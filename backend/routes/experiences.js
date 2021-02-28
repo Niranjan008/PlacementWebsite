@@ -22,7 +22,7 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 //api to add experience only for signed in users
-router.post("/add-exp", userAuth, checkRole(["user"]), upload.single('selectedFile'), async (req, res) => {
+router.post("/add-exp", upload.single('selectedFile'), async (req, res) => {
   console.log(req)
   await addexp(req.body, req.file, "user", res);
 });
