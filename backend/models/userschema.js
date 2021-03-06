@@ -6,17 +6,9 @@ mongoose.connect('mongodb://127.0.0.1:27017/placement-experience-db', {
 })
 const UserSchema = new Schema(
   {
-    name: {
-      type: String,
-      required: true
-    },
-    email: {
-      type: String,
-      required: true
-    },
     role: {
       type: String,
-      default: "user",
+      default: "admin",
       enum: ["user", "admin"]
     },
     username: {

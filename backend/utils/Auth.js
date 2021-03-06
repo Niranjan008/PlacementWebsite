@@ -47,19 +47,10 @@ const userRegister = async (userDets, role, res) => {
         success: false
       });
     }
-    let emailNotRegistered = await validateEmail(userDets.email);
-    if (!emailNotRegistered) {
-      return res.status(400).json({
-        message: `Email is already registered.`,
-        success: false
-      });
-    }
     const password = await bcrypt.hash(userDets.password, 12);
     const newUser = new User
     newUser.username = userDets.username
     newUser.password = password
-    newUser.email = userDets.email
-    newUser.name = userDets.name
     newUser.role = role
     await newUser.save();
     return res.status(201).json({
