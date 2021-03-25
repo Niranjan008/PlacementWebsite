@@ -17,6 +17,7 @@ class AdminVerify extends Component{
     }
     render(){
         const {dets} = this.state;
+        console.log(this.state)
         if(dets.length == 0){
             return <div><p>Hold Up!Data is loading</p></div>
         }

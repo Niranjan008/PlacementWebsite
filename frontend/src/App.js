@@ -4,7 +4,9 @@ import React from 'react'
 import HomePage from './HomePage.js'
 import AdminLogin from './AdminLogin.js'
 import AdminVerify from './AdminVerify.js'
-import Experience from './Experience';
+import Experience_post from './Experience_post';
+import ViewExp from './ViewExp'
+import Tips from './Tips'
 function App() {
   return (
     <div>
@@ -16,11 +18,17 @@ function App() {
           <Route exact path = "/adminlogin">
             <AdminLogin/>
           </Route>
+          <Route exact path = "/viewexp">
+            <ViewExp/>
+          </Route>
           <Route exact path = "/adminverify">
             <AdminVerify/>
           </Route>
-          <Route exact path = "/experience">
-          <Experience/>
+          <Route exact path = "/exp_post">
+          <Experience_post/>
+          </Route>
+          <Route exact path = "/tips">
+          <Tips/>
           </Route>
         </Switch>
       </BrowserRouter>

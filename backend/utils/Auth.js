@@ -10,7 +10,7 @@ const addexp = async (expDets, fts, role, res) => {
 
     const experienceschemauser = new experienceschema;
 
-    experienceschemauser.name = expDets.name;
+    experienceschemauser.name = expDets.uname;
 
     experienceschemauser.email = expDets.email;
 
@@ -18,7 +18,7 @@ const addexp = async (expDets, fts, role, res) => {
 
     experienceschemauser.company = expDets.company;
 
-    experienceschemauser.linkedinlink = expDets.linkedinlink;
+    experienceschemauser.linkedinlink = expDets.linkedIn;
 
     experienceschemauser.experiencefile.data = fs.readFileSync('./uploads/' + fts.filename)
 
@@ -140,6 +140,7 @@ const validateEmail = async email => {
 
 const getallexp = async (res) => {
   const data = await experienceschema.find({ isverified: { $in: ["yes"] } })
+  console.log(data)
   return res.status(200).json({
     message: data,
     success: true
