@@ -111,6 +111,10 @@ body {
   
 }
 
+/* color: #29abe2;
+  text-align: left;
+  background-color: #202020;
+   */
 [tabindex="-1"]:focus:not(:focus-visible) {
   outline: 0 !important;
 }
@@ -602,6 +606,17 @@ mark,
 .img-fluid {
   max-width: 100%;
   max-height: 100% ;
+}
+
+.csea-logo {
+  max-width: 100%;
+  max-height: 100%;
+  
+}
+
+.Tipslogo{
+  width: 100%;
+  height: 225px;
 }
 
 .img-thumbnail {
@@ -10411,7 +10426,7 @@ a.text-dark:focus {
   left: 45px;
 }
 .timeline ul li:nth-of-type(odd) > div {
-  left: -660px;
+  left: -550px;
 }
 .timeline ul li div {
   visibility: hidden;
@@ -10435,8 +10450,9 @@ a.text-dark:focus {
     flex-direction: column;
  }
   .timeline ul li div div {
-    width: 80%;
-    margin: 10px;
+    width: auto;
+    margin: 5px;
+    height: auto;
  }
   .timeline ul li:nth-of-type(odd) > div {
     left: -289px;
@@ -11264,3 +11280,4 @@ body {
       left: 100%;
  }
 }
+

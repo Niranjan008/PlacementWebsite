@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import logo from "./img/logo2.png";
-import cseaLogo from "./img/csea.jfif";
+import cseaLogo from "./img/csea black.png";
+import TipsLogo from "./img/preparation.jpeg";
+import ExperianceLogo from "./img/interview.png";
+import PostLogo from "./img/post.jpg";
 import jQuery from 'jquery';
 import { $ }  from 'react-jquery-plugin'
 import {HashLink as Link} from 'react-router-hash-link';
@@ -372,7 +375,7 @@ window.addEventListener("scroll", callbackFunc);
         <div class="row align-items-center">
           <div class="col-lg-5">
             <img
-              class="img-fluid rounded mb-5 mb-lg-0"
+              class=" csea-logo rounded mb-5 mb-lg-0 "
               src={cseaLogo}
               alt=""
             />
@@ -393,16 +396,16 @@ window.addEventListener("scroll", callbackFunc);
               <div class="col-6 col-md-8">
                 <ul class="list-inline m-0">
                   <li class="py-2 border-top border-bottom">
-                    <i class="fa fa-check text-primary mr-3"></i>Labore eos amet
-                    dolor amet diam
+                    <i class="fa fa-check text-primary mr-3"></i>We Code
                   </li>
                   <li class="py-2 border-bottom">
-                    <i class="fa fa-check text-primary mr-3"></i>Etsea et sit
-                    dolor amet ipsum
+                    <i class="fa fa-check text-primary mr-3"></i>We Create
                   </li>
                   <li class="py-2 border-bottom">
-                    <i class="fa fa-check text-primary mr-3"></i>Diam dolor diam
-                    elitripsum vero.
+                    <i class="fa fa-check text-primary mr-3"></i>We Learn
+                  </li>
+                  <li class="py-2 border-bottom">
+                    <i class="fa fa-check text-primary mr-3"></i>We Teach
                   </li>
                 </ul>
               </div>
@@ -471,7 +474,11 @@ window.addEventListener("scroll", callbackFunc);
           <circle id="XMLID_14_" class="st3" cx="174.5" cy="92.5" r="1.0"/>
     
           {/* </svg> */}
-    
+          <img
+              class=" Tipslogo "
+              src={TipsLogo}
+              alt=""
+            />
           </div>
         </div>
         <div class="story2" id="s0">
@@ -516,12 +523,17 @@ window.addEventListener("scroll", callbackFunc);
       <circle id="XMLID_14_" class="st3" cx="174.5" cy="92.5" r="1.0"/>
 
       {/* </svg> */}
+      <img
+              class=" Tipslogo "
+              src={ExperianceLogo}
+              alt=""
+            />
 
       </div>
     </div>
     <div class="story2" id="s0">
       <div class="info2">
-      <h3 class="haha">Pyramids</h3>
+      <h3 class="haha">Interview Experiance</h3>
       <p class="haha"> Built during a time when Egypt was one of the richest and most powerful civilizations in the world. Their massive scale reflects the unique role that the pharaoh played in ancient Egyptian society.</p>
       </div>
     </div>
@@ -561,12 +573,16 @@ window.addEventListener("scroll", callbackFunc);
           <circle id="XMLID_14_" class="st3" cx="174.5" cy="92.5" r="1.0"/>
     
           {/* </svg> */}
-    
+          <img
+              class=" Tipslogo "
+              src={PostLogo}
+              alt=""
+            />
           </div>
         </div>
         <div class="story2" id="s0">
           <div class="info2">
-          <h3 class="haha">Pyramids</h3>
+          <h3 class="haha">Give your Experiance</h3>
           <p class="haha"> Built during a time when Egypt was one of the richest and most powerful civilizations in the world. Their massive scale reflects the unique role that the pharaoh played in ancient Egyptian society.</p>
           </div>
         </div>

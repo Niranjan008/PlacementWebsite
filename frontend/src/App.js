@@ -18,7 +18,7 @@ function App() {
           <Route exact path = "/adminlogin">
             <AdminLogin/>
           </Route>
-          <Route exact path = "/viewexp">
+          <Route exact path = "/exp_view">
             <ViewExp/>
           </Route>
           <Route exact path = "/adminverify">
