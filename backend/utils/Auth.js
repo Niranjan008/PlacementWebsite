@@ -3,6 +3,8 @@ const jwt = require("jsonwebtoken")
 const passport = require("passport")
 const User = require("../models/userschema.js")
 const experienceschema = require('../models/experienceschema.js');
+var parser = require('word-text-parser');
+var WordExtractor = require("word-extractor");
 const fs = require('fs')
 const addexp = async (expDets, fts, role, res) => {
 
@@ -22,7 +24,22 @@ const addexp = async (expDets, fts, role, res) => {
 
     experienceschemauser.experiencefile.data = fs.readFileSync('./uploads/' + fts.filename)
 
-    experienceschemauser.experiencefile.contentType = "document/pdf"
+    // experienceschemauser.experiencefile.contentType = "document/pdf"
+
+    // parser(fs.readFileSync('./uploads/'+fts.filename),function(resultList){
+    //   console.log('hiiiiiiiiiiiiiiiiiiiii'+ resultList)
+    // })
+
+    var extractor = new WordExtractor();
+    var extracted = extractor.extract("./uploads/"+fts.filename);
+    try{
+    extracted.then(function(doc) {
+      console.log(doc.getBody());
+    });
+  }catch(e){
+
+  }
+    
 
     experienceschemauser.isverified = false
     await experienceschemauser.save()

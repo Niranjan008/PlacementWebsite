@@ -1,11 +1,34 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const mongoose = require('mongoose')
 const cors = require("cors");
 const app = express();
 const passport = require("passport");
 var corsOptions = {
   origin: "http://localhost:3000"
 };
+// const MongoClient = require('mongodb').MongoClient;
+// const uri = "mongodb+srv://plcweb:123@cluster0.3m9aq.mongodb.net/Experience_DB?retryWrites=true&w=majority";
+// const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+// client.connect(err => {
+//   const collection = client.db("test").collection("devices");
+//   // perform actions on the collection object
+//   client.close();
+// });
+mongoose.connect('mongodb+srv://plcweb:123@cluster0.3m9aq.mongodb.net/Experience_DB?retryWrites=true&w=majority', {
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useUnifiedTopology:true
+})
+
+mongoose.connection.on('connected',()=>{
+  console.log("Connected to MongoDB!")
+});
+
+mongoose.connection.on('error',(err)=>{
+  console.log("Error connecting the server");
+});
+
 require("./middlewares/passport")(passport);
 app.use(cors(corsOptions));
 

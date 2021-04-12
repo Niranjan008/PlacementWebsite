@@ -1,12 +1,13 @@
 import './App.css';
 import {BrowserRouter,Route,Switch} from 'react-router-dom';
 import React from 'react'
-import HomePage from './HomePage.js'
-import AdminLogin from './AdminLogin.js'
-import AdminVerify from './AdminVerify.js'
-import Experience_post from './Experience_post';
-import ViewExp from './ViewExp'
-import Tips from './Tips'
+import HomePage from './Home_page/HomePage.js'
+import AdminLogin from './Admin_files/AdminLogin.js'
+import AdminVerify from './Admin_files/AdminVerify'
+import Experience_post from './Post_Exp/Experience_post';
+import ViewExp from './View_exp/ViewExp'
+import Tips from './Tips/Tips'
+
 function App() {
   return (
     <div>
