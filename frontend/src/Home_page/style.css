@@ -11379,3 +11379,8 @@ body {
     left: 100%;
   }
 }
+
+/* tips page head */
+.whitehead {
+  background-color: white;
+}
