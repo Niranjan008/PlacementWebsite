@@ -3,14 +3,18 @@ const jwt = require("jsonwebtoken")
 const passport = require("passport")
 const User = require("../models/userschema.js")
 const experienceschema = require('../models/experienceschema.js');
+var parser = require('word-text-parser');
+var WordExtractor = require("word-extractor");
 const fs = require('fs')
+var textract = require('textract');
+var txt
 const addexp = async (expDets, fts, role, res) => {
 
   try {
 
     const experienceschemauser = new experienceschema;
 
-    experienceschemauser.name = expDets.name;
+    experienceschemauser.name = expDets.uname;
 
     experienceschemauser.email = expDets.email;
 
@@ -18,11 +22,22 @@ const addexp = async (expDets, fts, role, res) => {
 
     experienceschemauser.company = expDets.company;
 
-    experienceschemauser.linkedinlink = expDets.linkedinlink;
+    experienceschemauser.linkedinlink = expDets.linkedIn;
 
     experienceschemauser.experiencefile.data = fs.readFileSync('./uploads/' + fts.filename)
 
-    experienceschemauser.experiencefile.contentType = "document/pdf"
+    // experienceschemauser.experiencefile.contentType = "document/pdf"
+
+    // parser(fs.readFileSync('./uploads/'+fts.filename),function(resultList){
+    //   console.log('hiiiiiiiiiiiiiiiiiiiii'+ resultList)
+    // })
+
+    await textract.fromFileWithPath('./uploads/'+fts.filename, function( error, text ) {
+      
+      tst = text
+    })
+    experienceschemauser.exptext = tst.toString()
+    console.log(tst.toString())
 
     experienceschemauser.isverified = false
     await experienceschemauser.save()
@@ -140,6 +155,7 @@ const validateEmail = async email => {
 
 const getallexp = async (res) => {
   const data = await experienceschema.find({ isverified: { $in: ["yes"] } })
+  console.log(data)
   return res.status(200).json({
     message: data,
     success: true
