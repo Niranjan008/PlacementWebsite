@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import logo from "../assets/img/logo2.png";
+
 import {HashLink as Link} from 'react-router-hash-link';
-import './style.css';
 
 class Tips extends Component {
 
@@ -17,7 +16,7 @@ class Tips extends Component {
           class="navbar-brand font-weight-bold text-secondary" style={{fontSize: `35px`}}
           
         >
-          <img src={logo} style={{height: `80px`, width: `80px`, paddingBottom: `5px`}}></img>
+          
           <span class="text-primary " style={{fontFamily: `Handlee`}}>CSEA Placement</span>
         </a>
         <button
@@ -80,7 +79,7 @@ class Tips extends Component {
 
     </div>
     <div class="timeline_tips__event__date">
-    Resume building
+    Resume Building
     </div>
     <div class="timeline_tips__event__content ">
       <div class="timeline_tips__event__title">
@@ -116,14 +115,31 @@ class Tips extends Component {
 
     </div>
     <div class="timeline_tips__event__date">
-      20-08-2019
+    Coding Practice
     </div>
     <div class="timeline_tips__event__content">
-      <div class="timeline_tips__event__title">
-        Lunch
-      </div>
+      
       <div class="timeline_tips__event__description">
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in!</p>
+        <p>
+        <p>Most of the time the key focus in a placement process is Data structures and Algorithms. So practise as much as you can.</p>
+        <ul>
+          <li class='tips_li'>Prepare from GeeksforGeeks</li>
+          <li class='tips_li'>Practise in LeetCode</li>
+      </ul>
+      <p>Learn CS Subjects</p>
+      <ul>
+          <li class='tips_li'>Database Management System</li>
+          <li class='tips_li'>Operating Systems</li>
+          <li class='tips_li'>Object Oriented Programming Concepts</li>
+          <li class='tips_li'>Computer Networks</li>
+          <li class='tips_li'>Computer Architecture and Digital principles</li>
+          <li class='tips_li'>Java (depends on role)</li>
+      </ul>
+      <p>Aptitude</p>
+      You can refer https://www.indiabix.com/  or the book “Quantitative Aptitude By R S Aggarwal” 
+      for aptitude preparation.
+      
+        </p>
       </div>
     </div>
   </div>
@@ -133,14 +149,21 @@ class Tips extends Component {
 
     </div>
     <div class="timeline_tips__event__date">
-      20-08-2019
+    Face to face Interview
     </div>
     <div class="timeline_tips__event__content">
-      <div class="timeline_tips__event__title">
-        Exercise
-      </div>
+      
       <div class="timeline_tips__event__description">
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in!</p>
+        <p>
+          <p>Face to Face Interviews (Tech/Managerial):</p>
+          <ul>
+            <li class='tips_li'>Mostly you will get questions from the topics in your resume</li>
+            <li class='tips_li'>Questions about your projects and internship</li>
+            <li class='tips_li'>CS subjects mentioned before</li>
+            <li class='tips_li'>Coding questions</li>
+            <li class='tips_li'>Some logical and puzzle questions will also be asked to know about your thinking process.</li>
+          </ul>
+        </p>
       </div>
 
     </div>
@@ -151,14 +174,23 @@ class Tips extends Component {
 
     </div>
     <div class="timeline_tips__event__date">
-      20-08-2019
+      HR Interviews
     </div>
     <div class="timeline_tips__event__content">
-      <div class="timeline_tips__event__title">
-        Birthday
-      </div>
+      
       <div class="timeline_tips__event__description">
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in!</p>
+        <p>
+          <ul>
+            <li class='tips_li'>90% of the process is done</li>
+            <li class='tips_li'>Communicate with confidence</li>
+            <li class='tips_li'>Extend the conversations. Be prepared and have unique answers for the same old HR questions</li>
+            <li class='tips_li'>Know about the company and Job Description because they might discuss them during HR interviews.</li>
+            <li class='tips_li'>Be confident and honest while answering in the face-to-face interviews. Your confidence will be a X-factor in these interviews</li>
+            <li class='tips_li'>In case the interviewer asks, “Any Questions for me?”, ask them some general questions about the company.</li>
+            <li class='tips_li'>Follow dress code</li>
+            <li class='tips_li'>You must drive your interview</li>
+
+          </ul></p>
       </div>
     </div>
   </div>

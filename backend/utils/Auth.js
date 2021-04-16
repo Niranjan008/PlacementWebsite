@@ -6,6 +6,8 @@ const experienceschema = require('../models/experienceschema.js');
 var parser = require('word-text-parser');
 var WordExtractor = require("word-extractor");
 const fs = require('fs')
+var textract = require('textract');
+var txt
 const addexp = async (expDets, fts, role, res) => {
 
   try {
@@ -30,16 +32,12 @@ const addexp = async (expDets, fts, role, res) => {
     //   console.log('hiiiiiiiiiiiiiiiiiiiii'+ resultList)
     // })
 
-    var extractor = new WordExtractor();
-    var extracted = extractor.extract("./uploads/"+fts.filename);
-    try{
-    extracted.then(function(doc) {
-      console.log(doc.getBody());
-    });
-  }catch(e){
-
-  }
-    
+    await textract.fromFileWithPath('./uploads/'+fts.filename, function( error, text ) {
+      
+      tst = text
+    })
+    experienceschemauser.exptext = tst.toString()
+    console.log(tst.toString())
 
     experienceschemauser.isverified = false
     await experienceschemauser.save()

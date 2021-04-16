@@ -28,7 +28,7 @@ const PlaceExp = new Schema({
         data: Buffer
     },
     exptext:{
-        data: String
+        type: String
     },
 
     isverified: {
