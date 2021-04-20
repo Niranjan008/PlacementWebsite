@@ -2583,8 +2583,8 @@ class HomePage extends Component {
                 <div class="discovery">
                   <h1>Clarify the problem statement:</h1>
                   <p>
-                    It�s important to understand the problem clearly before
-                    attempting to solve it. It�s vital you ask the right
+                    It's important to understand the problem clearly before
+                    attempting to solve it. It's vital you ask the right
                     questions.
                   </p>
                 </div>

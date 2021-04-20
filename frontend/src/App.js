@@ -7,6 +7,7 @@ import AdminVerify from './Admin_files/AdminVerify'
 import Experience_post from './Post_Exp/Experience_post';
 import ViewExp from './View_exp/ViewExp'
 import Tips from './Tips/Tips'
+import ViewFullExp from './View_exp/ViewFullExp';
 
 function App() {
   return (
@@ -32,6 +33,9 @@ function App() {
           <Tips/>
           </Route>
         </Switch>
+        <Route exact path = "/exp_full_view">
+          <ViewFullExp/>
+        </Route>
       </BrowserRouter>
     </div>
   );

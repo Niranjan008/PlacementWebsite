@@ -11477,6 +11477,7 @@
     
             .basic-card .card-text {
                 line-height: 1.6;
+                
             }
     
             .basic-card .card-link {
@@ -11553,6 +11554,7 @@
             
             .basic-card-light .card-text {
                 color: #7b7b7b;
+                
             }
     
             .basic-card-light .card-link {
@@ -11582,5 +11584,26 @@
             .basic-card-dark .card-link a:after {
                 background:#eee;
             }
+    
+.column-tips{
+  padding-top: 75px;
+  columns: auto 4;
+}
+
+@media (max-width: 786px) {
+  .column-tips{
+    padding-top: 75px;
+    columns: auto 1;
+  }
+}
+
+    
+    /* Pop up model */
+    
+    
+    
+    
+    
+    
     
     
