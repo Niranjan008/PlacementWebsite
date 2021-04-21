@@ -530,6 +530,7 @@ h6,
 @media (max-width: 1200px) {
   .display-3 {
     font-size: calc(1.575rem + 3.9vw);
+    padding-top: 50px;
   }
 }
 
@@ -1466,14 +1467,14 @@ pre code {
   .col-lg-6 {
     flex: 0 0 50%;
     max-width: 50%;
-    padding-top: 210px;
-    padding-bottom: 210px;
+    padding-top: 100px;
+    padding-bottom: 100px;
   }
   .col-lg-61 {
     flex: 0 0 50%;
     max-width: 50%;
     padding-top: 100px;
-    padding-bottom: 210px;
+    padding-bottom: 100px;
   }
   .col-lg-7 {
     flex: 0 0 58.33333%;

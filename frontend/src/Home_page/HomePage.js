@@ -1869,7 +1869,7 @@ class HomePage extends Component {
                 </li>
                 <li>
                   <a href="#contact" class="nav-item nav-link">
-                    <Link style={{ textDecoration: `none` }}>Contact Us</Link>
+                    <Link style={{ textDecoration: `none` }}>Contact</Link>
                   </a>
                 </li>
 
@@ -1896,12 +1896,12 @@ class HomePage extends Component {
         <div class="container-fluid bg-primary px-0 px-md-5 mb-5">
           <div class="row align-items-center px-3">
             <div class="col-lg-6 text-center text-lg-left">
-              <h1 class="display-3 font-weight-bold text-white">
+              <h1 class="display-3 font-weight-normal text-white" >
                 Welcome Folks!
               </h1>
               <h4
-                class="text-white mb-4 mt-5 mt-lg-0"
-                style={{ fontSize: `20px` }}
+                class="text-white font-weight-light mb-4 mt-5 mt-lg-0"
+                style={{ fontSize: `30px` }}
               >
                 Your one-stop web portal for enhancing your Job Placement
                 preparations!

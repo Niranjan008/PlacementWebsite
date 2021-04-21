@@ -4,7 +4,7 @@ import jQuery from "jquery"
 import './style.css';
 import logo from "../assets/img/logo2.png";
 import { HashLink as Link } from "react-router-hash-link";
-
+const localStorage = require('local-storage')
 
 const axios = require('axios')
 
@@ -42,61 +42,32 @@ class ViewFullExp extends Component{
         // })
     }
 
-    displayExp = () =>{
-    //   console.log(dets);
-    console.log(this.props.location)
+   
+   
     
       
     //   const{name, cmpy, year,text} = this.props.data
-
-      return ()=>
-      (
-        <div class="card-category-1">
-            
-            <div class="basic-card basic-card-aqua">
-                <div class="card-content">
-                    <span class="card-title">{this.props.data.name}</span>
-                    <p class="card-text">
-                        {this.props.data.cmpy}<br></br>
-                        {this.props.data.year}<br></br>
-                        {this.props.data.text}
-
-                        
-                        
-                        
-                    </p>
-                    
-                </div>
-
-                <div class="card-link">
-                <Link to={{
-  pathname: '/tips',
-  state: [{id: 1, name: 'Ford', color: 'red'}]
-}}> Your Page </Link>
-                </div>
-            </div>
-            </div>
-
-      )
-    }
+    
+      
+    
 
    
 
     render(){
+        const {name,year,company,exptext,linkedinlink} = localStorage.get('indets')
         
-        //  const {index} = this.props.location
         return (
             <div>
-              <div class="container-fluid bg-light position-relative shadow">
+             <div class="container-fluid bg-light position-relative shadow">
           <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5">
             <a
               class="navbar-brand font-weight-bold text-secondary"
               style={{ fontSize: `35px` }}
             >
-              <img
+              {/* <img
                 src={logo}
                 style={{ height: `80px`, width: `80px`, paddingBottom: `5px` }}
-              ></img>
+              ></img> */}
               <span class="text-primary " style={{ fontFamily: `Handlee` }}>
                 CSEA Placement
               </span>
@@ -125,20 +96,18 @@ class ViewFullExp extends Component{
             </nav> --> */}
 
                 <li>
-                  <a href="#about" class="nav-item nav-link active">
+                  <a href="#about" class="nav-item nav-link ">
                     About
                   </a>
                 </li>
                 <li>
                   <a href="#experience" class="nav-item nav-link">
-                    <Link style={{ textDecoration: `none` }}>Prep Tips</Link>
+                    <Link style={{ textDecoration: `none` }}>Preparation</Link>
                   </a>
                 </li>
                 <li>
                   <a href="#experience" class="nav-item nav-link">
-                    <Link style={{ textDecoration: `none` }}>
-                      Interview Experiences
-                    </Link>
+                    <Link style={{ textDecoration: `none` }}>Experiences</Link>
                   </a>
                 </li>
                 {/* <li>
@@ -153,7 +122,7 @@ class ViewFullExp extends Component{
                 </li>
                 <li>
                   <a href="#contact" class="nav-item nav-link">
-                    <Link style={{ textDecoration: `none` }}>Contact Us</Link>
+                    <Link style={{ textDecoration: `none` }}>Contact</Link>
                   </a>
                 </li>
 
@@ -174,10 +143,24 @@ class ViewFullExp extends Component{
             </div>
           </nav>
         </div>
-        <div class="column-tips">
-              {this.displayExp()}
-              </div>
-            </div> 
+              <br/>
+              <br/>
+              <h1 style={{paddingLeft:`20px`,paddingRight:`20px`}}>{name}</h1>
+              <h2 style={{paddingLeft:`20px`}}>{company}</h2>
+              <h3 style={{paddingLeft:`20px`}}>{year}</h3>
+              <br/>
+              <br/>
+              <p style={{
+                    fontSize: `20px`,
+                    fontFamily: `Handlee`,
+                    color: `#00394f`,
+                    paddingLeft:`20px`,
+                    paddingRight:`20px`,
+                    paddingBottom:`20px`
+                  }}>{exptext}</p>
+              <center><a href={linkedinlink}><img style={{paddingBottom:`20px`}} src="https://img.icons8.com/doodle/48/000000/linkedin--v2.png"/></a></center>
+        </div>
+      
         );
         
     }

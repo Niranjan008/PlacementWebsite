@@ -1,102 +1,3 @@
-// import React, { useState } from 'react';
-// import Container from '@material-ui/core/Container';
-// import TextField from '@material-ui/core/TextField';
-// import Button from '@material-ui/core/Button';
-// import IconButton from '@material-ui/core/IconButton';
-// import RemoveIcon from '@material-ui/icons/Remove';
-// import AddIcon from '@material-ui/icons/Add';
-// import Icon from '@material-ui/core/Icon';
-// import { v4 as uuidv4 } from 'uuid';
-
-// import { makeStyles } from '@material-ui/core/styles';
-
-// const useStyles = makeStyles((theme) => ({
-//   root: {
-//     '& .MuiTextField-root': {
-//       margin: theme.spacing(1),
-//     },
-//   },
-//   button: {
-//     margin: theme.spacing(1),
-//   }
-// }))
-
-// function ViewExp() {
-//   const classes = useStyles()
-//   const [inputFields, setInputFields] = useState([
-//     { id: uuidv4(), firstName: '', lastName: '' },
-//   ]);
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     console.log("InputFields", inputFields);
-//   };
-
-//   const handleChangeInput = (id, event) => {
-//     const newInputFields = inputFields.map(i => {
-//       if(id === i.id) {
-//         i[event.target.name] = event.target.value
-//       }
-//       return i;
-//     })
-    
-//     setInputFields(newInputFields);
-//   }
-
-//   const handleAddFields = () => {
-//     setInputFields([...inputFields, { id: uuidv4(),  firstName: '', lastName: '' }])
-//   }
-
-//   const handleRemoveFields = id => {
-//     const values  = [...inputFields];
-//     values.splice(values.findIndex(value => value.id === id), 1);
-//     setInputFields(values);
-//   }
-
-//   return (
-//     <Container>
-//       <h1>Add New Member</h1>
-//       <form className={classes.root} onSubmit={handleSubmit}>
-//         { inputFields.map(inputField => (
-//           <div key={inputField.id}>
-//             <TextField
-//               name="firstName"
-//               label="First Name"
-//               variant="filled"
-//               value={inputField.firstName}
-//               onChange={event => handleChangeInput(inputField.id, event)}
-//             />
-//             <TextField
-//               name="lastName"
-//               label="Last Name"
-//               variant="filled"
-//               value={inputField.lastName}
-//               onChange={event => handleChangeInput(inputField.id, event)}
-//             />
-//             <IconButton disabled={inputFields.length === 1} onClick={() => handleRemoveFields(inputField.id)}>
-//               <RemoveIcon />
-//             </IconButton>
-//             <IconButton
-//               onClick={handleAddFields}
-//             >
-//               <AddIcon />
-//             </IconButton>
-//           </div>
-//         )) }
-//         <Button
-//           className={classes.button}
-//           variant="contained" 
-//           color="primary" 
-//           type="submit" 
-//           endIcon={<Icon>send</Icon>}
-//           onClick={handleSubmit}
-//         >Send</Button>
-//       </form>
-//     </Container>
-//   );
-// }
-
-// export default ViewExp;
 
 
 import React, { Component } from 'react'
@@ -105,7 +6,7 @@ import jQuery from "jquery"
 import './style.css';
 import logo from "../assets/img/logo2.png";
 import { HashLink as Link } from "react-router-hash-link";
-
+const localStorage = require('local-storage')
 
 const axios = require('axios')
 
@@ -119,18 +20,21 @@ class ViewExp extends Component{
             
             
         }
-        
+        this.savestate.bind(this)
     }
     
     
-    
+    savestate(ind){
+      console.log(this.state.dets[ind])
+      localStorage.set('indets',this.state.dets[ind])
+    }
     componentDidMount(){
 
       
       
     
         var self = this
-        axios.get('http://localhost:4000/api/experiences/getallexp').then(function (response) {
+        axios.get('http://18.217.0.201:4000/api/experiences/getallexp').then(function (response) {
             self.setState({dets:response.data.message})
             
             console.log("successfull!!");
@@ -145,7 +49,7 @@ class ViewExp extends Component{
     displayExp = (dets) =>{
       console.log(dets);
       // if(!dets.length) return null;
-      
+      var slf = this
 
       return dets.map((det,index)=>
       (
@@ -165,10 +69,9 @@ class ViewExp extends Component{
                 </div>
 
                 <div class="card-link">
-                <Link to={{
-  pathname: '/exp_full_view',
-    data: {name:det.name, cmpy:det.company, year:det.year, text:det.exptext}
-}}> Read Article </Link>
+<span onClick={() => this.savestate(index)}><Link to= {{pathname: '/exp_full_view'
+    }} > Read Article </Link></span>
+    
                 </div>
             </div>
             </div>
@@ -195,10 +98,10 @@ class ViewExp extends Component{
               class="navbar-brand font-weight-bold text-secondary"
               style={{ fontSize: `35px` }}
             >
-              <img
+              {/* <img
                 src={logo}
                 style={{ height: `80px`, width: `80px`, paddingBottom: `5px` }}
-              ></img>
+              ></img> */}
               <span class="text-primary " style={{ fontFamily: `Handlee` }}>
                 CSEA Placement
               </span>
@@ -227,20 +130,18 @@ class ViewExp extends Component{
             </nav> --> */}
 
                 <li>
-                  <a href="#about" class="nav-item nav-link active">
+                  <a href="#about" class="nav-item nav-link ">
                     About
                   </a>
                 </li>
                 <li>
                   <a href="#experience" class="nav-item nav-link">
-                    <Link style={{ textDecoration: `none` }}>Prep Tips</Link>
+                    <Link style={{ textDecoration: `none` }}>Preparation</Link>
                   </a>
                 </li>
                 <li>
                   <a href="#experience" class="nav-item nav-link">
-                    <Link style={{ textDecoration: `none` }}>
-                      Interview Experiences
-                    </Link>
+                    <Link style={{ textDecoration: `none` }}>Experiences</Link>
                   </a>
                 </li>
                 {/* <li>
@@ -255,7 +156,7 @@ class ViewExp extends Component{
                 </li>
                 <li>
                   <a href="#contact" class="nav-item nav-link">
-                    <Link style={{ textDecoration: `none` }}>Contact Us</Link>
+                    <Link style={{ textDecoration: `none` }}>Contact</Link>
                   </a>
                 </li>
 
