@@ -128,21 +128,40 @@ class Experience_post extends Component {
     }
   }
 
+  gotoHome = () =>{
+
+    window.location='/'
+  }
+  gotoTips = () =>{
+    window.location='/tips'
+  }
+  gotoExp = () =>{
+    window.location='/exp_view'
+  }
+  gotoHome = () =>{
+    
+  }
+  gotoHome = () =>{
+    
+  }
+
   render() {
     const { uname, email, year,company, linkedIn, selectedFile } = this.state;
     return (
       <div>
-        <div class="container-fluid bg-light position-relative shadow">
-          <nav
-            class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5"
-          >
+         <div class="container-fluid bg-light position-relative shadow">
+          <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5">
             <a
-
-              class="navbar-brand font-weight-bold text-secondary" style={{ fontSize: `35px` }}
-
+              class="navbar-brand font-weight-bold text-secondary"
+              style={{ fontSize: `35px` }}
             >
-              <img src={logo} style={{ height: `80px`, width: `80px`, paddingBottom: `5px` }}></img>
-              <span class="text-primary " style={{ fontFamily: `Handlee` }}>CSEA Placement</span>
+              {/* <img
+                src={logo}
+                style={{ height: `80px`, width: `80px`, paddingBottom: `5px` }}
+              ></img> */}
+              <span class="text-primary " style={{ fontFamily: `Handlee` }}>
+                CSEA Placement
+              </span>
             </a>
             <button
               type="button"
@@ -156,24 +175,54 @@ class Experience_post extends Component {
               class="collapse navbar-collapse justify-content-between"
               id="navbarCollapse"
             >
-              <div class="navbar-nav font-weight-bold mx-auto py-0 " >
+              <div class="navbar-nav font-weight-bold mx-auto py-0 ">
+                {/* <!-- <nav>
+              <ul>
+                <li class="active"><a href="" style="text-decoration: none;">About</a></li>
+                <li><a href="#tips" style="text-decoration: none;">Tips</a></li>
+                <li><a href="Experiance.html" style="text-decoration: none;">Experiences</a></li>
+                <li><a href="contact.html" style="text-decoration: none;">Contact</a></li>
+                <li><a href="gallery.html" style="text-decoration: block;">Five</a></li>
+              </ul>
+            </nav> --> */}
 
- 
+                <li>
+                <a class="nav-item nav-link" style={{ textDecoration: `none` }} onClick={this.gotoHome} >Home</a>
+                </li>
+                <li>
+                <a class="nav-item nav-link" style={{ textDecoration: `none` }} onClick={this.gotoTips} >Preparation</a>
+                </li>
+                <li>
+                <a class="nav-item nav-link" style={{ textDecoration: `none` }} onClick={this.gotoExp} >Experiance</a>
+                </li>
+                
+                <li>
+                <a class="nav-item nav-link" style={{ textDecoration: `none` }} onClick={this.gotoPost} >Post</a>
+                </li>
+                <li>
+                  
+                    <a class="nav-item nav-link" style={{ textDecoration: `none` }} onClick={this.gotoContact} >Contact</a>
+                  
+                </li>
 
-                <li class="active"><a href="index.html" class="nav-item nav-link active">Home</a></li>
-                <li ><a class="nav-item nav-link"><Link style={{ textDecoration: `none` }} to="#about">About</Link></a></li>
-                <li ><a href="" class="nav-item nav-link" ><Link style={{ textDecoration: `none` }} to="#about">Experience</Link></a></li>
-                <li><a href="" class="nav-item nav-link"><Link style={{ textDecoration: `none` }} to="#about">Tips</Link></a></li>
-                <li><a href="" class="nav-item nav-link"><Link style={{ textDecoration: `none` }} to="#about">Contact</Link></a></li>
-
-
-
+                {/* <!-- <div class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-toggle="dropdown"
+                >Pages</a
+              >
+              <div class="dropdown-menu rounded-0 m-0">
+                <a href="blog.html" class="dropdown-item">Blog Grid</a>
+                <a href="single.html" class="dropdown-item">Blog Detail</a>
               </div>
-
+            </div>
+            <a href="contact.html" class="nav-item nav-link">Contact</a> -->  */}
+              </div>
             </div>
           </nav>
         </div>
-        {/* <!-- Navbar End --> */}
+            {/* <!-- Navbar End --> */}
 
 
 

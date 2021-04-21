@@ -145,7 +145,7 @@ class ViewFullExp extends Component{
         </div>
               <br/>
               <br/>
-              <h1 style={{paddingLeft:`20px`,paddingRight:`20px`}}>{name}</h1>
+              <h1 style={{paddingLeft:`20px`}}>{name}</h1>
               <h2 style={{paddingLeft:`20px`}}>{company}</h2>
               <h3 style={{paddingLeft:`20px`}}>{year}</h3>
               <br/>
@@ -158,7 +158,7 @@ class ViewFullExp extends Component{
                     paddingRight:`20px`,
                     paddingBottom:`20px`
                   }}>{exptext}</p>
-              <center><a href={linkedinlink}><img style={{paddingBottom:`20px`}} src="https://img.icons8.com/doodle/48/000000/linkedin--v2.png"/></a></center>
+              <center><a href={linkedinlink}><img style={{paddingBottom:`40px`}} src="https://img.icons8.com/cute-clipart/64/000000/linkedin.png"/></a></center>
         </div>
       
         );
