@@ -94,35 +94,39 @@ class ViewFullExp extends Component{
                 <li><a href="gallery.html" style="text-decoration: block;">Five</a></li>
               </ul>
             </nav> --> */}
-
+                <li class="active">
+                  <a href="/" class="nav-item nav-link active">
+                    Home
+                  </a>
+                </li>
                 <li>
-                  <a href="#about" class="nav-item nav-link ">
+                  <a href="/#about" class="nav-item nav-link ">
                     About
                   </a>
                 </li>
                 <li>
-                  <a href="#experience" class="nav-item nav-link">
-                    <Link style={{ textDecoration: `none` }}>Preparation</Link>
+                  <a href="/#experience" class="nav-item nav-link">
+                    Preparation
                   </a>
                 </li>
                 <li>
-                  <a href="#experience" class="nav-item nav-link">
-                    <Link style={{ textDecoration: `none` }}>Experiences</Link>
+                  <a href="/#experience" class="nav-item nav-link">
+                    Experiences
                   </a>
                 </li>
                 {/* <li>
-                  <a href="#experience" class="nav-item nav-link">
-                    <Link style={{ textDecoration: `none` }}>Tips</Link>
+                  <a href="/tips" class="nav-item nav-link">
+                    Tips
                   </a>
-                </li> */}
+                </li>  */}
                 <li>
-                  <a href="#faqs" class="nav-item nav-link">
-                    <Link style={{ textDecoration: `none` }}>FAQ</Link>
+                  <a href="/#faqs" class="nav-item nav-link">
+                   FAQ
                   </a>
                 </li>
                 <li>
-                  <a href="#contact" class="nav-item nav-link">
-                    <Link style={{ textDecoration: `none` }}>Contact</Link>
+                  <a href="/#contact" class="nav-item nav-link">
+                    Contact
                   </a>
                 </li>
 

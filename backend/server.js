@@ -5,7 +5,7 @@ const cors = require("cors");
 const app = express();
 const passport = require("passport");
 var corsOptions = {
-  origin: "http://localhost:3000"
+  origin: "*"
 };
 // const MongoClient = require('mongodb').MongoClient;
 // const uri = "mongodb+srv://plcweb:123@cluster0.3m9aq.mongodb.net/Experience_DB?retryWrites=true&w=majority";
@@ -30,7 +30,7 @@ mongoose.connection.on('error',(err)=>{
 });
 
 require("./middlewares/passport")(passport);
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.use(passport.initialize());
 

@@ -149,16 +149,13 @@ class Experience_post extends Component {
     const { uname, email, year,company, linkedIn, selectedFile } = this.state;
     return (
       <div>
-         <div class="container-fluid bg-light position-relative shadow">
+          <div class="container-fluid bg-light position-relative shadow">
           <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5">
             <a
               class="navbar-brand font-weight-bold text-secondary"
               style={{ fontSize: `35px` }}
             >
-              {/* <img
-                src={logo}
-                style={{ height: `80px`, width: `80px`, paddingBottom: `5px` }}
-              ></img> */}
+              
               <span class="text-primary " style={{ fontFamily: `Handlee` }}>
                 CSEA Placement
               </span>
@@ -176,33 +173,37 @@ class Experience_post extends Component {
               id="navbarCollapse"
             >
               <div class="navbar-nav font-weight-bold mx-auto py-0 ">
-                {/* <!-- <nav>
-              <ul>
-                <li class="active"><a href="" style="text-decoration: none;">About</a></li>
-                <li><a href="#tips" style="text-decoration: none;">Tips</a></li>
-                <li><a href="Experiance.html" style="text-decoration: none;">Experiences</a></li>
-                <li><a href="contact.html" style="text-decoration: none;">Contact</a></li>
-                <li><a href="gallery.html" style="text-decoration: block;">Five</a></li>
-              </ul>
-            </nav> --> */}
-
-                <li>
-                <a class="nav-item nav-link" style={{ textDecoration: `none` }} onClick={this.gotoHome} >Home</a>
-                </li>
-                <li>
-                <a class="nav-item nav-link" style={{ textDecoration: `none` }} onClick={this.gotoTips} >Preparation</a>
-                </li>
-                <li>
-                <a class="nav-item nav-link" style={{ textDecoration: `none` }} onClick={this.gotoExp} >Experiance</a>
-                </li>
                 
-                <li>
-                <a class="nav-item nav-link" style={{ textDecoration: `none` }} onClick={this.gotoPost} >Post</a>
+
+              <li>
+                  <a href="/#about" class="nav-item nav-link">
+                    About
+                  </a>
                 </li>
                 <li>
-                  
-                    <a class="nav-item nav-link" style={{ textDecoration: `none` }} onClick={this.gotoContact} >Contact</a>
-                  
+                  <a href="/#experience" class="nav-item nav-link">
+                    Preparation
+                  </a>
+                </li>
+                <li>
+                  <a href="/#experience" class="nav-item nav-link">
+                    Experiences
+                  </a>
+                </li>
+                 {/* <li>
+                  <a href="/tips" class="nav-item nav-link">
+                    Tips
+                  </a>
+                </li> */}
+                <li>
+                  <a href="/#faqs" class="nav-item nav-link">
+                    FAQ
+                  </a>
+                </li>
+                <li>
+                  <a href="/#contact" class="nav-item nav-link">
+                    Contact
+                  </a>
                 </li>
 
                 {/* <!-- <div class="nav-item dropdown">
@@ -222,7 +223,6 @@ class Experience_post extends Component {
             </div>
           </nav>
         </div>
-            {/* <!-- Navbar End --> */}
 
 
 

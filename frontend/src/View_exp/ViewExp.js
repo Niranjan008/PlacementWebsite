@@ -34,15 +34,16 @@ class ViewExp extends Component{
       
     
         var self = this
-        axios.get('http://18.217.0.201:4000/api/experiences/getallexp').then(function (response) {
+        axios.get('http://localhost:4000/api/experiences/getallexp').then(function (response) {
             self.setState({dets:response.data.message})
             
             console.log("successfull!!");
             // console.log(dets);
         })
-        .catch(()=>
+        .catch((e)=>
         {
-          alert('Error fetching data');
+          
+          alert(e);
         })
     }
 
@@ -69,7 +70,7 @@ class ViewExp extends Component{
                 </div>
 
                 <div class="card-link">
-<span onClick={() => this.savestate(index)}><Link to= {{pathname: '/exp_full_view'
+<span onClick={() => this.savestate(index)}><Link target="_blank"to= {{pathname: '/exp_full_view'
     }} > Read Article </Link></span>
     
                 </div>
@@ -128,35 +129,39 @@ class ViewExp extends Component{
                 <li><a href="gallery.html" style="text-decoration: block;">Five</a></li>
               </ul>
             </nav> --> */}
-
+                <li class="active">
+                  <a href="/" class="nav-item nav-link active">
+                    Home
+                  </a>
+                </li>
                 <li>
-                  <a href="#about" class="nav-item nav-link ">
+                  <a href="/#about" class="nav-item nav-link ">
                     About
                   </a>
                 </li>
                 <li>
-                  <a href="#experience" class="nav-item nav-link">
-                    <Link style={{ textDecoration: `none` }}>Preparation</Link>
+                  <a href="/#experience" class="nav-item nav-link">
+                    Preparation
                   </a>
                 </li>
                 <li>
-                  <a href="#experience" class="nav-item nav-link">
-                    <Link style={{ textDecoration: `none` }}>Experiences</Link>
+                  <a href="/#experience" class="nav-item nav-link">
+                    Experiences
                   </a>
                 </li>
-                {/* <li>
-                  <a href="#experience" class="nav-item nav-link">
-                    <Link style={{ textDecoration: `none` }}>Tips</Link>
+                 {/* <li>
+                  <a href="/tips" class="nav-item nav-link">
+                    Tips
                   </a>
                 </li> */}
                 <li>
-                  <a href="#faqs" class="nav-item nav-link">
-                    <Link style={{ textDecoration: `none` }}>FAQ</Link>
+                  <a href="/#faqs" class="nav-item nav-link">
+                    FAQ
                   </a>
                 </li>
                 <li>
-                  <a href="#contact" class="nav-item nav-link">
-                    <Link style={{ textDecoration: `none` }}>Contact</Link>
+                  <a href="/#contact" class="nav-item nav-link">
+                    Contact
                   </a>
                 </li>
 
