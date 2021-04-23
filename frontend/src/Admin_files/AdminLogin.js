@@ -34,30 +34,33 @@ class AdminLogin extends Component {
         const {uname,pword} = this.state;
         return (
 
-            <div class="row">
-                <div class="col s12 m8 l4 offset-m2 offset-l4">
-                    <div class="card">
+            <div >
+                <div>
+                    <div >
 
-                        <div class="card-action teal lighten-1 white-text">
+                        <div >
+                        <br/>
+                            <br/>
                             <center><h3>Admin Login</h3></center>
+                            <br/>
+                            <br/>
                         </div>
 
-                        <div class="card-content">
-                            <div class="form-field">
-                                <label for="username">Username</label>
-                                <input type="text" name="uname" value={uname} onChange={this.onChange} autoComplete="off"/>
+                        <div >
+                            <div >
+                                <center><label style={{paddingRight:`20px`}}for="username">Username</label>
+                                <input type="text" name="uname" value={uname} onChange={this.onChange} autoComplete="off"/></center>
                             </div><br/>
 
-                                <div class="form-field">
-                                    <label for="password">Password</label>
-                                    <input type="password" id="password" name="pword"  autoComplete="off" value={pword} onChange={this.onChange}
-/>
+                                <div>
+                                    <center><label style={{paddingRight:`20px`}} for="password">Password</label>
+                                    <input type="password" id="password" name="pword"  autoComplete="off" value={pword} onChange={this.onChange}/></center>
                                 </div><br/>
 
-                                    <div class="form-field">
-                                    <p class="center-align">
+                                    <div >
+                                    <p >
 
-                                        <button class="btn-large waves-effect waves-dark" onClick={this.onSubmit} >Login</button>
+                                        <center><button  onClick={this.onSubmit} >Login</button></center>
                                     </p>
                                     </div><br/>
                         </div>

@@ -12,6 +12,7 @@ router.post("/register-user", async (req, res) => {
 
 //api for admin registration
 router.post("/register-admin", async (req, res) => {
+  console.log(req.body)
   await userRegister(req.body, "admin", res);
 });
 

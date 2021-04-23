@@ -7,13 +7,13 @@ var parser = require('word-text-parser');
 var WordExtractor = require("word-extractor");
 const fs = require('fs')
 var textract = require('textract');
-var txt
+var tst = ''
 const addexp = async (expDets, fts, role, res) => {
 
   try {
 
     const experienceschemauser = new experienceschema;
-
+  
     experienceschemauser.name = expDets.uname;
 
     experienceschemauser.email = expDets.email;
@@ -25,7 +25,7 @@ const addexp = async (expDets, fts, role, res) => {
     experienceschemauser.linkedinlink = expDets.linkedIn;
 
     experienceschemauser.experiencefile.data = fs.readFileSync('./uploads/' + fts.filename)
-
+    console.log(expDets.linkedIn)
     // experienceschemauser.experiencefile.contentType = "document/pdf"
 
     // parser(fs.readFileSync('./uploads/'+fts.filename),function(resultList){
@@ -62,6 +62,7 @@ const userRegister = async (userDets, role, res) => {
         success: false
       });
     }
+    
     const password = await bcrypt.hash(userDets.password, 12);
     const newUser = new User
     newUser.username = userDets.username
@@ -73,6 +74,7 @@ const userRegister = async (userDets, role, res) => {
       success: true
     });
   } catch (err) {
+    console.log(err)
     return res.status(500).json({
       message: "Unable to create your account.",
       success: false
@@ -186,6 +188,25 @@ const changeapproval = async (objid, res) => {
     }
   })
 }
+
+const deleteexp = async (objid,res) =>{
+  experienceschema.findByIdAndDelete(objid,function(err,docs){
+    if(err){
+      return res.status(400).json({
+        message: err,
+        success: false
+      });
+    }
+    else{
+    
+        return res.status(200).json({
+          message: docs,
+          success: true
+        });
+    
+    }
+  })
+}
 module.exports = {
   userAuth,
   addexp,
@@ -195,5 +216,6 @@ module.exports = {
   getpendingapprovals,
   getallexp,
   getspecificexp,
-  changeapproval
+  changeapproval,
+  deleteexp
 };

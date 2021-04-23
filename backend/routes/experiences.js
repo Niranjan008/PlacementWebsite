@@ -7,7 +7,8 @@ const {
   getpendingapprovals,
   getallexp,
   getspecificexp,
-  changeapproval
+  changeapproval,
+  deleteexp
 } = require("../utils/Auth");
 const uuidv4 = require("uuid").v4;
 const path = require('path')
@@ -43,5 +44,9 @@ router.get("/getbycompany/:company", async (req, res) => {
 
 router.get("/giveapproval/:id", async (req, res) => {
   await changeapproval(req.params.id, res);
+})
+
+router.get("/deletef/:id",async (req,res)=>{
+  await deleteexp(req.params.id,res)
 })
 module.exports = router;
