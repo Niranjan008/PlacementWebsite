@@ -2,105 +2,105 @@ import React, { Component } from 'react'
 const axios = require('axios');
 const localStorage = require('local-storage')
 class AdminVerify extends Component{
-    constructor(){
-        super();
-        this.state = {
-            dets:[]
-        }
+constructor(){
+    super();
+    this.state = {
+        dets:[]
     }
-    
-    componentDidMount(){
-        var self = this
-        axios.get('http://localhost:4000/api/experiences/get-pending-approvals',{headers:{Authorization: localStorage.get('authtoken')}}).then(function (response) {
-            self.setState({dets:response.data.message})
-        })
+}
+
+componentDidMount(){
+    var self = this
+    axios.get('http://localhost:4000/api/experiences/get-pending-approvals',{headers:{Authorization: localStorage.get('authtoken')}}).then(function (response) {
+        self.setState({dets:response.data.message})
+    })
+}
+render(){
+    const {dets} = this.state;
+    console.log(this.state)
+    if(dets.length == 0){
+        return <div><p>Hold Up!Data is loading</p></div>
     }
-    render(){
-        const {dets} = this.state;
-        console.log(this.state)
-        if(dets.length == 0){
-            return <div><p>Hold Up!Data is loading</p></div>
-        }
-        return (
-            
-            <div>
-                <br/><br/>
-                <center><h1>Pending Approals</h1></center>
-                <br/><br/>
-                <center>
-                    <table border ="2">
-                    <tbody>
-                        <th style={{padding:`10px`}}>Name</th>
-                        <th style={{padding:`10px`}}>Email</th>
-                        <th style={{padding:`10px`}}>LinkedIn Profile</th>
-                        <th style={{padding:`10px`}}>Company</th>
-                        <th style={{padding:`10px`}}>Experience file</th>
-                        <th style={{padding:`10px`}}>Verify</th>
-                        <th style={{padding:`10px`}}>Delete</th>
-                        {this.state.dets.map(function(item, key) {
-                            function download() {
-                                var strj = item.experiencefile.data.data
-                                var base64 = btoa(
-                                    new Uint8Array(strj)
-                                      .reduce((data, byte) => data + String.fromCharCode(byte), '')
-                                  );
-                                  
-                                console.log(base64.toString())
-                                const linkSource = `data:application/pdf;base64,${base64}`;
-                                const downloadLink = document.createElement("a");
-                                const fileName = "abc.pdf";
-                                downloadLink.href = linkSource;
-                                downloadLink.download = fileName;
-                                downloadLink.click()
-                            }
-                            function verifs(){
-                                
-
-                                axios.get('http://localhost:4000/api/experiences/giveapproval/'+item._id,{headers:{Authorization: localStorage.get('authtoken')}}).then(function(response){
-                                    
-                                    window.alert('Verification Success')
-                                    window.location.reload(false);
-
-                                 }).catch((e)=>{
-                                     console.log(e)
-                                 })
-
-                 
-                            }
-                            function dels(){
-                                console.log(item._id)
-                                axios.get('http://localhost:4000/api/experiences/deletef/'+item._id,{headers:{Authorization: localStorage.get('authtoken')}}).then(function(response){
-                                    
-                                    window.alert('Deleted Success')
-                                    window.location.reload(false);
-
-                                 }).catch((e)=>{
-                                     console.log(e)
-                                 })
-                            }
-                            
-                            return (
-                                <tr key = {key} >
-                                    <td style={{padding:`10px`}}>{item.name}</td>
-                                    <td style={{padding:`10px`}}>{item.email}</td>
-                                    <td style={{padding:`10px`}}>{item.linkedinlink}</td>
-                             <td style={{padding:`10px`}}>{item.company}</td>
-                             <td style={{padding:`10px`}}><button onClick={download}>Experience File</button></td>
-                             <td style={{padding:`10px`}}><button onClick={verifs}>Verify</button></td>
-                             <td style={{padding:`10px`}}><button onClick={dels}>Delete</button></td>
-                                </tr>
-                              )
-                            })}
-                            </tbody>
-
-                    
-
-                    </table>
-                </center>
-            </div>
-        );
+    return (
         
-    }
+        <div>
+            <br/><br/>
+            <center><h1>Pending Approals</h1></center>
+            <br/><br/>
+            <center>
+                <table border ="2">
+                <tbody>
+                    <th style={{padding:`10px`}}>Name</th>
+                    <th style={{padding:`10px`}}>Email</th>
+                    <th style={{padding:`10px`}}>LinkedIn Profile</th>
+                    <th style={{padding:`10px`}}>Company</th>
+                    <th style={{padding:`10px`}}>Experience file</th>
+                    <th style={{padding:`10px`}}>Verify</th>
+                    <th style={{padding:`10px`}}>Delete</th>
+                    {this.state.dets.map(function(item, key) {
+                        function download() {
+                            var strj = item.experiencefile.data.data
+                            var base64 = btoa(
+                                new Uint8Array(strj)
+                                    .reduce((data, byte) => data + String.fromCharCode(byte), '')
+                                );
+                                
+                            console.log(base64.toString())
+                            const linkSource = `data:application/pdf;base64,${base64}`;
+                            const downloadLink = document.createElement("a");
+                            const fileName = "abc.pdf";
+                            downloadLink.href = linkSource;
+                            downloadLink.download = fileName;
+                            downloadLink.click()
+                        }
+                        function verifs(){
+                            
+
+                            axios.get('http://localhost:4000/api/experiences/giveapproval/'+item._id,{headers:{Authorization: localStorage.get('authtoken')}}).then(function(response){
+                                
+                                window.alert('Verification Success')
+                                window.location.reload(false);
+
+                                }).catch((e)=>{
+                                    console.log(e)
+                                })
+
+                
+                        }
+                        function dels(){
+                            console.log(item._id)
+                            axios.get('http://localhost:4000/api/experiences/deletef/'+item._id,{headers:{Authorization: localStorage.get('authtoken')}}).then(function(response){
+                                
+                                window.alert('Deleted Success')
+                                window.location.reload(false);
+
+                                }).catch((e)=>{
+                                    console.log(e)
+                                })
+                        }
+                        
+                        return (
+                            <tr key = {key} >
+                                <td style={{padding:`10px`}}>{item.name}</td>
+                                <td style={{padding:`10px`}}>{item.email}</td>
+                                <td style={{padding:`10px`}}>{item.linkedinlink}</td>
+                            <td style={{padding:`10px`}}>{item.company}</td>
+                            <td style={{padding:`10px`}}><button onClick={download}>Experience File</button></td>
+                            <td style={{padding:`10px`}}><button onClick={verifs}>Verify</button></td>
+                            <td style={{padding:`10px`}}><button onClick={dels}>Delete</button></td>
+                            </tr>
+                            )
+                        })}
+                        </tbody>
+
+                
+
+                </table>
+            </center>
+        </div>
+    );
     
+}
+
 }
 export default AdminVerify;

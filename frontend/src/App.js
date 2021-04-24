@@ -10,35 +10,35 @@ import Tips from './Tips/Tips'
 import ViewFullExp from './View_exp/ViewFullExp';
 
 function App() {
-  return (
-    <div>
-      <BrowserRouter>
-        <Switch>
-          <Route exact path = "/">
-            <HomePage/>
-          </Route>
-          <Route exact path = "/adminlogin">
-            <AdminLogin/>
-          </Route>
-          <Route exact path = "/exp_view">
-            <ViewExp/>
-          </Route>
-          <Route exact path = "/adminverify">
-            <AdminVerify/>
-          </Route>
-          <Route exact path = "/exp_post">
-          <Experience_post/>
-          </Route>
-          <Route exact path = "/tips">
-          <Tips/>
-          </Route>
-        </Switch>
-        <Route exact path = "/exp_full_view">
-          <ViewFullExp/>
+return (
+  <div>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path = "/">
+          <HomePage/>
         </Route>
-      </BrowserRouter>
-    </div>
-  );
+        <Route exact path = "/adminlogin">
+          <AdminLogin/>
+        </Route>
+        <Route exact path = "/exp_view">
+          <ViewExp/>
+        </Route>
+        <Route exact path = "/adminverify">
+          <AdminVerify/>
+        </Route>
+        <Route exact path = "/exp_post">
+        <Experience_post/>
+        </Route>
+        <Route exact path = "/tips">
+        <Tips/>
+        </Route>
+      </Switch>
+      <Route exact path = "/exp_full_view">
+        <ViewFullExp/>
+      </Route>
+    </BrowserRouter>
+  </div>
+);
 }
 
 export default App;
