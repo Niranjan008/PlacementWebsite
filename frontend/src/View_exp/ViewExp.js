@@ -4,6 +4,7 @@ import React, { Component } from 'react'
 import './style.css';
 import {MDBListGroup, MDBListGroupItem,MDBIcon,MDBCol,MDBBtn} from 'mdbreact';
 import { HashLink as Link } from "react-router-hash-link";
+import cseaLogo1 from "../assets/img/csea_black1.png"
 const localStorage = require('local-storage')
 
 const axios = require('axios')
@@ -163,9 +164,10 @@ var cmpnylist = ['All','Accenture','Accolite','Alstom', 'Amazon','Aspire Systems
         style={{ fontSize: `35px` }}
       >
       
-        <span class="text-primary " style={{ fontFamily: `Handlee` }}>
-          CSEA Placement
-        </span>
+    <img
+            src={cseaLogo1}
+            style={{ height: `80px`, width: `80px`, paddingBottom: `5px` }}
+          ></img>
       </a>
       <button
         type="button"

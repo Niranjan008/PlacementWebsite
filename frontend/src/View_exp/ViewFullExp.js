@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './style.css';
 import ReactDOM from 'react-dom';
+import cseaLogo1 from "../assets/img/csea_black1.png"
 const localStorage = require('local-storage')
 
 const axios = require('axios')
@@ -77,9 +78,10 @@ class ViewFullExp extends Component{
             style={{ fontSize: `35px` }}
           >
             
-            <span class="text-primary " style={{ fontFamily: `Handlee` }}>
-              CSEA Placement
-            </span>
+            <img
+              src={cseaLogo1}
+              style={{ height: `80px`, width: `80px`, paddingBottom: `5px` }}
+            ></img>
           </a>
           <button
             type="button"
@@ -101,11 +103,6 @@ class ViewFullExp extends Component{
                 </a>
               </li>
               <li>
-                <a href="/#about" class="nav-item nav-link ">
-                  About
-                </a>
-              </li>
-              <li>
                 <a href="/#experience" class="nav-item nav-link">
                   Preparation
                 </a>
@@ -117,8 +114,8 @@ class ViewFullExp extends Component{
               </li>
               
               <li>
-                <a href="/#faqs" class="nav-item nav-link">
-                  FAQ
+                <a href="/exp_post" class="nav-item nav-link">
+                  Post
                 </a>
               </li>
               <li>

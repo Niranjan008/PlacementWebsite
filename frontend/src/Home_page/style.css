@@ -1414,7 +1414,12 @@ margin-left: 91.66667%;
   margin-left: 91.66667%;
 }
 }
-
+@media(max-width:768px){
+  .col-lg-6 {
+    padding-top: 50px;
+    padding-bottom: 30px;
+  }
+}
 @media (min-width: 992px) {
 .col-lg {
   flex-basis: 0;
