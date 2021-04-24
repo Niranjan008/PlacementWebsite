@@ -1878,7 +1878,7 @@ class HomePage extends Component {
                 </li>
                 <li>
                   <a href="#experience" class="nav-item nav-link">
-                    <Link style={{ textDecoration: `none` }}>Guidelines</Link>
+                    <Link style={{ textDecoration: `none` }}>Preparation</Link>
                   </a>
                 </li>
                 <li>
@@ -2225,7 +2225,9 @@ class HomePage extends Component {
                       </p>
                       <p>
                         <button className="button1">
+                          <a href="/tips" style={{color:`white`}}>
                           <span>Explore</span>
+                          </a>
                         </button>
                       </p>
                     </div>
@@ -2404,7 +2406,9 @@ class HomePage extends Component {
                       </p>
                       <p>
                         <button className="button1">
+                        <a href="/exp_view" style={{color:`white`}}>
                           <span>Explore</span>
+                          </a>
                         </button>
                       </p>
                     </div>
@@ -2582,7 +2586,9 @@ class HomePage extends Component {
                       </p>
                       <p>
                         <button className="button1">
+                        <a href="/exp_post" style={{color:`white`}}>
                           <span>Explore</span>
+                          </a>
                         </button>
                       </p>
                     </div>

@@ -26,6 +26,73 @@ class ViewFullExp extends Component{
     
     componentDidMount(){
 
+     
+    
+    }
+   
+
+    render(){
+        const {name,year,company,exptext,linkedinlink,experiencefile} = localStorage.get('indets')
+
+        // console.log(experiencefile.data);
+
+      
+         
+        // console.log(test.resume)
+        var strj = experiencefile.data.data;
+        var base64 = btoa(
+           new Uint8Array(strj)
+             .reduce((data, byte) => data + String.fromCharCode(byte), '')
+         );
+         
+         
+        // console.log(base64.toString())
+        const linkSource = `data:application/pdf;base64,${base64}`;
+
+        var StringDecoder = require('string_decoder').StringDecoder;
+
+
+    
+    var decoder = new StringDecoder('utf8');
+
+   
+        // var textChunk = decoder.write(strj.toString('utf8'))
+        // console.log(textChunk);
+
+        // var utf8encoded = (new Buffer(strj, 'base64')).toString('utf8');
+        // console.log(utf8encoded);
+        // process utf8 text chunk
+    
+
+    
+        // window.open(linkSource);
+// const downloadLink = document.createElement("a");
+// var decodedStringAtoB = atob(base64.toString());
+// console.log(decodedStringAtoB);
+
+// const fileName = "abc.pdf";
+// downloadLink.href = linkSource;
+// downloadLink.download = fileName;
+// downloadLink.click()
+// console.log(strj.toString('utf8'));
+var b64 = base64.toString();
+
+// Decode Base64 to binary and show some information about the PDF file (note that I skipped all checks)
+var bin = atob(b64);
+
+// fs.readFileSync('./test.txt').toString('ascii');
+
+// Embed the PDF into the HTML page and show it to the user
+var obj = document.createElement('object');
+obj.style.width = '75%';
+obj.style.height = '500pt';
+obj.type = 'application/pdf';
+obj.data = 'data:application/pdf;base64,' + b64;
+{document.body.appendChild(obj)}
+
+
+
+
       
       
     
@@ -40,8 +107,7 @@ class ViewFullExp extends Component{
         // {
         //   alert('Error fetching data');
         // })
-    }
-
+    
    
    
     
@@ -49,12 +115,6 @@ class ViewFullExp extends Component{
     //   const{name, cmpy, year,text} = this.props.data
     
       
-    
-
-   
-
-    render(){
-        const {name,year,company,exptext,linkedinlink} = localStorage.get('indets')
         
         return (
             <div>
@@ -161,7 +221,7 @@ class ViewFullExp extends Component{
                     paddingLeft:`20px`,
                     paddingRight:`20px`,
                     paddingBottom:`20px`
-                  }}>{exptext}</p>
+                  }}></p>
               <center><a href={linkedinlink}><img style={{paddingBottom:`40px`}} src="https://img.icons8.com/cute-clipart/64/000000/linkedin.png"/></a></center>
         </div>
       

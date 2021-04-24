@@ -7,68 +7,68 @@ import { HashLink as Link } from 'react-router-hash-link';
 class Experience_post extends Component {
 
   componentDidMount() {
-    var nav = $('nav');
-    var line = $('<div />').addClass('line');
-    line.appendTo('.active');
+    // var nav = $('nav');
+    // var line = $('<div />').addClass('line');
+    // line.appendTo('.active');
 
-    var active = nav.find('.active');
-    var pos = 0;
-    var wid = 0;
+    // var active = nav.find('.active');
+    // var pos = 0;
+    // var wid = 0;
 
-    if (active.length) {
-      pos = active.position().left;
-      wid = active.width();
-      line.css({
-        left: pos,
-        width: wid
-      });
-    }
+    // if (active.length) {
+    //   pos = active.position().left;
+    //   wid = active.width();
+    //   line.css({
+    //     left: pos,
+    //     width: wid
+    //   });
+    // }
 
 
 
-    nav.find(' li a').click(function (e) {
-      e.preventDefault();
-      if (!$(this).parent().hasClass('active') && !nav.hasClass('animate')) {
+    // nav.find(' li a').click(function (e) {
+    //   e.preventDefault();
+    //   if (!$(this).parent().hasClass('active') && !nav.hasClass('animate')) {
 
-        nav.addClass('animate');
+    //     nav.addClass('animate');
 
-        var _this = $(this);
+    //     var _this = $(this);
 
-        nav.find('li').removeClass('active');
+    //     nav.find('li').removeClass('active');
 
-        var position = _this.parent().position();
-        var width = _this.parent().width();
+    //     var position = _this.parent().position();
+    //     var width = _this.parent().width();
 
-        if (position.left >= pos) {
-          line.animate({
-            width: ((position.left - pos) + width)
-          }, 300, function () {
-            line.animate({
-              width: width,
-              left: position.left
-            }, 150, function () {
-              nav.removeClass('animate');
-            });
-            _this.parent().addClass('active');
-          });
-        } else {
-          line.animate({
-            left: position.left,
-            width: ((pos - position.left) + wid)
-          }, 300, function () {
-            line.animate({
-              width: width
-            }, 150, function () {
-              nav.removeClass('animate');
-            });
-            _this.parent().addClass('active');
-          });
-        }
+    //     if (position.left >= pos) {
+    //       line.animate({
+    //         width: ((position.left - pos) + width)
+    //       }, 300, function () {
+    //         line.animate({
+    //           width: width,
+    //           left: position.left
+    //         }, 150, function () {
+    //           nav.removeClass('animate');
+    //         });
+    //         _this.parent().addClass('active');
+    //       });
+    //     } else {
+    //       line.animate({
+    //         left: position.left,
+    //         width: ((pos - position.left) + wid)
+    //       }, 300, function () {
+    //         line.animate({
+    //           width: width
+    //         }, 150, function () {
+    //           nav.removeClass('animate');
+    //         });
+    //         _this.parent().addClass('active');
+    //       });
+    //     }
 
-        pos = position.left;
-        wid = width;
-      }
-    });
+    //     pos = position.left;
+    //     wid = width;
+    //   }
+    // });
 
   }
   constructor() {
@@ -149,13 +149,16 @@ class Experience_post extends Component {
     const { uname, email, year,company, linkedIn, selectedFile } = this.state;
     return (
       <div>
-          <div class="container-fluid bg-light position-relative shadow">
+           <div class="container-fluid bg-light position-relative shadow">
           <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5">
             <a
               class="navbar-brand font-weight-bold text-secondary"
               style={{ fontSize: `35px` }}
             >
-              
+              {/* <img
+                src={logo}
+                style={{ height: `80px`, width: `80px`, paddingBottom: `5px` }}
+              ></img> */}
               <span class="text-primary " style={{ fontFamily: `Handlee` }}>
                 CSEA Placement
               </span>
@@ -173,20 +176,28 @@ class Experience_post extends Component {
               id="navbarCollapse"
             >
               <div class="navbar-nav font-weight-bold mx-auto py-0 ">
-                
-
-              <li>
-                  <a href="/#about" class="nav-item nav-link">
-                    About
+                {/* <!-- <nav>
+              <ul>
+                <li class="active"><a href="" style="text-decoration: none;">About</a></li>
+                <li><a href="#tips" style="text-decoration: none;">Tips</a></li>
+                <li><a href="Experiance.html" style="text-decoration: none;">Experiences</a></li>
+                <li><a href="contact.html" style="text-decoration: none;">Contact</a></li>
+                <li><a href="gallery.html" style="text-decoration: block;">Five</a></li>
+              </ul>
+            </nav> --> */}
+                <li class="active">
+                  <a href="/" class="nav-item nav-link active">
+                    Home
                   </a>
                 </li>
+                
                 <li>
-                  <a href="/#experience" class="nav-item nav-link">
+                  <a href="/tips" class="nav-item nav-link">
                     Preparation
                   </a>
                 </li>
                 <li>
-                  <a href="/#experience" class="nav-item nav-link">
+                  <a href="/exp_post" class="nav-item nav-link">
                     Experiences
                   </a>
                 </li>
@@ -196,8 +207,8 @@ class Experience_post extends Component {
                   </a>
                 </li> */}
                 <li>
-                  <a href="/#faqs" class="nav-item nav-link">
-                    FAQ
+                  <a href="/exp_post" class="nav-item nav-link">
+                    Post
                   </a>
                 </li>
                 <li>

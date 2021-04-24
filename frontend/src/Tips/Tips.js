@@ -488,13 +488,9 @@ class Tips extends Component {
                     Home
                   </a>
                 </li>
+               
                 <li>
-                  <a href="/#about" class="nav-item nav-link">
-                    About
-                  </a>
-                </li>
-                <li>
-                  <a href="/#experience" class="nav-item nav-link">
+                  <a href="/tips" class="nav-item nav-link">
                     Preparation
                   </a>
                 </li>
@@ -509,8 +505,8 @@ class Tips extends Component {
                   </a>
                 </li> */}
                 <li>
-                  <a href="/#faqs" class="nav-item nav-link">
-                    FAQ
+                  <a href="/exp_post" class="nav-item nav-link">
+                    Post
                   </a>
                 </li>
                 <li>

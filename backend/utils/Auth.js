@@ -164,7 +164,7 @@ const getallexp = async (res) => {
   });
 };
 const getspecificexp = async (cmpny, res) => {
-  const data = await experienceschema.find({ isverified: { $in: ["yes"] }, company: { $in: [cmpny] } })
+  const data = await experienceschema.find({ isverified: { $in: ["yes"] }, company: {$regex:cmpny,$options:'i'}})
   console.log(data.length)
   return res.status(200).json({
     message: data,

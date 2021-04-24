@@ -4,12 +4,10 @@ import React, { Component } from 'react'
 import { $ } from "react-jquery-plugin";
 import jQuery from "jquery"
 import './style.css';
-import logo from "../assets/img/logo2.png"
-import SideBar from 'react-fixed-sidebar';
-import {MDBListGroup, MDBListGroupItem,MDBIcon,MDBCol,MDBBtn} from 'mdbreact';
+import logo from "../assets/img/logo2.png";
 import { HashLink as Link } from "react-router-hash-link";
+import { MDBCol,MDBBtn,MDBIcon } from "mdbreact";
 const localStorage = require('local-storage')
-
 const axios = require('axios')
 
 
@@ -19,28 +17,23 @@ class ViewExp extends Component{
         super();
         this.state = {
             dets:[],
-            
+            search_text:''
             
         }
         this.savestate.bind(this)
     }
-    
-    // toggleSideBar = event => {
-    //   // use our 'ref' to the sidebar component
-    //   // to open it
-    //   this.sidebar.toggle()
-    // }
-  
     onChange = (e) => {
       this.setState({ [e.target.name]: e.target.value });
       console.log(this.state.search_text)
     }
-
-
+    
+    
     savestate(ind){
       console.log(this.state.dets[ind])
       localStorage.set('indets',this.state.dets[ind])
     }
+
+ 
     componentDidMount(){
 
       
@@ -83,7 +76,7 @@ class ViewExp extends Component{
                 </div>
 
                 <div class="card-link">
-<span onClick={() => this.savestate(index)}><Link to= {{pathname: '/exp_full_view'
+<span onClick={() => this.savestate(index)}><Link target="_blank"to= {{pathname: '/exp_full_view'
     }} > Read Article </Link></span>
     
                 </div>
@@ -120,8 +113,8 @@ class ViewExp extends Component{
     }
 
     render(){
-      const search_text = this.state.search_text
-
+        
+        const search_text = this.state.search_text
         return (
             <div>
               <div class="container-fluid bg-light position-relative shadow">
@@ -165,9 +158,13 @@ class ViewExp extends Component{
                     Home
                   </a>
                 </li>
-                
                 <li>
-                  <a href="/tips" class="nav-item nav-link">
+                  <a href="/#about" class="nav-item nav-link ">
+                    About
+                  </a>
+                </li>
+                <li>
+                  <a href="/#experience" class="nav-item nav-link">
                     Preparation
                   </a>
                 </li>
@@ -182,8 +179,8 @@ class ViewExp extends Component{
                   </a>
                 </li> */}
                 <li>
-                  <a href="/exp_post" class="nav-item nav-link">
-                    Post
+                  <a href="/#faqs" class="nav-item nav-link">
+                    FAQ
                   </a>
                 </li>
                 <li>
@@ -209,70 +206,30 @@ class ViewExp extends Component{
             </div>
           </nav>
         </div>
-
+   
         <MDBCol className='searchbar' >
          
 <div style={{display:`flex`,flexDirection:`row`}}>
-<MDBIcon style={{paddingRight:`10px`,  paddingTop:`10px`}}floating icon="search" size="lg"/>
+<MDBIcon floating icon="search" size="lg"  style={{paddingRight:`10px`,paddingTop:`10px`}}/>
 <input className="form-control" name="search_text" id = "search_text" onChange={this.onChange} type="text" placeholder="Search" aria-label="Search" />
-<div className='search-bar-button'>
+<div style={{paddingLeft:`10px`,paddingTop:`5px`}}>
 <MDBBtn  onClick={this.searchexp} color="blue" rounded size="sm" type="submit" className="mrc"  >
 Search
 </MDBBtn>
 </div>
 </div>
+
+
+
+
+
+
+
 </MDBCol>
-<div style={{float:`left`,paddingTop:`30px`}} className="sidebar-list">
-        <MDBListGroup style={{ width: "20rem" }}>
-    <MDBListGroupItem >  Home</MDBListGroupItem>
-    <MDBListGroupItem>  Library</MDBListGroupItem>
-    <MDBListGroupItem>  Applications</MDBListGroupItem>
-    <MDBListGroupItem  >  Settings</MDBListGroupItem>
-    <MDBListGroupItem>Amazon</MDBListGroupItem>
-    <MDBListGroupItem>Samsung</MDBListGroupItem>
-    <MDBListGroupItem>Microsoft</MDBListGroupItem>
-    <MDBListGroupItem>Adobe</MDBListGroupItem>
-    <MDBListGroupItem>Oracle</MDBListGroupItem>
-    <MDBListGroupItem>Google</MDBListGroupItem>
-    <MDBListGroupItem>Flipkart</MDBListGroupItem>
-    <MDBListGroupItem>Facebook</MDBListGroupItem>
-    <MDBListGroupItem>Goldman Sachs</MDBListGroupItem>
-    <MDBListGroupItem>D E Shaw</MDBListGroupItem>
-    <MDBListGroupItem>Cisco</MDBListGroupItem>
-    <MDBListGroupItem>Visa</MDBListGroupItem>
-    <MDBListGroupItem>Paytm</MDBListGroupItem>
-    <MDBListGroupItem>Morgan Stanley</MDBListGroupItem>
-    <MDBListGroupItem>SAP Labs</MDBListGroupItem>
-    <MDBListGroupItem>MAQ Software</MDBListGroupItem>
-    <MDBListGroupItem>Ola Cabs</MDBListGroupItem>
-    <MDBListGroupItem>VMware</MDBListGroupItem>
-    <MDBListGroupItem>TCS</MDBListGroupItem>
-    <MDBListGroupItem>Wipro</MDBListGroupItem>
-    <MDBListGroupItem>Infosys</MDBListGroupItem>
-    <MDBListGroupItem>IBM</MDBListGroupItem>
-    <MDBListGroupItem>Hike</MDBListGroupItem>
-    <MDBListGroupItem>Cognizant</MDBListGroupItem>
-  </MDBListGroup>
-  </div>
-        {/* <div>
-				
-				<button
-					onClick={this.toggleSideBar}
-					style={{float: 'inherit'}}
-				>
-					Choose company
-				</button>
-				<SideBar ref={sidebar => this.sidebar = sidebar}>
-					<div>content</div>
-					<div>more content</div>
-				</SideBar>
-			</div> */}
-<div style={{paddingTop:`30px`}}>
-        <div class="container-sidebar">
+        <div class="column-tips">
               {this.displayExp(this.state.dets)}
               </div>
             </div> 
-            </div>
         );
         
     }
