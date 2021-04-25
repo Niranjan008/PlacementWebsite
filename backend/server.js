@@ -23,7 +23,7 @@ console.log("Error connecting the server");
 });
 
 require("./middlewares/passport")(passport);
-app.use(cors());
+app.use(cors(corsOptions));
 
 app.use(passport.initialize());
 

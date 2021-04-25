@@ -36,7 +36,7 @@ class ViewFullExp extends Component{
     obj.style.height = '500pt';
     obj.type = 'application/pdf';
     obj.data = 'data:application/pdf;base64,' + base64;
-    ReactDOM.render(<center><object data={obj.data} type={obj.type} style={{width:`75%`,height:`500pt`}}></object></center>,document.getElementById('pdf'))
+    ReactDOM.render(<center><object data={obj.data} type={obj.type} style={{width:`90%`,height:`800px`}}></object></center>,document.getElementById('pdf'))
   
   }
   
@@ -131,9 +131,11 @@ class ViewFullExp extends Component{
       </div>
             <br/>
             <br/>
-            <h1 style={{paddingLeft:`20px`}}>{name}</h1>
-            <h2 style={{paddingLeft:`20px`}}>{company}</h2>
-            <h3 style={{paddingLeft:`20px`}}>{year}</h3>
+            <center>
+              <h1 style={{paddingLeft:`20px`}}>Name: {name}</h1>
+              <h2 style={{paddingLeft:`20px`}}>Attended {company} at {year}</h2>
+            </center>
+            
             <br/>
             <br/>
             <p style={{
@@ -144,7 +146,22 @@ class ViewFullExp extends Component{
                   paddingRight:`20px`,
                   paddingBottom:`20px`
                 }}></p>
-            <center><a href={linkedinlink}><img style={{paddingBottom:`40px`}} src="https://img.icons8.com/cute-clipart/64/000000/linkedin.png"/></a></center>
+            <center><span style={{
+                  fontSize: `20px`,
+                  fontFamily: `Handlee`,
+                  color: `#00394f`,
+                  fontWeight:`bold`,
+                  paddingLeft:`20px`,
+                  paddingRight:`2px`,
+                  paddingBottom:`20px`
+                }}>Connect with {name} via </span>{linkedinlink!='-'?  <a
+                class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
+                style={{ width: `38px`, height: `38px`,marginBottom:`10px` }}
+                href={linkedinlink}
+                target="_blank"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </a>:null}</center>
       </div>
     
       );

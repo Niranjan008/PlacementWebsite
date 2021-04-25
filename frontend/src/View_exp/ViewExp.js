@@ -233,7 +233,7 @@ Search
   <MDBListGroup style={{ width: "20rem" }}>
     {cmpnylist.map( (company) =>(
     
-    <span onClick={() =>this.searchlist({company})}><MDBListGroupItem>{company}</MDBListGroupItem></span>
+    <span onClick={() =>this.searchlist({company})}><MDBListGroupItem style={{cursor:`pointer`}}>{company}</MDBListGroupItem></span>
 
   ))}
 

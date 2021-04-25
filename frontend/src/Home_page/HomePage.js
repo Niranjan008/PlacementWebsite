@@ -272,7 +272,8 @@ render() {
               preparations!
             </p> */}
             <a
-              href=""
+              href="/exp_view"
+              
               class="btn btn-secondary mt-1 py-3 px-5 bg-secondary"
               style={{ fontFamily: `Handlee` }}
             >
@@ -304,7 +305,7 @@ render() {
               <p class="section-title pr-5">
                 <span class="pr-2">Learn About Us</span>
               </p>
-              <h1 class="mb-4">CSEA</h1>
+              <h1 class="mb-4">CSEA CEG</h1>
               <p>
                 The Computer Science and Engineering Association (CSEA) of
                 College of Engineering Guindy is an association with a legacy
@@ -1078,9 +1079,9 @@ render() {
                       should use your most comfortable language. Sometimes,
                       your interviewer will ask a question specific to a
                       language if you list it on your resume. So keep that in
-                      mind! If you�re not confident with a language, make that
+                      mind! If you're not confident with a language, make that
                       clear on your resume. Put your less-strong languages
-                      under a header like �Working Knowledge� or assign star
+                      under a header like "Working Knowledge" or assign star
                       rating.
                     </p>
                   </div>
@@ -1119,7 +1120,7 @@ render() {
                   <div id="faq3" class="collapse" data-bs-parent=".faq-list">
                     <p>
                       Give a firm handshake after entering and greet the
-                      interviewers. Be friendly and respectful. Don�t argue
+                      interviewers. Be friendly and respectful. Don't argue
                       with the interviewer. Be confident and drive your own
                       interview.
                     </p>
@@ -1259,12 +1260,7 @@ render() {
                 CSEA
               </span>
             </a>
-            <p>
-              The Computer Science and Engineering Association (CSEA) of
-              College of Engineering Guindy is an association with a legacy of
-              more than 10 years, established for the primary goal of
-              Knowledge Advancement.
-            </p>
+           
             <div class="d-flex justify-content-start mt-4">
               {/* <a
                 class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"

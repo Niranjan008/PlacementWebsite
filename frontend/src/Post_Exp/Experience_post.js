@@ -180,11 +180,11 @@ render() {
                     <p class="help-block text-danger"></p>
                   </div>
                   <div class="control-group">
-                    <input class="form-control-post" rows="6" id="linkedIn" placeholder="linkedIn" required="required" data-validation-required-message="Please enter your linkedIn Link" name="linkedIn" value={linkedIn} onChange={this.onChange}></input>
+                    <input class="form-control-post" rows="6" id="linkedIn" placeholder="linkedIn URL"  data-validation-required-message="Please enter your linkedIn Link" name="linkedIn" value={linkedIn} onChange={this.onChange}></input>
                     <p class="help-block text-danger"></p>
                   </div>
                   <div>
-                    <input  style={{width:`300px`}}accept="application/pdf" rows="7" id="selectedFile" placeholder="Select File" required="required" name="selectedFile" type="file" onChange={this.handleChange}></input>
+                    <span>Upload PDF </span><input  style={{width:`300px`}}accept="application/pdf" rows="7" id="selectedFile" placeholder="Select File" required="required" name="selectedFile" type="file" onChange={this.handleChange}></input>
 
                     <p class="help-block text-danger"></p>
                   </div>

@@ -21,7 +21,8 @@ try {
   experienceschemauser.year = expDets.year;
 
   experienceschemauser.company = expDets.company;
-
+  if(expDets.linkedinlink == '')
+    experienceschemauser.linkedinlink =''
   experienceschemauser.linkedinlink = expDets.linkedIn;
 
   experienceschemauser.experiencefile.data = fs.readFileSync('./uploads/' + fts.filename)
