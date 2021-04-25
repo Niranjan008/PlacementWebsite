@@ -414,3 +414,17 @@ line-height: 1.6;
   transform: translateX(0%);
 }
 }
+
+.prev-next{
+  margin-left: 87%;
+  /* display: flex; */
+  /* flex-direction: row-reverse; */
+}
+
+
+@media (max-width:768px)
+{
+  .prev-next{
+  margin-left: 60%;
+  /* padding-bottom: 100px; */
+}}

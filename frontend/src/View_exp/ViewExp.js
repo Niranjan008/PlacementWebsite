@@ -5,6 +5,7 @@ import './style.css';
 import {MDBListGroup, MDBListGroupItem,MDBIcon,MDBCol,MDBBtn} from 'mdbreact';
 import { HashLink as Link } from "react-router-hash-link";
 import cseaLogo1 from "../assets/img/csea_black1.png"
+import { $ } from "react-jquery-plugin";
 const localStorage = require('local-storage')
 
 const axios = require('axios')
@@ -40,7 +41,9 @@ componentDidMount(){
 
 
   var self = this
-  axios.get('http://localhost:4000/api/experiences/getallexp').then(function (response) {
+  axios.get('http://localhost:4000/api/experiences/getallexp',{mode:'cors'}).then(function (response) {
+
+
       self.setState({dets:response.data.message})
       
       console.log("successfull!!");
@@ -49,8 +52,12 @@ componentDidMount(){
   .catch((e)=>
   {
     
-    alert(e);
+    window.alert(e)
+    console.log(e)
   })
+  $(window).on("load", function () {
+    $("#loader").fadeOut(7000);
+  });
 }
 
 displayExp = (dets) =>{
@@ -240,7 +247,10 @@ Search
 
 </MDBListGroup> 
 </div>
-  
+{/* loader start */}
+<div id="loader"></div>
+        {/* loader end */}
+
 <div style={{paddingTop:`30px`}}>
   <div class="container-sidebar">
         {this.displayExp(this.state.dets)}

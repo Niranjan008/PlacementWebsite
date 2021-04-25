@@ -585,6 +585,10 @@ return (
           <a href="#0" class="prev inactive">
             Prev
           </a>
+          <span><img src="https://img.icons8.com/metro/26/000000/long-arrow-left.png"/></span>
+              <span > Prev</span>
+              <span  className="prev-next"> Next</span>
+              <span><img  src="https://img.icons8.com/metro/26/000000/long-arrow-right.png"/></span>
           {/* </li> */}
           {/* <li> */}
           <a href="#0" class="next">

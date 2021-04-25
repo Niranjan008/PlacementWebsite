@@ -119,6 +119,10 @@ componentDidMount() {
       }
     }
   }
+  $(window).on("load", function () {
+    $("#loader").fadeOut(3000);
+  });
+
 
   window.addEventListener("load", callbackFunc);
   window.addEventListener("scroll", callbackFunc);
@@ -173,7 +177,12 @@ componentDidMount() {
 render() {
   return (
     <div>
+      {/* loader start */}
+      <div id="loader"></div>
+        {/* loader end */}
+
       {/* Navbar start */}
+      
       <div
         class="container-fluid bg-light position-relative shadow"
         id="starting"
@@ -1313,7 +1322,7 @@ render() {
                 href="https://www.linkedin.com/in/lekha-shanthini-r/"
                 target="_blank"
               >
-                <i class="fa fa-angle-right mr-2"></i>Lekha - 3rd year CSE
+                <i class="fa fa-angle-right mr-2"></i>Surya - 3rd year CSE
               </a>
               <a
                 style={{ textDecoration: `none` }}
@@ -1337,7 +1346,8 @@ render() {
                 href="https://www.linkedin.com/in/surya-nagarajan-14074a19b/"
                 target="_blank"
               >
-                <i class="fa fa-angle-right mr-2"></i>Surya - 3rd year CSE
+                <i class="fa fa-angle-right mr-2"></i>
+                Lekha Shanthini - 3rd year CSE
               </a>
             </div>
           </div>
