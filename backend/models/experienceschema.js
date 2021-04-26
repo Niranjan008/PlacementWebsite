@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 var Schema = mongoose.Schema;
 
-mongoose.connect('mongodb+srv://plcweb:123@cluster0.3m9aq.mongodb.net/Experience_DB?retryWrites=true&w=majority', {
+mongoose.connect('mongodb://admin:admin@18.221.72.173/placementdb', {
   useNewUrlParser: true,
   useCreateIndex: true
 })

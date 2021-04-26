@@ -120,7 +120,7 @@ componentDidMount() {
     }
   }
   $(window).on("load", function () {
-    $("#loader").fadeOut(3000);
+    $("#loader").fadeOut(5000);
   });
 
 
@@ -256,7 +256,7 @@ render() {
       {/* <!-- Navbar End --> */}
 
       {/* <!-- Header Start --> */}
-      <div class="container-fluid bg-primary px-0 px-md-5 mb-5">
+      <div class="container-fluid bg-primary px-0 px-md-5 mb-5 hb ">
         <div class="row align-items-center px-3">
           <div class="col-lg-6 text-center text-lg-left">
             <h1 class="display-3 font-weight-normal text-white ">
@@ -905,13 +905,10 @@ render() {
                 </div>
                 <div class="story2" id="s0">
                   <div class="info2">
-                    <h3 class="haha">Give your Experiance</h3>
+                    <h3 class="haha">Give your Experience</h3>
                     <p class="haha">
                       {" "}
-                      Built during a time when Egypt was one of the richest
-                      and most powerful civilizations in the world. Their
-                      massive scale reflects the unique role that the pharaoh
-                      played in ancient Egyptian society.
+                      Experience, when shared with others, has a greater impact. Shared experiences enable your peers to integrate information and empower them to own their ideas. Do you want to keep the learning alive and encourage future growth?
                     </p>
                     <p>
                       <button className="button1">
@@ -1392,7 +1389,7 @@ render() {
             </div>
           </div>
           <div id="contact" class="col-lg-3 col-md-6 mb-5">
-            <h3 class="text-primary mb-4">Wanna share your experience?</h3>
+            <h3 class="text-primary mb-4">Want to share your experience?</h3>
             {/* <form action="">
               <div class="form-group">
                 <input

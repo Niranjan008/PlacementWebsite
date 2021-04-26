@@ -202,7 +202,7 @@ var cmpnylist = ['All','Accenture','Accolite','Alstom', 'Amazon','Aspire Systems
             </a>
           </li>
           <li>
-            <a href="/#experience" class="nav-item nav-link">
+            <a href="/exp_view" class="nav-item nav-link">
               Experiences
             </a>
           </li>
