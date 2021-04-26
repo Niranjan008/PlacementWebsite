@@ -24,9 +24,7 @@ const PlaceExp = new Schema({
     experiencefile: {
         data: Buffer
     },
-    exptext:{
-        type: String
-    },
+    
 
     isverified: {
         type: Boolean

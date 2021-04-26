@@ -23,7 +23,9 @@ try {
   experienceschemauser.company = expDets.company;
   if(expDets.linkedinlink == '')
     experienceschemauser.linkedinlink =''
+  else{
   experienceschemauser.linkedinlink = expDets.linkedIn;
+  }
 
   experienceschemauser.experiencefile.data = fs.readFileSync('./uploads/' + fts.filename)
   console.log(expDets.linkedIn)
@@ -33,25 +35,26 @@ try {
   //   console.log('hiiiiiiiiiiiiiiiiiiiii'+ resultList)
   // })
 
-  await textract.fromFileWithPath('./uploads/'+fts.filename, function( error, text ) {
-    
-    tst = text
-  })
-  experienceschemauser.exptext = tst.toString()
-  console.log(tst.toString())
+  
 
   experienceschemauser.isverified = false
-  await experienceschemauser.save()
+  await experienceschemauser.save().then((ss)=>{
+    console.log(ss)
+  }).catch((e)=>{
+    res.status(300).json({message:e})
+  })
   return res.status(201).json({
     message: "Posted success.",
     success: true
   });
 }
 catch (err) {
+  console.log(err)
   return res.status(500).json({
     message: err,
     success: false
   });
+  
 }
 };
 const userRegister = async (userDets, role, res) => {
