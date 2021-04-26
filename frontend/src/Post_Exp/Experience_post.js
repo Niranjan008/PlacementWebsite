@@ -38,7 +38,8 @@ onSubmit = (e) => {
     formData.append('linkedIn',linkedIn);
     console.log(linkedIn)
     formData.append('selectedFile',selectedFile);
-  axios.post('http://18.221.72.173:4000/'+'api/experiences/add-exp',formData).then((result)=>{
+  axios.post('http://18.221.72.173:4000/'+'api/experiences/add-exp',  { "Content-Type": "multipart/form-data" },
+  formData).then((result)=>{
         this.setState({uname:'',email:'',year:'',company:'',linkedIn:'',selectedFile:''});
         window.alert('Post Success')
     }).catch((e)=>{
