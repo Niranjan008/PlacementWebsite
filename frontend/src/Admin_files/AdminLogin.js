@@ -15,7 +15,7 @@ this.setState({ [e.target.name]: e.target.value });
 onSubmit = (e) =>{
 e.preventDefault();
 const {uname,pword} = this.state;
-axios.post('http://localhost:4000/api/users/login-admin',{username:uname,password:pword}).then(
+axios.post('http://18.221.72.173:4000/'+'api/users/login-admin',{username:uname,password:pword}).then(
     function (response){
         if(response.status == 200){
             window.location = "/adminverify"

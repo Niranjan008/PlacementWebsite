@@ -257,7 +257,8 @@ render() {
 
       {/* <!-- Header Start --> */}
       <div class="container-fluid bg-primary px-0 px-md-5 mb-5">
-        <div class="row align-items-center px-3">
+        <div class="row align-items-center px-3" style={{ marginRight: `0px`}}
+   >
           <div class="col-lg-6 text-center text-lg-left">
             <h1 class="display-3 font-weight-normal text-white ">
               CSEA Placements
@@ -563,6 +564,8 @@ render() {
                 </div>
               </div>
             </div>
+            <br/>
+            <br/>
             <div class="wrapper2">
               <div class="container2" id="c0">
                 <div class="image2" id="i0">
@@ -908,10 +911,7 @@ render() {
                     <h3 class="haha">Give your Experiance</h3>
                     <p class="haha">
                       {" "}
-                      Built during a time when Egypt was one of the richest
-                      and most powerful civilizations in the world. Their
-                      massive scale reflects the unique role that the pharaoh
-                      played in ancient Egyptian society.
+                      Experience, when shared with others has a greater impact. Sharing knowledge and insights enables your peers to integrate information and empowers them to own their ideas. Do you want to keep the learning alive and encourage future growth? 
                     </p>
                     <p>
                       <button className="button1">
