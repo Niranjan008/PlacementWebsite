@@ -41,7 +41,7 @@ componentDidMount(){
 
 
   var self = this
-  axios.get('http://localhost:4000/api/experiences/getallexp',{mode:'cors'}).then(function (response) {
+  axios.get('http://18.221.72.173:4000/api/experiences/getallexp',{mode:'cors'}).then(function (response) {
 
 
       self.setState({dets:response.data.message})
@@ -103,7 +103,7 @@ return dets.map((det)=>{
 searchexp = ()=>{
 var self = this
 
-  axios.get('http://localhost:4000/api/experiences/getbycompany/' + self.state.search_text).then(function (response) {
+  axios.get('http://18.221.72.173:4000/api/experiences/getbycompany/' + self.state.search_text).then(function (response) {
       self.setState({dets:response.data.message,search_text:self.state.search_text})
       
       console.log("successfull!!");
@@ -120,7 +120,7 @@ var self = this
 searchlist = (cmpny)=>{
 var self = this
 if(cmpny.company == 'All'){
-  axios.get('http://localhost:4000/api/experiences/getallexp').then(function (response) {
+  axios.get('http://18.221.72.173:4000/api/experiences/getallexp').then(function (response) {
       self.setState({dets:response.data.message,search_text:self.state.search_text})
       
       console.log("successfull!!");
@@ -135,7 +135,7 @@ if(cmpny.company == 'All'){
 
 }
 else{
-axios.get('http://localhost:4000/api/experiences/getbycompany/' + cmpny.company).then(function (response) {
+axios.get('http://18.221.72.173:4000/api/experiences/getbycompany/' + cmpny.company).then(function (response) {
   console.log(cmpny.company.localeCompare('All'))
 
   if(response.data.message.length ==0){
