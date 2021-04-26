@@ -24,6 +24,7 @@ filename: (req, file, cb) => {
 const upload = multer({ storage });
 //api to add experience only for signed in users
 router.post("/add-exp", upload.single('selectedFile'), async (req, res) => {
+  console.log(req.file)
 await addexp(req.body, req.file, "user", res);
 });
 

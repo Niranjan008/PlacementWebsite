@@ -9,7 +9,7 @@ const fs = require('fs')
 var textract = require('textract');
 var tst = ''
 const addexp = async (expDets, fts, role, res) => {
-
+console.log('FTS IN AUTH'+fts)
 try {
 
   const experienceschemauser = new experienceschema;
