@@ -12,19 +12,12 @@ deleteexp
 } = require("../utils/Auth");
 const uuidv4 = require("uuid").v4;
 const path = require('path')
-const storage = multer.diskStorage({
-destination: (req, file, cb) => {
-  cb(null, './uploads');
-},
-filename: (req, file, cb) => {
-  const newFilename = `${uuidv4()}${path.extname(file.originalname)}`;
-  cb(null, newFilename);
-},
-});
-const upload = multer({ storage });
+
+
 //api to add experience only for signed in users
-router.post("/add-exp", upload.single('selectedFile'), async (req, res) => {
-await addexp(req.body, req.file, "user", res);
+router.post("/add-exp",  async (req, res) => {
+await addexp(req.body,"user", res);
+console.log(req.body)
 });
 
 //api with only admin level access for giving approvals

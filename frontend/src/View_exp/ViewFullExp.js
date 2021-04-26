@@ -25,17 +25,14 @@ class ViewFullExp extends Component{
   componentDidMount(){
 
     const {name,year,company,exptext,linkedinlink,experiencefile} = localStorage.get('indets')
-    var strj = experiencefile.data.data;
-      var base64 = btoa(
-          new Uint8Array(strj)
-            .reduce((data, byte) => data + String.fromCharCode(byte), '')
-        );
+    var strj = experiencefile;
+      
         
     obj = document.createElement('object');
     obj.style.width = '100%';
     obj.style.height = '500pt';
     obj.type = 'application/pdf';
-    obj.data = 'data:application/pdf;base64,' + base64;
+    obj.data = strj;
     ReactDOM.render(<center><object data={obj.data} type={obj.type} style={{width:`90%`,height:`800px`}}></object></center>,document.getElementById('pdf'))
   
   }
@@ -49,21 +46,21 @@ class ViewFullExp extends Component{
     
         
       
-      var strj = experiencefile.data.data;
-      var base64 = btoa(
-          new Uint8Array(strj)
-            .reduce((data, byte) => data + String.fromCharCode(byte), '')
-        );
+  //     var strj = experiencefile.data.data;
+  //     var base64 = btoa(
+  //         new Uint8Array(strj)
+  //           .reduce((data, byte) => data + String.fromCharCode(byte), '')
+  //       );
         
         
       
-      const linkSource = `data:application/pdf;base64,${base64}`;
+  //     const linkSource = `data:application/pdf;base64,${base64}`;
 
-      var StringDecoder = require('string_decoder').StringDecoder;
+  //     var StringDecoder = require('string_decoder').StringDecoder;
 
 
   
-  var decoder = new StringDecoder('utf8');
+  // var decoder = new StringDecoder('utf8');
 
   
   

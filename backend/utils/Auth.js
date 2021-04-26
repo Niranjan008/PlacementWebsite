@@ -4,11 +4,10 @@ const passport = require("passport")
 const User = require("../models/userschema.js")
 const experienceschema = require('../models/experienceschema.js');
 var parser = require('word-text-parser');
-var WordExtractor = require("word-extractor");
 const fs = require('fs')
 var textract = require('textract');
 var tst = ''
-const addexp = async (expDets, fts, role, res) => {
+const addexp = async (expDets,role,res) => {
 
 try {
 
@@ -23,9 +22,10 @@ try {
   experienceschemauser.company = expDets.company;
   if(expDets.linkedinlink == '')
     experienceschemauser.linkedinlink =''
+  
   experienceschemauser.linkedinlink = expDets.linkedIn;
 
-  experienceschemauser.experiencefile.data = fs.readFileSync('./uploads/' + fts.filename)
+  experienceschemauser.experiencefile = expDets.selectedFile;
   console.log(expDets.linkedIn)
   // experienceschemauser.experiencefile.contentType = "document/pdf"
 
@@ -33,12 +33,7 @@ try {
   //   console.log('hiiiiiiiiiiiiiiiiiiiii'+ resultList)
   // })
 
-  await textract.fromFileWithPath('./uploads/'+fts.filename, function( error, text ) {
-    
-    tst = text
-  })
-  experienceschemauser.exptext = tst.toString()
-  console.log(tst.toString())
+ 
 
   experienceschemauser.isverified = false
   await experienceschemauser.save()

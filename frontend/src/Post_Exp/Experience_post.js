@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import logo from "../assets/img/logo2.png";
 import { $ } from 'react-jquery-plugin'
 import axios from 'axios';
+import FileBase64 from 'react-file-base64';
 import { HashLink as Link } from 'react-router-hash-link';
-
+var result = ''
 class Experience_post extends Component {
 
 componentDidMount() {
@@ -27,8 +28,10 @@ onChange = (e) => {
 }
 onSubmit = (e) => {
   const {uname,email,year,company,linkedIn,selectedFile} = this.state;
-  console.log(this.state)
+  
   let formData = new FormData();
+  console.log(this.state.uname + this.state.email +
+  this.state.year +this.state.company + this.state.linkedIn + this.state.selectedFile)
   if(this.state.uname !== "" && this.state.email !== "" &&
     this.state.year !== "" && this.state.company !== "" && this.state.linkedIn !== "" && this.state.selectedFile !== "" ){
     formData.append('uname', uname);
@@ -37,8 +40,10 @@ onSubmit = (e) => {
     formData.append('company',company);
     formData.append('linkedIn',linkedIn);
     console.log(linkedIn)
-    formData.append('selectedFile',selectedFile);
-  axios.post('http://18.221.72.173:4000/api/experiences/add-exp',formData).then((result)=>{
+    formData.append('selectedFile',result);
+    const ss = {uname:uname,email:email,year:year,company:company,linkedIn:linkedIn,selectedFile:selectedFile}
+    console.log(ss)
+  axios.post('http://18.221.72.173:4000/api/experiences/add-exp',{uname:uname,email:email,year:year,company:company,linkedIn:linkedIn,selectedFile:selectedFile}).then((result)=>{
         this.setState({uname:'',email:'',year:'',company:'',linkedIn:'',selectedFile:''});
         console.log('success')
     }).catch((e)=>{
@@ -52,18 +57,13 @@ onSubmit = (e) => {
 }
 
 handleChange = (event) => {
-  switch (event.target.name) {
-    case 'selectedFile':
-      this.setState({
-        selectedFile: event.target.files[0]
-      });
-      break;
-    default:
+ 
+   
       this.setState({
         [event.target.name]:
         event.target.value
       });
-  }
+  
 }
 
 gotoHome = () =>{
@@ -83,6 +83,24 @@ gotoHome = () =>{
   
 }
 
+readFile = (event) =>{
+  var file = event.target.files[0]
+  let reader = new FileReader();
+  var self = this
+  reader.readAsDataURL(file);
+
+  reader.onload = function() {
+    result = reader.result
+    self.setState({selectedFile:result})
+  };
+
+  reader.onerror = function() {
+    console.log(reader.error);
+  };
+
+  
+
+}
 render() {
   const { uname, email, year,company, linkedIn, selectedFile } = this.state;
   return (
@@ -184,9 +202,10 @@ render() {
                     <p class="help-block text-danger"></p>
                   </div>
                   <div>
-                    <span>Upload PDF </span><input  style={{width:`300px`}}accept="application/pdf" rows="7" id="selectedFile" placeholder="Select File" required="required" name="selectedFile" type="file" onChange={this.handleChange}></input>
+                  <input type="file" class="form-control-post" id="subject2" placeholder="Experience File" required="required" data-validation-required-message="Please give a PDF as input"  onChange={this.readFile} />
 
-                    <p class="help-block text-danger"></p>
+
+                    <p class="help-block text-danger">Please Upload PDF's only</p>
                   </div>
                   <div>
                     <button class="btn btn-primary py-21 px-4 form-control-post"  type="submit" id="sendMessageButton" >Send Message</button>

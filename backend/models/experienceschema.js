@@ -22,9 +22,6 @@ const PlaceExp = new Schema({
         type: String
     },
     experiencefile: {
-        data: Buffer
-    },
-    exptext:{
         type: String
     },
 
