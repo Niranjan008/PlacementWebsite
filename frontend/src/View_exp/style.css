@@ -37,16 +37,43 @@
 --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
   "Liberation Mono", "Courier New", monospace;
 }
-
+/* 
 html {
 width: 100%;
 height: 100%;
 padding: 0px;
 margin: 0px;
 overflow-x: hidden;
-}
+} */
 
-@media (max-width: 576px) {
+@media (max-width: 400px) {
+html {
+  width: 400px;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+  overflow-x: hidden;
+}
+}
+@media only screen and (max-width: 450px) and (min-width: 401px){
+  html {
+    width: 450px;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+    overflow-x: hidden;
+  }
+  }
+@media only screen and (max-width: 500px) and (min-width: 451px){
+  html {
+    width: 500px;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+    overflow-x: hidden;
+  }
+  }
+@media (min-width: 768px) {
 html {
   width: 100%;
   height: 100%;
@@ -55,16 +82,7 @@ html {
   overflow-x: hidden;
 }
 }
-@media (max-width: 768px) {
-html {
-  width: 100%;
-  height: 100%;
-  padding: 0px;
-  margin: 0px;
-  overflow-x: hidden;
-}
-}
-@media (max-width: 992px) {
+@media (min-width: 992px) {
 html {
   width: 100%;
   height: 100%;
@@ -779,7 +797,7 @@ margin-left: auto;
 .row {
 display: flex;
 flex-wrap: wrap;
-margin-right: -15px;
+margin-right: 0px;
 margin-left: -15px;
 }
 
@@ -10609,7 +10627,7 @@ position: flex;
 top: 10%;
 left: 40%;
 width: 300px;
-height: 450px;
+height: 600px;
 perspective: 900px;
 margin: 0 auto;
 }
@@ -10689,7 +10707,7 @@ position: absolute;
 top: 0%;
 width: 100%;
 height: 100%;
-background: linear-gradient(to bottom, #eba65b 30%, #d99267 100%);
+/* background: linear-gradient(to bottom, #eba65b 30%, #d99267 100%); */
 z-index: 300;
 box-shadow: 0px 20px 100px rgba(56, 213, 252, 0.2);
 }
@@ -10819,7 +10837,7 @@ position: absolute;
 text-align: center;
 top: 45%;
 left: 0%;
-height: 100%;
+height: 10%;
 width: 100%;
 background: #fff;
 z-index: 30;
@@ -10932,20 +10950,28 @@ animation: simple 1s linear infinite;
 @media (min-width: 992px) {
 .container-fluid .container .wrapper2 {
   flex-direction: column;
+  width: 300px;
+height: 600px;
 }
 }
 
 @media (min-width: 768px) {
 .container-fluid .container .wrapper2 {
   flex-direction: column;
+  width: 300px;
+height: 600px;
 }
 }
+
 
 @media (min-width: 576px) {
 .container-fluid .container .wrapper2 {
   flex-direction: column;
+  width: 300px;
+height: 600px;
 }
 }
+
 
 /* Navbar */
 
@@ -11971,3 +11997,6 @@ background-color: #007bff;
 /* color: linear-gradient(to top, rgba(251, 194, 235, 0.5), rgba(166, 193, 238, 0.5)); */
 }
 
+.hb{
+  height:auto;
+}

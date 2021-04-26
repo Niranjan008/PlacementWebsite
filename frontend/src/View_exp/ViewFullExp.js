@@ -103,12 +103,12 @@ class ViewFullExp extends Component{
                 </a>
               </li>
               <li>
-                <a href="/#experience" class="nav-item nav-link">
+                <a href="/tips" class="nav-item nav-link">
                   Preparation
                 </a>
               </li>
               <li>
-                <a href="/#experience" class="nav-item nav-link">
+                <a href="/exp_view" class="nav-item nav-link">
                   Experiences
                 </a>
               </li>
