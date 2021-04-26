@@ -40,11 +40,10 @@ onSubmit = (e) => {
     formData.append('selectedFile',selectedFile);
   axios.post('http://18.221.72.173:4000/'+'api/experiences/add-exp',formData).then((result)=>{
         this.setState({uname:'',email:'',year:'',company:'',linkedIn:'',selectedFile:''});
-        console.log('success')
+        window.alert('Post Success')
     }).catch((e)=>{
-      console.log(e)
+      window.alert(e)
     });
-        window.alert('Post Success');
   }
   else
     window.alert('Post Failure');
