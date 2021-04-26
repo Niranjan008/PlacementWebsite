@@ -120,7 +120,7 @@ componentDidMount() {
     }
   }
   $(window).on("load", function () {
-    $("#loader").fadeOut(3000);
+    $("#loader").fadeOut(5000);
   });
 
 
