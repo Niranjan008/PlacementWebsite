@@ -3,7 +3,9 @@ import logo from "../assets/img/logo2.png";
 import { $ } from 'react-jquery-plugin'
 import axios from 'axios';
 import FileBase64 from 'react-file-base64';
-import { HashLink as Link } from 'react-router-hash-link';
+
+
+
 var result = ''
 class Experience_post extends Component {
 
@@ -18,7 +20,9 @@ constructor() {
     year: '',
     company: '',
     linkedIn: '',
-    selectedFile: ''
+    selectedFile: '',
+    post:false,
+    unpost:false
 
   };
 }
@@ -51,12 +55,16 @@ onSubmit = (e) => {
  
 
   axios.post('http://18.221.72.173:4000/api/experiences/add-exp',{uname:uname,email:email,year:year,company:company,linkedIn:linkedIn,selectedFile:selectedFile},{headers:headers}).then(res => {
-      window.alert('Success');
+    this.setState({post: true});
+    
+    
     }).catch(err => console.error(err));
     
   }
-  else
-    window.alert('Post Failure');
+  else{
+    this.setState({unpost: true});
+    
+  }
 
 }
 
@@ -70,22 +78,7 @@ handleChange = (event) => {
   
 }
 
-gotoHome = () =>{
 
-  window.location='/'
-}
-gotoTips = () =>{
-  window.location='/tips'
-}
-gotoExp = () =>{
-  window.location='/exp_view'
-}
-gotoHome = () =>{
-  
-}
-gotoHome = () =>{
-  
-}
 
 readFile = (event) =>{
   var file = event.target.files[0]
@@ -108,7 +101,7 @@ readFile = (event) =>{
 render() {
   const { uname, email, year,company, linkedIn, selectedFile } = this.state;
   return (
-    <div>
+   <div>
           <div class="container-fluid bg-light position-relative shadow">
         <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5">
           <a
@@ -149,7 +142,7 @@ render() {
                 </a>
               </li>
               <li>
-                <a href="/exp_post" class="nav-item nav-link">
+                <a href="/exp_view" class="nav-item nav-link">
                   Experiences
                 </a>
               </li>
@@ -174,7 +167,7 @@ render() {
 
 
 
-      <div class="container-fluid pt-5">
+      { !this.state.post ? <div class="container-fluid pt-5">
         <div class="container">
           <div class="text-center pb-2">
             <p class="section-title px-5"><span class="px-2">Connect with Us</span></p>
@@ -206,24 +199,26 @@ render() {
                     <p class="help-block text-danger"></p>
                   </div>
                   <div>
-                  <input type="file" class="form-control-post" id="subject2" placeholder="Experience File" required="required" data-validation-required-message="Please give a PDF as input"  onChange={this.readFile} />
+                  <input type="file" class="form-control-post" id="subject2" style={{height:`50px`}}placeholder="Experience File" required="required" data-validation-required-message="Please give a PDF as input"  onChange={this.readFile} />
 
 
-                    <p class="help-block text-danger">Please Upload PDF's only</p>
+                    <center><p class="help-block text-danger">* Please upload PDF only</p></center>
                   </div>
                   <div>
                     <button class="btn btn-primary py-21 px-4 form-control-post"  type="button" onClick={this.onSubmit}  id="sendMessageButton" >Submit</button>
                   </div>
                 </form>
+                
               </div>
             </div>
 
           </div>
         </div>
-      </div>
+      </div>:null}
 
-      
-      
+      {this.state.post && <center><br/><br/><br /><h1>Thank You for your response!!</h1></center>}
+      {this.state.unpost && <center><h1>Please try again later!!</h1></center>}
+              
     </div>
   );
 }

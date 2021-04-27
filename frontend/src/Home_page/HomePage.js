@@ -13,9 +13,10 @@ import "./style.css";
 import "./style1.css";
 
 class HomePage extends Component {
+  
 componentDidMount() {
   
-
+  
   var nav = $("nav");
   var line = $("<div />").addClass("line");
   line.appendTo(".active");
@@ -119,10 +120,18 @@ componentDidMount() {
       }
     }
   }
-  $(window).on("load", function () {
-    $("#loader").fadeOut(5000);
-  });
+  // $(window).on("load", function () {
+  //   $("#loader").fadeOut(5000);
+    
+  // });
+  $(window).on("load",function(){
+    $("#loader").show();
+});
 
+setTimeout(function(){
+$("#loader").hide();
+}, 4000);
+ 
 
   window.addEventListener("load", callbackFunc);
   window.addEventListener("scroll", callbackFunc);
@@ -177,9 +186,9 @@ componentDidMount() {
 render() {
   return (
     <div>
-      {/* loader start */}
+      
       <div id="loader"></div>
-        {/* loader end */}
+      
 
       {/* Navbar start */}
       
@@ -353,7 +362,7 @@ render() {
               </div>
 
               <div class="swanky_title__social">
-                <a href="http://cseaceg.org.in/" target="_blank">
+                <a href="https://cseaceg.org.in/" target="_blank">
                   <div class="slide">
                     <div class="arrow">
                       <div class="stem"></div>
@@ -1311,15 +1320,15 @@ render() {
                 href="https://www.linkedin.com/in/aarti-v-a33963180/"
                 target="_blank"
               >
-                <i class="fa fa-angle-right mr-2"></i>Aarti - 3rd year CSE
+                <i class="fa fa-angle-right mr-2"></i>Aarti V - 3rd year CSE
               </a>
               <a
                 style={{ textDecoration: `none` }}
                 class="text-white mb-2"
-                href="https://www.linkedin.com/in/lekha-shanthini-r/"
+                href="https://www.linkedin.com/in/surya-nagarajan-14074a19b/"
                 target="_blank"
               >
-                <i class="fa fa-angle-right mr-2"></i>Surya - 3rd year CSE
+                <i class="fa fa-angle-right mr-2"></i>Surya N - 3rd year CSE
               </a>
               <a
                 style={{ textDecoration: `none` }}
@@ -1327,7 +1336,7 @@ render() {
                 href="https://www.linkedin.com/in/niranjan-k-a45966182/"
                 target="_blank"
               >
-                <i class="fa fa-angle-right mr-2"></i>Niranjan - 3rd year CSE
+                <i class="fa fa-angle-right mr-2"></i>Niranjan K - 3rd year CSE
               </a>
               <a
                 style={{ textDecoration: `none` }}
@@ -1335,16 +1344,16 @@ render() {
                 href="https://www.linkedin.com/in/shruthi-s-608826180/"
                 target="_blank"
               >
-                <i class="fa fa-angle-right mr-2"></i>Shruthi - 3rd year CSE
+                <i class="fa fa-angle-right mr-2"></i>Shruthi S- 3rd year CSE
               </a>
               <a
                 style={{ textDecoration: `none` }}
                 class="text-white"
-                href="https://www.linkedin.com/in/surya-nagarajan-14074a19b/"
+                href="https://www.linkedin.com/in/lekha-shanthini-r/"
                 target="_blank"
               >
                 <i class="fa fa-angle-right mr-2"></i>
-                Lekha Shanthini - 3rd year CSE
+                Lekha Shanthini R - 3rd year CSE
               </a>
             </div>
           </div>

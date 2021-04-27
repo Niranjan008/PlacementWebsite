@@ -2,6 +2,13 @@ import React, { Component } from 'react'
 import './style.css';
 import ReactDOM from 'react-dom';
 import cseaLogo1 from "../assets/img/csea_black1.png"
+import { HashLink as Link } from 'react-router-hash-link';
+import {
+  BrowserView,
+  MobileView,
+  isBrowser,
+  isMobile
+} from "react-device-detect";
 const localStorage = require('local-storage')
 
 const axios = require('axios')
@@ -33,16 +40,36 @@ class ViewFullExp extends Component{
     obj.style.height = '500pt';
     obj.type = 'application/pdf';
     obj.data = strj;
-    ReactDOM.render(<center><object data={obj.data} type={obj.type} style={{width:`90%`,height:`800px`}}></object></center>,document.getElementById('pdf'))
+    if(!isMobile)
+      ReactDOM.render(<center><iframe src={obj.data} type={obj.type}  style={{width:`90%`,height:`800px`}}></iframe></center>,document.getElementById('pdf'))
   
   }
   
+  download = ()=> {
+    const {name,year,company,exptext,linkedinlink,experiencefile} = localStorage.get('indets')
+    var strj = experiencefile
+    var base64 = btoa(
+        new Uint8Array(strj)
+            .reduce((data, byte) => data + String.fromCharCode(byte), '')
+        );
+        
+    console.log(base64.toString())
+    const downloadLink = document.createElement("a");
+    const fileName = "Experience" + "_" + name +".pdf";
+    downloadLink.href = strj;
+    downloadLink.download = fileName;
+    downloadLink.click()
+}
 
   render(){
       const {name,year,company,exptext,linkedinlink,experiencefile} = localStorage.get('indets')
 
-      
-
+      // var strj = experiencefile;
+      // obj = document.createElement('object');
+      // obj.style.width = '100%';
+      // obj.style.height = '500pt';
+      // obj.type = 'application/pdf';
+      // obj.data = strj;
     
         
       
@@ -158,7 +185,12 @@ class ViewFullExp extends Component{
                 target="_blank"
               >
                 <i class="fab fa-linkedin-in"></i>
-              </a>:null}</center>
+              </a>:null}
+              <br/>
+              {isMobile?<button class = "btn btn-primary py-21 px-4 form-control-post" type="button" onClick={this.download}>Open Experience</button>:null}
+        
+
+              </center>
       </div>
     
       );

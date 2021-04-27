@@ -17,8 +17,8 @@ constructor(){
   super();
   this.state = {
       dets:[],
-      
-      
+      onload: true,
+      emptydata:false,
   }
   this.savestate.bind(this)
 }
@@ -44,7 +44,7 @@ componentDidMount(){
   axios.get('http://18.221.72.173:4000/api/experiences/getallexp',{mode:'cors'}).then(function (response) {
 
 
-      self.setState({dets:response.data.message})
+      self.setState({dets:response.data.message,onload:false})
       
       console.log("successfull!!");
       
@@ -102,11 +102,14 @@ return dets.map((det)=>{
 
 searchexp = ()=>{
 var self = this
+  self.setState({onload:true,emptydata:false})
 
   axios.get('http://18.221.72.173:4000/api/experiences/getbycompany/' + self.state.search_text).then(function (response) {
-      self.setState({dets:response.data.message,search_text:self.state.search_text})
+      self.setState({dets:response.data.message,search_text:self.state.search_text,onload:false})
       
-      console.log("successfull!!");
+      if(response.data.message.length==0){
+        self.setState({emptydata:true})
+      }
       
       
   })
@@ -119,11 +122,15 @@ var self = this
 }
 searchlist = (cmpny)=>{
 var self = this
+self.setState({onload:true})
+self.setState({emptydata:false})
 if(cmpny.company == 'All'){
   axios.get('http://18.221.72.173:4000/api/experiences/getallexp').then(function (response) {
-      self.setState({dets:response.data.message,search_text:self.state.search_text})
+      self.setState({dets:response.data.message,search_text:self.state.search_text,onload:false})
       
-      console.log("successfull!!");
+      if(response.data.message.length==0){
+        self.setState({emptydata:true})
+      }
       
       
   })
@@ -138,12 +145,13 @@ else{
 axios.get('http://18.221.72.173:4000/api/experiences/getbycompany/' + cmpny.company).then(function (response) {
   console.log(cmpny.company.localeCompare('All'))
 
-  if(response.data.message.length ==0){
-    window.alert('No results found')
+  if(response.data.message.length==0){
+    self.setState({emptydata:true})
   }
   
   else{
-  self.setState({dets:response.data.message,search_text:self.state.search_text})
+    self.setState({onload:true})
+  self.setState({dets:response.data.message,search_text:self.state.search_text,onload:false})
   
   console.log("successfull!!");
   }
@@ -161,7 +169,7 @@ alert(e);
 
 render(){
 const search_text = this.state.search_text
-var cmpnylist = ['All','Accenture','Accolite','Alstom', 'Amazon','Aspire Systems','Barclays','BNY Mellon','Chronus Software','Citicorp','Enphase Enery','Fidelity','Global Analytics','Hubstream','Khoros','LTI','Micron Technology','Morgan Stanley','MU Sigma','Quatiphi Analytics','RBS','SAP Labs','TCS','TCS Digital','Tekion','Temenos','Verizon','Visa','Vivriti Capital','Walmart Labs','Wells Fargo','Wipro']
+var cmpnylist = ['All','Accenture','Accolite','Alstom', 'Amazon','Aspire Systems','Barclays','BNY Mellon','Chronus','Citicorp','Enphase Energy','Fidelity','Global Analytics','Hubstream','Khoros','LTI','Micron Technology','Morgan Stanley','MU Sigma','Quatiphi Analytics','RBS','SAP Labs','TCS','TCS Digital','Tekion','Temenos','Verizon','Visa','Vivriti Capital','Walmart Labs','Wells Fargo','Wipro']
   return (
       <div>
         <div class="container-fluid bg-light position-relative shadow">
@@ -234,9 +242,17 @@ var cmpnylist = ['All','Accenture','Accolite','Alstom', 'Amazon','Aspire Systems
 Search
 </MDBBtn>
 </div>
+<div className="showAll">
+ 
+<MDBBtn  onClick={()=>this.searchlist({company:'All'})} color="blue" rounded size="sm"  className="allButton"  >
+All
+</MDBBtn>
+</div>
+
 </div>
 </MDBCol>
-<div style={{float:`left`,paddingTop:`30px`}} className="sidebar-list">
+<br/>
+<div style={{float:`left`,paddingTop:`10px`,height:`600px`,width:`20%`,overflow:`hidden`,overflowY:`scroll`}} className="sidebar-list">
   <MDBListGroup style={{ width: "20rem" }}>
     {cmpnylist.map( (company) =>(
     
@@ -247,15 +263,19 @@ Search
 
 </MDBListGroup> 
 </div>
-{/* loader start */}
-<div id="loader"></div>
-        {/* loader end */}
+{
+  this.state.onload?
 
+<div id="loader"></div>:null
+       
+}
 <div style={{paddingTop:`30px`}}>
   <div class="container-sidebar">
         {this.displayExp(this.state.dets)}
         </div>
       </div> 
+
+    {this.state.emptydata?<center><h3>No experiences available Yet!</h3></center>:null}
   </div>
   );
   
