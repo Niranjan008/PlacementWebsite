@@ -16,8 +16,9 @@ const path = require('path')
 
 //api to add experience only for signed in users
 router.post("/add-exp",  async (req, res) => {
+console.log(req.headers)
 await addexp(req.body,"user", res);
-console.log(req.body)
+
 });
 
 //api with only admin level access for giving approvals
