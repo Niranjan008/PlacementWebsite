@@ -44,7 +44,7 @@ onSubmit = (e) => {
     const ss = {uname:uname,email:email,year:year,company:company,linkedIn:linkedIn,selectedFile:selectedFile}
     console.log(ss)
   axios.post('http://18.221.72.173:4000/api/experiences/add-exp',{uname:uname,email:email,year:year,company:company,linkedIn:linkedIn,selectedFile:selectedFile}).then((result)=>{
-        this.setState({uname:'',email:'',year:'',company:'',linkedIn:'',selectedFile:''});
+        //this.setState({uname:'',email:'',year:'',company:'',linkedIn:'',selectedFile:''});
         console.log('success')
     }).catch((e)=>{
       console.log(e)

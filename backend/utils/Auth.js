@@ -36,11 +36,15 @@ try {
  
 
   experienceschemauser.isverified = false
-  await experienceschemauser.save()
-  return res.status(201).json({
-    message: "Posted success.",
-    success: true
-  });
+  await experienceschemauser.save().then((res)=>{
+    return res.status(201).json({
+      message: "Posted success.",
+      success: true
+    });
+  }).catch((err)=>{
+    window.alert(err)
+  })
+  
 }
 catch (err) {
   return res.status(500).json({
