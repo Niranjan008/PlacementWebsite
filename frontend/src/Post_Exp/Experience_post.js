@@ -43,22 +43,16 @@ onSubmit = (e) => {
     formData.append('selectedFile',result);
     const ss = {uname:uname,email:email,year:year,company:company,linkedIn:linkedIn,selectedFile:selectedFile}
     console.log(ss)
-    const requestOptions = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(ss)
-  };
-  fetch('http://18.221.72.173:4000/api/experiences/add-exp', requestOptions)
-  .then(response => console.log(response.json()))
-  .then(data => window.alert('Your experience Received'));
+    const headers = {
+      'Content-Type': 'application/json',
+      'Accept':'application/json'
+    }
+    
+ 
 
-
-  // axios.post('http://18.221.72.173:4000/api/experiences/add-exp',{uname:uname,email:email,year:year,company:company,linkedIn:linkedIn,selectedFile:selectedFile}).then((result)=>{
-  //       //this.setState({uname:'',email:'',year:'',company:'',linkedIn:'',selectedFile:''});
-  //       console.log('success')
-  //   }).catch((e)=>{
-  //     console.log(e)
-  //   });
+  axios.post('http://18.221.72.173:4000/api/experiences/add-exp',{uname:uname,email:email,year:year,company:company,linkedIn:linkedIn,selectedFile:selectedFile},{headers:headers}).then(res => {
+      window.alert('Success');
+    }).catch(err => console.error(err));
     
   }
   else
@@ -218,7 +212,7 @@ render() {
                     <p class="help-block text-danger">Please Upload PDF's only</p>
                   </div>
                   <div>
-                    <button class="btn btn-primary py-21 px-4 form-control-post"  type="submit" id="sendMessageButton" >Send Message</button>
+                    <button class="btn btn-primary py-21 px-4 form-control-post"  type="button" onClick={this.onSubmit}  id="sendMessageButton" >Submit</button>
                   </div>
                 </form>
               </div>

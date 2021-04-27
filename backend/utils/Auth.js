@@ -37,13 +37,14 @@ try {
 
   experienceschemauser.isverified = false
   await experienceschemauser.save().then((res)=>{
-    return res.status(201).json({
-      message: "Posted success.",
-      success: true
-    });
+    console.log('hi')
   }).catch((err)=>{
     window.alert(err)
   })
+  return res.status(201).json({
+    message: "Posted success.",
+    success: true
+  });
   
 }
 catch (err) {
