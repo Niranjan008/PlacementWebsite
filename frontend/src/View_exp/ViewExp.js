@@ -56,7 +56,7 @@ componentDidMount(){
     console.log(e)
   })
   $(window).on("load", function () {
-    $("#loader").fadeOut(7000);
+    $("#loader").fadeOut(15000);
   });
 }
 
@@ -169,7 +169,7 @@ alert(e);
 
 render(){
 const search_text = this.state.search_text
-var cmpnylist = ['All','Accenture','Accolite','Alstom', 'Amazon','Aspire Systems','Barclays','BNY Mellon','Chronus','Citicorp','Enphase Energy','Fidelity','Global Analytics','Hubstream','Khoros','LTI','Micron Technology','Morgan Stanley','MU Sigma','Quatiphi Analytics','RBS','SAP Labs','TCS','TCS Digital','Tekion','Temenos','Verizon','Visa','Vivriti Capital','Walmart Labs','Wells Fargo','Wipro']
+var cmpnylist = ['Accenture','Accolite','Alstom', 'Amazon','Aspire Systems','Barclays','BNY Mellon','Chronus','Citicorp','Enphase Energy','Fidelity','Global Analytics','Hubstream','Khoros','LTI','Micron Technology','Morgan Stanley','MU Sigma','Quatiphi Analytics','RBS','SAP Labs','TCS','TCS Digital','Tekion','Temenos','Verizon','Visa','Vivriti Capital','Walmart Labs','Wells Fargo','Wipro']
   return (
       <div>
         <div class="container-fluid bg-light position-relative shadow">
@@ -198,7 +198,7 @@ var cmpnylist = ['All','Accenture','Accolite','Alstom', 'Amazon','Aspire Systems
       >
         <div class="navbar-nav font-weight-bold mx-auto py-0 ">
         
-          <li class="active">
+          <li >
             <a href="/" class="nav-item nav-link active">
               Home
             </a>
@@ -209,7 +209,7 @@ var cmpnylist = ['All','Accenture','Accolite','Alstom', 'Amazon','Aspire Systems
               Preparation
             </a>
           </li>
-          <li>
+          <li class="active">
             <a href="/exp_view" class="nav-item nav-link">
               Experiences
             </a>
@@ -254,6 +254,7 @@ All
 <br/>
 <div style={{float:`left`,paddingTop:`10px`,height:`600px`,width:`20%`,overflow:`hidden`,overflowY:`scroll`}} className="sidebar-list">
   <MDBListGroup style={{ width: "20rem" }}>
+    <span onClick={()=>this.searchlist({company:'All'})}><MDBListGroupItem style={{cursor:`pointer`,backgroundImage:`linear-gradient(to bottom right, #00bfad, #99a3d4)`,color:`white`}}>All</MDBListGroupItem></span>
     {cmpnylist.map( (company) =>(
     
     <span onClick={() =>this.searchlist({company})}><MDBListGroupItem style={{cursor:`pointer`}}>{company}</MDBListGroupItem></span>

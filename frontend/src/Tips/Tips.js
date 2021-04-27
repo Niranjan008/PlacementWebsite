@@ -471,13 +471,13 @@ return (
           <div class="navbar-nav font-weight-bold mx-auto py-0 ">
             
 
-            <li class="active">
+            <li >
               <a href="/" class="nav-item nav-link active">
                 Home
               </a>
             </li>
             
-            <li>
+            <li class="active">
               <a href="/tips" class="nav-item nav-link">
                 Preparation
               </a>
@@ -612,9 +612,7 @@ return (
                 color: `#00394f`,
               }}
             >
-              ❏ Make sure you can answer any questions raised from your
-              resume.
-              <br />❏ Make sure you can answer any questions raised from
+             ❏ Make sure you can answer any questions raised from
               your resume.
               <br />
               ❏ Things to include:
@@ -622,8 +620,8 @@ return (
               <br /> ❏ Professional social sites link(optional) like
               LinkedIn, codechef..
               <br /> ❏ Education (reverse order)
-              <br /> ❏ Internship (if any) <br />❏ Projects Extra curricular
-              activities Skills (programming languages or technologies
+              <br /> ❏ Internship (if any) <br />❏ Projects, Extra curricular
+              activities, Skills (programming languages or technologies
               known) <br />❏ Hobbies
               <br />
               ❏ Resume should be free from mistakes.

@@ -121,7 +121,7 @@ class ViewFullExp extends Component{
           >
             <div class="navbar-nav font-weight-bold mx-auto py-0 ">
               
-              <li class="active">
+              <li >
                 <a href="/" class="nav-item nav-link active">
                   Home
                 </a>
@@ -131,7 +131,7 @@ class ViewFullExp extends Component{
                   Preparation
                 </a>
               </li>
-              <li>
+              <li class="active">
                 <a href="/exp_view" class="nav-item nav-link">
                   Experiences
                 </a>

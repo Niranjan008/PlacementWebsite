@@ -3,7 +3,7 @@ import logo from "../assets/img/logo2.png";
 import { $ } from 'react-jquery-plugin'
 import axios from 'axios';
 import FileBase64 from 'react-file-base64';
-
+import cseaLogo1 from "../assets/img/csea_black1.png";
 
 
 var result = ''
@@ -108,13 +108,11 @@ render() {
             class="navbar-brand font-weight-bold text-secondary"
             style={{ fontSize: `35px` }}
           >
-            {/* <img
-              src={logo}
-              style={{ height: `80px`, width: `80px`, paddingBottom: `5px` }}
-            ></img> */}
-            <span class="text-primary " style={{ fontFamily: `Handlee` }}>
-              CSEA Placement
-            </span>
+           <img
+            src={cseaLogo1}
+            style={{ height: `80px`, width: `80px`, paddingBottom: `5px` }}
+          ></img>
+          
           </a>
           <button
             type="button"
@@ -130,7 +128,7 @@ render() {
           >
             <div class="navbar-nav font-weight-bold mx-auto py-0 ">
               
-              <li class="active">
+              <li>
                 <a href="/" class="nav-item nav-link active">
                   Home
                 </a>
@@ -147,7 +145,7 @@ render() {
                 </a>
               </li>
                 
-              <li>
+              <li class="active">
                 <a href="/exp_post" class="nav-item nav-link">
                   Post
                 </a>
