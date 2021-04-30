@@ -289,14 +289,14 @@ render() {
               Your one-stop web portal for enhancing your Job Placement
               preparations!
             </p> */}
-            <a
+            {/* <a
               href="/exp_view"
               
               class="btn btn-secondary mt-1 py-3 px-5 bg-secondary"
               style={{ fontFamily: `Handlee` }}
             >
               Learn More
-            </a>
+            </a> */}
           </div>
           <div class="col-lg-6 text-center text-lg-right">
             <img class="img-fluid mt-5 " src={headimg} alt="" />
@@ -1469,13 +1469,13 @@ render() {
                 >
                   <i class="fa fa-angle-right mr-2"></i>FAQ
                 </a>
-                <a
+                {/* <a
                   class="text-white"
                   href="#contact"
                   style={{ textDecoration: `none` }}
                 >
                   <i class="fa fa-angle-right mr-2"></i>Contact
-                </a>
+                </a> */}
               </div>
             </div>
             <div id="contact" class="col-lg-3 col-md-6 mb-5">

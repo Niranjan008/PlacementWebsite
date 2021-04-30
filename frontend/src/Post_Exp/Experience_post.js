@@ -217,7 +217,7 @@ render() {
                     {this.state.validemail?<center><p class="help-block text-danger">Please enter valid email</p></center>:null}
                   </div>
                   <div class="control-group">
-                    <input type="text" class="form-control-post" id="subject" placeholder="Passed out year" required="required" data-validation-required-message="Please enter the year of interview" name="year" value={year} onChange={this.onChange} />
+                    <input type="text" class="form-control-post" id="subject" placeholder="Year of passing out" required="required" data-validation-required-message="Please enter the year of interview" name="year" value={year} onChange={this.onChange} />
                     <br/>
                     {this.state.validyear?<center><p class="help-block text-danger">Please enter year</p></center>:null}
                   </div>
