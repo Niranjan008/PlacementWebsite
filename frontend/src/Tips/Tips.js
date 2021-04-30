@@ -4,7 +4,10 @@ import jQuery from "jquery";
 import "./style.css";
 import cseaLogo1 from "../assets/img/csea_black1.png";
 class Tips extends Component {
+  
+  
 componentDidMount() {
+
 jQuery(document).ready(function ($) {
   var timelines = $(".cd-horizontal-timeline"),
     eventsMinDistance = 120;
@@ -89,7 +92,7 @@ jQuery(document).ready(function ($) {
           );
         }
       );
-
+      
       //on swipe, show next/prev event content
       timelineComponents["eventsContent"].on("swipeleft", function () {
         var mq = checkMQ();
@@ -472,13 +475,13 @@ return (
             
 
             <li >
-              <a href="/" class="nav-item nav-link active">
+              <a href="/" class="nav-item nav-link">
                 Home
               </a>
             </li>
             
             <li class="active">
-              <a href="/tips" class="nav-item nav-link">
+              <a href="/tips" class="nav-item nav-link active">
                 Preparation
               </a>
             </li>
@@ -585,16 +588,9 @@ return (
           <a href="#0" class="prev inactive">
             Prev
           </a>
-          {/* <span><img src="https://img.icons8.com/metro/26/000000/long-arrow-left.png"/></span> */}
-              <span > Prev</span>
-              <span  className="prev-next"> Next</span>
-              {/* <span><img  src="https://img.icons8.com/metro/26/000000/long-arrow-right.png"/></span> */}
-          {/* </li> */}
-          {/* <li> */}
           <a href="#0" class="next">
             Next
           </a>
-          {/* </li> */}
         </ul>
       </div>
 
@@ -608,7 +604,7 @@ return (
             <p
               style={{
                 fontSize: `20px`,
-                fontFamily: `Handlee`,
+                fontFamily: `"Nunito",sans-serif`,
                 color: `#00394f`,
               }}
             >
@@ -637,7 +633,7 @@ return (
             <p
               style={{
                 fontSize: `20px`,
-                fontFamily: `Handlee`,
+                fontFamily: `"Nunito",sans-serif`,
                 color: `#00394f`,
               }}
             >
@@ -658,7 +654,7 @@ return (
             <p
               style={{
                 fontSize: `20px`,
-                fontFamily: `Handlee`,
+                fontFamily: `"Nunito",sans-serif`,
                 color: `#00394f`,
               }}
             >
@@ -684,13 +680,18 @@ return (
             <p
               style={{
                 fontSize: `20px`,
-                fontFamily: `Handlee`,
+                fontFamily: `"Nunito",sans-serif`,
                 color: `#00394f`,
               }}
             >
-              ❏ You can refer https://www.indiabix.com/ or the book
-              “Quantitative Aptitude By R S Aggarwal” for aptitude
-              preparation.
+              ❏ You can refer “Quantitative Aptitude By R S Aggarwal” for aptitude
+              preparation and <span  ><a  style={{
+                fontSize: `20px`,
+                fontFamily: `"Nunito",sans-serif`,
+                color: `#00394f`,
+                fontWeight:`normal`
+              }} href="https://www.indiabix.com/">www.indiabix.com</a> </span>
+              
             </p>
           </li>
 
@@ -702,7 +703,7 @@ return (
             <p
               style={{
                 fontSize: `20px`,
-                fontFamily: `Handlee`,
+                fontFamily: `"Nunito",sans-serif`,
                 color: `#00394f`,
               }}
             >
@@ -729,7 +730,7 @@ return (
             <p
               style={{
                 fontSize: `20px`,
-                fontFamily: `Handlee`,
+                fontFamily: `"Nunito",sans-serif`,
                 color: `#00394f`,
               }}
             >
@@ -778,6 +779,11 @@ return (
             </p>
           </li>
 
+          <li  data-date="10/07/2014">
+                <h2 style={{ fontSize: `40px`, fontFamily: `Handlee` }}>
+                  All the Best!!!
+                </h2>
+                </li>
           
         </ol>
       </div>

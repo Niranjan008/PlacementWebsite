@@ -26,6 +26,7 @@ router.get("/get-pending-approvals", userAuth, checkRole(["admin"]), async (req,
 await getpendingapprovals(res);
 });
 
+
 //api for viewing all experiences without authorization 
 router.get("/getallexp", async (req, res) => {
 await getallexp(res);

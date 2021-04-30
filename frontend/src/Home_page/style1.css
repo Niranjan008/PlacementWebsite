@@ -351,13 +351,13 @@ padding-bottom: 20px;
 #faq .faq-list .question {
 display: block;
 position: relative;
-font-family: #f82249;
+font-family: #17a2b8;;
 font-size: 18px;
 line-height: 24px;
 font-weight: 400;
 padding-left: 25px;
 cursor: pointer;
-color: #e0072f;
+color:#17a2b8;
 transition: 0.3s;
 }
 
@@ -382,7 +382,7 @@ color: black;
 }
 
 #faq .faq-list .collapsed:hover {
-color: #f82249;
+color: #17a2b8;
 }
 
 #faq .faq-list .collapsed .icon-show {

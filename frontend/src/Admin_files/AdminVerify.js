@@ -39,14 +39,9 @@ render(){
                     <th style={{padding:`10px`}}>Delete</th>
                     {this.state.dets.map(function(item, key) {
                         function download() {
-                            var strj = item.experiencefile.data.data
-                            var base64 = btoa(
-                                new Uint8Array(strj)
-                                    .reduce((data, byte) => data + String.fromCharCode(byte), '')
-                                );
-                                
-                            console.log(base64.toString())
-                            const linkSource = `data:application/pdf;base64,${base64}`;
+                            var strj = item.experiencefile
+                            
+                            const linkSource = strj;
                             const downloadLink = document.createElement("a");
                             const fileName = "abc.pdf";
                             downloadLink.href = linkSource;

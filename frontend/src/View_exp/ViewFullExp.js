@@ -20,6 +20,7 @@ class ViewFullExp extends Component{
       super();
       this.state = {
           dets:[],
+          ondownload:false
           
           
       }
@@ -46,6 +47,7 @@ class ViewFullExp extends Component{
   }
   
   download = ()=> {
+    this.setState({ondownload:true})
     const {name,year,company,exptext,linkedinlink,experiencefile} = localStorage.get('indets')
     var strj = experiencefile
     var base64 = btoa(
@@ -122,7 +124,7 @@ class ViewFullExp extends Component{
             <div class="navbar-nav font-weight-bold mx-auto py-0 ">
               
               <li >
-                <a href="/" class="nav-item nav-link active">
+                <a href="/" class="nav-item nav-link">
                   Home
                 </a>
               </li>
@@ -132,7 +134,7 @@ class ViewFullExp extends Component{
                 </a>
               </li>
               <li class="active">
-                <a href="/exp_view" class="nav-item nav-link">
+                <a href="/exp_view" class="nav-item nav-link active">
                   Experiences
                 </a>
               </li>
@@ -155,9 +157,10 @@ class ViewFullExp extends Component{
       </div>
             <br/>
             <br/>
+            
             <center>
-              <h1 style={{paddingLeft:`20px`}}>Name: {name}</h1>
-              <h2 style={{paddingLeft:`20px`}}>Attended {company} at {year}</h2>
+              <h1 style={{paddingLeft:`20px`}}>{name}</h1>
+              <h2 style={{paddingLeft:`20px`}}>{company} - {year}</h2>
             </center>
             
             <br/>
@@ -170,7 +173,7 @@ class ViewFullExp extends Component{
                   paddingRight:`20px`,
                   paddingBottom:`20px`
                 }}></p>
-            <center><span style={{
+           <center> {linkedinlink!='-'?<span style={{
                   fontSize: `20px`,
                   fontFamily: `Handlee`,
                   color: `#00394f`,
@@ -178,7 +181,8 @@ class ViewFullExp extends Component{
                   paddingLeft:`20px`,
                   paddingRight:`2px`,
                   paddingBottom:`20px`
-                }}>Connect with {name} via </span>{linkedinlink!='-'?  <a
+                }}>Connect with {name} via </span> :null}
+                 {linkedinlink!='-'?<a
                 class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
                 style={{ width: `38px`, height: `38px`,marginBottom:`10px` }}
                 href={linkedinlink}
@@ -187,8 +191,10 @@ class ViewFullExp extends Component{
                 <i class="fab fa-linkedin-in"></i>
               </a>:null}
               <br/>
-              {isMobile?<button class = "btn btn-primary py-21 px-4 form-control-post" type="button" onClick={this.download}>Open Experience</button>:null}
-        
+              {isMobile?<center><button class = "btn btn-primary py-21 px-4 " type="button" onClick={this.download}>Open Experience</button></center>:null}
+              <br/>
+              <br />
+              {isMobile && this.state.ondownload ?<center>< p style={{color:`green`,fontWeight:`bold`}}>File Downloaded</p></center>:null}
 
               </center>
       </div>

@@ -33,65 +33,66 @@ componentDidMount() {
       width: wid,
     });
   }
+  
 
-  nav.find(" li a").click(function (e) {
-    e.preventDefault();
-    if (!$(this).parent().hasClass("active") && !nav.hasClass("animate")) {
-      nav.addClass("animate");
+  // nav.find(" li a").click(function (e) {
+  //   e.preventDefault();
+  //   if (!$(this).parent().hasClass("active") && !nav.hasClass("animate")) {
+  //     nav.addClass("animate");
 
-      var _this = $(this);
+  //     var _this = $(this);
 
-      nav.find("li").removeClass("active");
+  //     nav.find("li").removeClass("active");
 
-      var position = _this.parent().position();
-      var width = _this.parent().width();
+  //     var position = _this.parent().position();
+  //     var width = _this.parent().width();
 
-      if (position.left >= pos) {
-        line.animate(
-          {
-            width: position.left - pos + width,
-          },
-          300,
-          function () {
-            line.animate(
-              {
-                width: width,
-                left: position.left,
-              },
-              150,
-              function () {
-                nav.removeClass("animate");
-              }
-            );
-            _this.parent().addClass("active");
-          }
-        );
-      } else {
-        line.animate(
-          {
-            left: position.left,
-            width: pos - position.left + wid,
-          },
-          300,
-          function () {
-            line.animate(
-              {
-                width: width,
-              },
-              150,
-              function () {
-                nav.removeClass("animate");
-              }
-            );
-            _this.parent().addClass("active");
-          }
-        );
-      }
+  //     if (position.left >= pos) {
+  //       line.animate(
+  //         {
+  //           width: position.left - pos + width,
+  //         },
+  //         300,
+  //         function () {
+  //           line.animate(
+  //             {
+  //               width: width,
+  //               left: position.left,
+  //             },
+  //             150,
+  //             function () {
+  //               nav.removeClass("animate");
+  //             }
+  //           );
+  //           _this.parent().addClass("active");
+  //         }
+  //       );
+  //     } else {
+  //       line.animate(
+  //         {
+  //           left: position.left,
+  //           width: pos - position.left + wid,
+  //         },
+  //         300,
+  //         function () {
+  //           line.animate(
+  //             {
+  //               width: width,
+  //             },
+  //             150,
+  //             function () {
+  //               nav.removeClass("animate");
+  //             }
+  //           );
+  //           _this.parent().addClass("active");
+  //         }
+  //       );
+  //     }
 
-      pos = position.left;
-      wid = width;
-    }
-  });
+  //     pos = position.left;
+  //     wid = width;
+  //   }
+  // });
 
   // Timeline
 
@@ -130,7 +131,7 @@ componentDidMount() {
 
 setTimeout(function(){
 $("#loader").hide();
-}, 4000);
+}, 3000);
  
 
   window.addEventListener("load", callbackFunc);
@@ -196,7 +197,7 @@ render() {
         class="container-fluid bg-light position-relative shadow"
         id="starting"
       >
-        <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5">
+        <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5" >
           <a
             href="#about"
             class="navbar-brand font-weight-bold text-secondary"
@@ -225,23 +226,23 @@ render() {
             <div class="navbar-nav font-weight-bold mx-auto py-0 ">
             
               <li>
-                <a href="#about" class="nav-item nav-link ">
+                <a href="#about" class="nav-item nav-link " id="aboutclick">
                   About
                 </a>
               </li>
               <li>
-                <a href="#experience" class="nav-item nav-link">
-                  <Link style={{ textDecoration: `none` }}>Preparation</Link>
+                <a href="/tips" class="nav-item nav-link">
+                  Preparation
                 </a>
               </li>
               <li>
-                <a href="#experience" class="nav-item nav-link">
-                  <Link style={{ textDecoration: `none` }}>Experiences</Link>
+                <a href="/exp_view" class="nav-item nav-link">
+                  Experiences
                 </a>
               </li>
               
               <li>
-                <a href="#experience" class="nav-item nav-link ">
+                <a href="/exp_post" class="nav-item nav-link ">
                   Post
                 </a>
               </li>
@@ -253,7 +254,7 @@ render() {
 
               <li>
                 <a href="#contact" class="nav-item nav-link">
-                  <Link style={{ textDecoration: `none` }}>Contact Us</Link>
+                  <Link style={{ textDecoration: `none` }}>Contact</Link>
                 </a>
               </li>
 
@@ -269,18 +270,17 @@ render() {
         <div class="row align-items-center px-3">
           <div class="col-lg-6 text-center text-lg-left">
             <h1 class="display-3 font-weight-normal text-white ">
-              CSEA Placements
+              CSEA Placement Experiences
             </h1>
             <h4
               class="text-white font-weight-light mb-4 mt-5 mt-lg-0"
               style={{ fontSize: `30px` }}
             >
-              Your one-stop web portal for enhancing your Job Placement
-              preparations!
+              One stop web portal for enhancing your placement preparation!
               <br />
               <br />
               Interview Experiences of ambitious students from College of
-              Engineering Guindy, curated into a website for your benefit.
+              Engineering Guindy, curated into a website for your own benefit.
             </h4>
             {/* <h1 class="display-3 font-weight-bold text-white">
               New Approach to Kids Education
@@ -556,9 +556,8 @@ render() {
                     <p class="haha">
                       {" "}
                       The secret to getting ahead is getting started.
-                      Placement being the significant part of the future
-                      ahead, it needs both hard and smart work to be shown in
-                      preparation. To provide a head start, here are some
+                      Placement being a key to unlock your future, it needs both hard and smart work to be shown in
+                      preparation. To give you an edge, here are some
                       guidelines to prepare you for the big day!
                     </p>
                     <p>
@@ -957,96 +956,85 @@ render() {
         <ul>
           <li>
             <div>
-              <time>1</time>
+              <time style={{color:`white`}}>1</time>
               <div class="discovery">
                 <h1>Clarify the problem statement:</h1>
                 <p>
-                  Its important to understand the problem clearly before
-                  attempting to solve it. Its vital you ask the right
-                  questions.
+                Before attempting to solve a problem, it is important to understand the problem clearly.Hence it is important to ask right questions.
+
                 </p>
               </div>
             </div>
           </li>
           <li>
             <div>
-              <time>2</time>
+              <time style={{color:`white`}}>2</time>
               <div class="discovery">
                 <h1>Constraints:</h1>
                 <p>
-                  Once you are clear with the problem statement you need to
-                  ask if there are any particular constraints that you need to
-                  adhere to.
+                If there is a clear understanding of the problem statement, the next step is to determine whether there are any specific constraints that must be followed.
+
                 </p>
               </div>
             </div>
           </li>
           <li>
             <div>
-              <time>3</time>
+              <time style={{color:`white`}}>3</time>
               <div class="discovery">
                 <h1>Observations:</h1>
                 <p>
-                  Any problem has some specific peculiar behavior associated
-                  to it. Remember you need to explicitly tell the interviewer
-                  all your observations.
+                Every problem has a peculiar behaviour associated with it. So don't forget to tell the interviewer about all of the observations of that problem.
+
                 </p>
               </div>
             </div>
           </li>
           <li>
             <div>
-              <time>4</time>
+              <time style={{color:`white`}}>4</time>
               <div class="discovery">
                 <h1>Approaches:</h1>
                 <p>
-                  This is the most crucial part in the entire interview
-                  process. If you plan to use a data structure to solve the
-                  problem, specify the reason as to why you chose to do so. If
-                  you get stuck try the brute force approach.
+                This is the most crucial part in the entire interview process. If you intend to solve the problem with a data structure, explain why you want to do so. If you're stuck, use the brute force method.
                 </p>
               </div>
             </div>
           </li>
           <li>
             <div>
-              <time>5</time>
+              <time style={{color:`white`}}>5</time>
               <div class="discovery">
                 <h1>Discuss your approach:</h1>
                 <p>
-                  Once you are done with narrowing down the approach and you
-                  think you might have a solution, discuss it with the
-                  interviewer. If the interviewer suggests something different
-                  gracefully accept it and start thinking along those lines.
-                  Dont be too rigid with your approach.
+                When you've narrowed down your plan and believe you have a solution, talk to the interviewer about it. Accept if the interviewer proposes something new and begin thinking along those lines. Don't be too rigid in your thinking.
                 </p>
               </div>
             </div>
           </li>
           <li>
             <div>
-              <time>6</time>
+              <time style={{color:`white`}}>6</time>
               <div class="discovery">
                 <h1>Edge Cases and counter examples:</h1>
                 <p>
-                  Once you are certain for a particular solution make sure you
-                  check out your approach for all the edge cases.
+                If the solution for the problem is decided, make sure to test it for all possible edge-cases.
                 </p>
               </div>
             </div>
           </li>
           <li>
             <div>
-              <time>7</time>
+              <time style={{color:`white`}}>7</time>
               <div class="discovery">
                 <h1>Writing the Code:</h1>
                 <p class="p1">
-                  Make sure of the following:
-                  <ol class="p1">a. Your code is readable.</ol>
-                  <ol class="p1">b. You specify comments in your code</ol>
+                Make sure to check the following:
+
+                  <ol class="p1">a. The code should be readable and understandable.</ol>
+                  <ol class="p1">b. Add comments to your code.</ol>
                   <ol class="p1">
-                    c. Dry run your code with a few examples before showing it
-                    to the interviewer.
+                  c. Before showing the code to the interviewer, dry run it with a few examples.
                   </ol>
                 </p>
               </div>
@@ -1084,22 +1072,17 @@ render() {
                     class="collapsed question"
                     href="#faq1"
                   >
-                    Which programming language should I use?
+                    Which programming language should I use?<img style={{flexDirection:`column-reverse`,width:`15px`,height:`15px`,float:`right`}}src="https://img.icons8.com/ultraviolet/40/000000/down-squared.png" />
                     <i class="bi bi-chevron-down icon-show"></i>
                     <i class="bi bi-chevron-up icon-close"></i>
                   </div>
+                  
                   <div id="faq1" class="collapse" data-bs-parent=".faq-list">
                     <p>
-                      Companies usually let you choose, in which case you
-                      should use your most comfortable language. Sometimes,
-                      your interviewer will ask a question specific to a
-                      language if you list it on your resume. So keep that in
-                      mind! If you're not confident with a language, make that
-                      clear on your resume. Put your less-strong languages
-                      under a header like "Working Knowledge" or assign star
-                      rating.
+                    Companies typically give you the option of choosing your preferred programming language, in which case you can do so. If you list a language on your resume, your interviewer can ask you a question about it. As a result, keep that in mind! Make it clear on your resume if you aren't completely confident in a language. Put less-stronger languages under a heading like "Working Knowledge" or give them a star ranking.
                     </p>
                   </div>
+                  
                 </li>
 
                 <li>
@@ -1108,13 +1091,13 @@ render() {
                     href="#faq2"
                     class="collapsed question"
                   >
-                    What if I draw a blank and can't answer a question?
+                    What if I draw a blank and can't answer a question?<img style={{flexDirection:`column-reverse`,width:`15px`,height:`15px`,float:`right`}}src="https://img.icons8.com/ultraviolet/40/000000/down-squared.png" />
                     <i class="bi bi-chevron-down icon-show"></i>
                     <i class="bi bi-chevron-up icon-close"></i>
                   </div>
                   <div id="faq2" class="collapse" data-bs-parent=".faq-list">
                     <p>
-                      It is okay to not know. The interview process mainly
+                      It is ok to not know. The interview process mainly
                       tests the thinking process/ logical ability rather than
                       providing correct answers. If you are struck, ask your
                       interviewer for help or hint. Don't give up!
@@ -1128,7 +1111,7 @@ render() {
                     href="#faq3"
                     class="collapsed question"
                   >
-                    How should I behave in a face to face interview?{" "}
+                    How should I behave in a face to face interview?{" "}<img style={{flexDirection:`column-reverse`,width:`15px`,height:`15px`,float:`right`}}src="https://img.icons8.com/ultraviolet/40/000000/down-squared.png" />
                     <i class="bi bi-chevron-down icon-show"></i>
                     <i class="bi bi-chevron-up icon-close"></i>
                   </div>
@@ -1148,7 +1131,7 @@ render() {
                     href="#faq4"
                     class="collapsed question"
                   >
-                    What should I wear for the interview?
+                    What should I wear for the interview?<img style={{flexDirection:`column-reverse`,width:`15px`,height:`15px`,float:`right`}}src="https://img.icons8.com/ultraviolet/40/000000/down-squared.png" />
                     <i class="bi bi-chevron-down icon-show"></i>
                     <i class="bi bi-chevron-up icon-close"></i>
                   </div>
@@ -1261,145 +1244,243 @@ render() {
 
       
       {/* Team end */}
-      {/* <!-- Footer Start --> */}
-      <div class="container-fluid bg-secondary text-white mt-5 py-5 px-sm-3 px-md-5">
-        <div class="row pt-5">
-          <div class="col-lg-3 col-md-6 mb-5">
-            <a
-              href=""
-              class="navbar-brand font-weight-bold text-primary m-0 mb-4 p-0"
-              style={{ fontSize: `40px`, lineHeight: `40px` }}
-            >
-              <i class="flaticon-043-teddy-bear"></i>
-              <span class="text-white " style={{ fontFamily: `Handlee` }}>
-                CSEA
-              </span>
-            </a>
-           
-            <div class="d-flex justify-content-start mt-4">
-              {/* <a
+      
+       <div class="container-fluid pt-5">
+          <div class="container">
+            <div class="text-center pb-2">
+              <p class="section-title px-5">
+                <span class="px-2">The Team</span>
+              </p>
+              <h2 class="mb-4">Designed and Developed by</h2>
+            </div>
+            <br />
+            <br/>
+            <div class="row">
+              <div class="col-md-6 col-lg-2 text-center team mb-5">
+              
+
+                <h3>Aarti </h3>
+                <i>3rd year CSE</i>
+                <br />
+                <a
+                  class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
+                  style={{ width: `38px`, height: `38px` }}
+                  href="https://www.linkedin.com/in/aarti-v-a33963180/"
+                  target="_blank"
+                >
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </div>
+              <div class="col-md-6 col-lg-2 text-center team mb-5">
+               
+                <h3>Lekha</h3>
+                <i>3rd year CSE</i>
+                <br />
+                <a
+                  class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
+                  style={{ width: `38px`, height: `38px` }}
+                  href="https://www.linkedin.com/in/lekha-shanthini-r/"
+                  target="_blank"
+                >
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </div>
+
+              
+
+              <div class="col-md-6 col-lg-2 text-center team mb-5">
+              
+                <h3>Niranjan </h3>
+                <i>3rd year CSE</i>
+                <br />
+                <a
+                  class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
+                  style={{ width: `38px`, height: `38px` }}
+                  href="https://www.linkedin.com/in/niranjan-k-a45966182/"
+                  target="_blank"
+                >
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </div>
+
+              
+
+              <div class="col-md-6 col-lg-2 text-center team mb-5">
+               
+                <h3>Shruthi </h3>
+                <i>3rd year CSE</i>
+                <br />
+                <a
+                  class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
+                  style={{ width: `38px`, height: `38px` }}
+                  href="https://www.linkedin.com/in/shruthi-s-608826180/"
+                  target="_blank"
+                >
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </div>
+              <div class="col-md-6 col-lg-2 text-center team mb-5">
+               
+                <h3>Sowmiya</h3>
+                <i>3rd year CSE</i>
+                <br />
+                <a
+                  class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
+                  style={{ width: `38px`, height: `38px` }}
+                  href="https://www.linkedin.com/in/sowmiya2805"
+                  target="_blank"
+                >
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </div>
+              <div class="col-md-6 col-lg-2 text-center team mb-5">
+                
+
+                <h3>Surya </h3>
+                <i>3rd year CSE</i>
+                <br />
+                <a
+                  class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
+                  style={{ width: `38px`, height: `38px` }}
+                  href="https://www.linkedin.com/in/surya-nagarajan-14074a19b/"
+                  target="_blank"
+                >
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div> 
+
+        
+
+ {/* <!-- Footer Start --> */}
+        <div class="container-fluid bg-secondary text-white mt-5 py-5 px-sm-3 px-md-5">
+          <div class="row pt-5">
+            <div class="col-lg-3 col-md-6 mb-5">
+              <a
+                href=""
+                class="navbar-brand font-weight-bold text-primary m-0 mb-4 p-0"
+                style={{ fontSize: `40px`, lineHeight: `40px` }}
+              >
+                <i class="flaticon-043-teddy-bear"></i>
+                <span class="text-white " style={{ fontFamily: `Handlee` }}>
+                  CSEA
+                </span>
+                
+              </a>
+              
+              <div class="d-flex justify-content-start mt-4">
+                {/* <a
                 class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
                 style={{ width: `38px`, height: `38px` }}
                 href="#"
               >
                 <i class="fab fa-twitter"></i>
               </a> */}
-              <a
-                class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
-                style={{ width: `38px`, height: `38px` }}
-                href="https://www.facebook.com/csea.ceg"
-                target="_blank"
-              >
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a
-                class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
-                style={{ width: `38px`, height: `38px` }}
-                href="https://www.linkedin.com/company/csea-ceg/"
-                target="_blank"
-              >
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-              <a
-                class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
-                style={{ width: `38px`, height: `38px` }}
-                href="https://www.instagram.com/csea_ceg/"
-                target="_blank"
-              >
-                <i class="fab fa-instagram"></i>
-              </a>
+                <a
+                  class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
+                  style={{ width: `38px`, height: `38px` }}
+                  href="https://www.facebook.com/csea.ceg"
+                  target="_blank"
+                >
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a
+                  class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
+                  style={{ width: `38px`, height: `38px` }}
+                  href="https://www.linkedin.com/company/csea-ceg/"
+                  target="_blank"
+                >
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a
+                  class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
+                  style={{ width: `38px`, height: `38px` }}
+                  href="https://www.instagram.com/csea_ceg/"
+                  target="_blank"
+                >
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </div>
+              
+            
             </div>
-          </div>
-          
-          <div class="col-lg-3 col-md-6 mb-5">
-            <h3 class="text-primary mb-4">Designed and Developed by</h3>
-            <div class="d-flex flex-column justify-content-start">
-              <a
-                style={{ textDecoration: `none` }}
-                class="text-white mb-2"
-                href="https://www.linkedin.com/in/aarti-v-a33963180/"
-                target="_blank"
-              >
-                <i class="fa fa-angle-right mr-2"></i>Aarti V - 3rd year CSE
-              </a>
-              <a
-                style={{ textDecoration: `none` }}
-                class="text-white mb-2"
-                href="https://www.linkedin.com/in/surya-nagarajan-14074a19b/"
-                target="_blank"
-              >
-                <i class="fa fa-angle-right mr-2"></i>Surya N - 3rd year CSE
-              </a>
-              <a
-                style={{ textDecoration: `none` }}
-                class="text-white mb-2"
-                href="https://www.linkedin.com/in/niranjan-k-a45966182/"
-                target="_blank"
-              >
-                <i class="fa fa-angle-right mr-2"></i>Niranjan K - 3rd year CSE
-              </a>
-              <a
-                style={{ textDecoration: `none` }}
-                class="text-white mb-2"
-                href="https://www.linkedin.com/in/shruthi-s-608826180/"
-                target="_blank"
-              >
-                <i class="fa fa-angle-right mr-2"></i>Shruthi S- 3rd year CSE
-              </a>
-              <a
-                style={{ textDecoration: `none` }}
-                class="text-white"
-                href="https://www.linkedin.com/in/lekha-shanthini-r/"
-                target="_blank"
-              >
-                <i class="fa fa-angle-right mr-2"></i>
-                Lekha Shanthini R - 3rd year CSE
-              </a>
+           
+
+           
+
+             <div class="col-lg-3 col-md-6 mb-5"> 
+              <h3 class="text-primary mb-4">Get In Touch</h3> 
+              {/* <div class="d-flex">
+                <h4 class="fa fa-map-marker-alt text-primary"></h4>
+                <div class="pl-3">
+                  <h5 class="text-white">Address</h5>
+                  <p>123 Street, New York, USA</p>
+                </div>
+              </div> */}
+              <div class="d-flex">
+                <h4 class="fa fa-envelope text-primary"></h4>
+                <div class="pl-3">
+                  <h5 class="text-white">Email</h5>
+                  <p> placements@abacus.org.in</p>
+                </div>
+              </div>
+              <div class="d-flex">
+                <h4 class="fa fa-phone-alt text-primary"></h4>
+                <div class="pl-3">
+                  <h5 class="text-white">Phone</h5>
+                  <p>Abinaya S K C</p>
+                  <p>+91 8825649922</p>
+                  <p>Varsha A</p>
+                  <p>+91 9489463257</p>
+                </div>
+              </div> 
+            </div> 
+
+            <div class="col-lg-3 col-md-6 mb-5">
+              <h3 class="text-primary mb-4">Quick Links</h3>
+              <div class="d-flex flex-column justify-content-start">
+                <a
+                  class="text-white mb-2"
+                  href="#about"
+                  style={{ textDecoration: `none` }}
+                >
+                  <i class="fa fa-angle-right mr-2"></i>About Us
+                </a>
+                <a
+                  class="text-white mb-2"
+                  href="/tips"
+                  style={{ textDecoration: `none` }}
+                >
+                  <i class="fa fa-angle-right mr-2"></i>Prep Tips
+                </a>
+                <a
+                  class="text-white mb-2"
+                  href="/exp_view"
+                  style={{ textDecoration: `none` }}
+                >
+                  <i class="fa fa-angle-right mr-2"></i>Interview Experience
+                </a>
+                <a
+                  class="text-white mb-2"
+                  href="#faq"
+                  style={{ textDecoration: `none` }}
+                >
+                  <i class="fa fa-angle-right mr-2"></i>FAQ
+                </a>
+                <a
+                  class="text-white"
+                  href="#contact"
+                  style={{ textDecoration: `none` }}
+                >
+                  <i class="fa fa-angle-right mr-2"></i>Contact
+                </a>
+              </div>
             </div>
-          </div>
-          <div class="col-lg-3 col-md-6 mb-5">
-            <h3 class="text-primary mb-4">Quick Links</h3>
-            <div class="d-flex flex-column justify-content-start">
-              <a
-                class="text-white mb-2"
-                href="#about"
-                style={{ textDecoration: `none` }}
-              >
-                <i class="fa fa-angle-right mr-2"></i>About Us
-              </a>
-              <a
-                class="text-white mb-2"
-                href="#experience"
-                style={{ textDecoration: `none` }}
-              >
-                <i class="fa fa-angle-right mr-2"></i>Prep Tips
-              </a>
-              <a
-                class="text-white mb-2"
-                href="#experience"
-                style={{ textDecoration: `none` }}
-              >
-                <i class="fa fa-angle-right mr-2"></i>Interview Experience
-              </a>
-              <a
-                class="text-white mb-2"
-                href="#faq"
-                style={{ textDecoration: `none` }}
-              >
-                <i class="fa fa-angle-right mr-2"></i>FAQ
-              </a>
-              <a
-                class="text-white"
-                href="#contact"
-                style={{ textDecoration: `none` }}
-              >
-                <i class="fa fa-angle-right mr-2"></i>Contact Us
-              </a>
-            </div>
-          </div>
-          <div id="contact" class="col-lg-3 col-md-6 mb-5">
-            <h3 class="text-primary mb-4">Want to share your experience?</h3>
-            {/* <form action="">
+            <div id="contact" class="col-lg-3 col-md-6 mb-5">
+              <h3 class="text-primary mb-4">Want to share your experience?</h3>
+              {/* <form action="">
               <div class="form-group">
                 <input
                   type="text"
@@ -1425,35 +1506,35 @@ render() {
                 </button>
               </div>
             </form> */}
-            <button
-              class="btn btn-primary btn-block border-0 py-3"
-              type="submit"
-            >
-              Click here to post
-            </button>
+              <a href="/exp_post"><button
+                class="btn btn-primary btn-block border-0 py-3"
+                type="submit"
+              >
+                Click here to post
+              </button></a>
+            </div>
           </div>
-        </div>
-        <div
-          class="container-fluid pt-5"
-          style={{ borderTop: `1px solid rgba(23, 162, 184, 0.2)` }}
-        >
-          <p class="m-0 text-center text-white">
-            &copy;
-            <a class="text-primary font-weight-bold" href="#about">
-              CSEA
-            </a>
-            . All Rights Reserved.
-            {/* Designed by */}
-            {/* <a
+          <div
+            class="container-fluid pt-5"
+            style={{ borderTop: `1px solid rgba(23, 162, 184, 0.2)` }}
+          >
+            <p class="m-0 text-center text-white">
+              &copy;
+              <a class="text-primary font-weight-bold" href="#about">
+                CSEA
+              </a>
+              . All Rights Reserved.
+              {/* Designed by */}
+              {/* <a
               class="text-primary font-weight-bold"
               href="http://cseaceg.org.in/"
             >
               CSEA
             </a> */}
-          </p>
+            </p>
+          </div>
         </div>
-      </div>
-      {/* <!-- Footer End --> */}
+        {/* <!-- Footer End --> */}
 
       {/* <!-- Back to Top --> */}
       {/* <a href="#starting" class="btn btn-primary p-3 back-to-top">

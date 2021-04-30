@@ -19,7 +19,11 @@ constructor(){
       dets:[],
       onload: true,
       emptydata:false,
+
   }
+  this.searchRef = React.createRef();
+  this.buttonRef = React.createRef();
+
   this.savestate.bind(this)
 }
 
@@ -55,14 +59,28 @@ componentDidMount(){
     window.alert(e)
     console.log(e)
   })
-  $(window).on("load", function () {
-    $("#loader").fadeOut(15000);
-  });
+  // $(window).on("load", function () {
+  //   $("#loader").fadeOut(15000);
+  // });
+//   $('#search_text').keydown(function() {
+//     $('input').keyup(function(event) {
+//         if (event.which === 13)
+//         {
+//             event.preventDefault();
+//             $('#search_button').click();
+//         }
+//     });
+// });
+
+ 
+
+
 }
 
 displayExp = (dets) =>{
 console.log(dets);
 var slf = this
+
 
 return dets.map((det,index)=>
 (
@@ -120,6 +138,7 @@ var self = this
   })
 
 }
+
 searchlist = (cmpny)=>{
 var self = this
 self.setState({onload:true})
@@ -169,7 +188,7 @@ alert(e);
 
 render(){
 const search_text = this.state.search_text
-var cmpnylist = ['Accenture','Accolite','Alstom', 'Amazon','Aspire Systems','Barclays','BNY Mellon','Chronus','Citicorp','Enphase Energy','Fidelity','Global Analytics','Hubstream','Khoros','LTI','Micron Technology','Morgan Stanley','MU Sigma','Quatiphi Analytics','RBS','SAP Labs','TCS','TCS Digital','Tekion','Temenos','Verizon','Visa','Vivriti Capital','Walmart Labs','Wells Fargo','Wipro']
+var cmpnylist = ['Accenture','Accolite','Alstom', 'Amazon','Aspire Systems','Barclays','BNY Mellon','Chronus','Citicorp','Enphase Energy','Fidelity','Global Analytics','Hubstream','Khoros','LTI','Micron Technology','Morgan Stanley','MU Sigma','Quantiphi','RBS','SAP Labs','TCS','TCS Digital','Tekion','Temenos','Verizon','Visa','Vivriti Capital','Walmart Labs','Wells Fargo','Wipro']
   return (
       <div>
         <div class="container-fluid bg-light position-relative shadow">
@@ -199,7 +218,7 @@ var cmpnylist = ['Accenture','Accolite','Alstom', 'Amazon','Aspire Systems','Bar
         <div class="navbar-nav font-weight-bold mx-auto py-0 ">
         
           <li >
-            <a href="/" class="nav-item nav-link active">
+            <a href="/" class="nav-item nav-link">
               Home
             </a>
           </li>
@@ -210,7 +229,7 @@ var cmpnylist = ['Accenture','Accolite','Alstom', 'Amazon','Aspire Systems','Bar
             </a>
           </li>
           <li class="active">
-            <a href="/exp_view" class="nav-item nav-link">
+            <a href="/exp_view" class="nav-item nav-link active">
               Experiences
             </a>
           </li>
@@ -236,9 +255,9 @@ var cmpnylist = ['Accenture','Accolite','Alstom', 'Amazon','Aspire Systems','Bar
     
 <div style={{display:`flex`,flexDirection:`row`}}>
 <MDBIcon style={{paddingRight:`10px`,  paddingTop:`10px`}}floating icon="search" size="lg"/>
-<input className="form-control" name="search_text" id = "search_text" onChange={this.onChange} type="text" placeholder="Search" aria-label="Search" />
+<input className="form-control" name="search_text" id = "search_text" onChange={this.onChange}  ref={this.searchRef} type="text" placeholder="Enter company name" aria-label="Search" />
 <div className='search-bar-button'>
-<MDBBtn  onClick={this.searchexp} color="blue" rounded size="sm" type="submit" className="mrc"  >
+<MDBBtn  onClick={this.searchexp} color="blue" rounded size="sm" id = "search_button"type="submit" className="mrc" ref={this.buttonRef}  >
 Search
 </MDBBtn>
 </div>
@@ -276,7 +295,7 @@ All
         </div>
       </div> 
 
-    {this.state.emptydata?<center><h3>No experiences available Yet!</h3></center>:null}
+    {this.state.emptydata?<center><h3>No experiences available yet!</h3></center>:null}
   </div>
   );
   
