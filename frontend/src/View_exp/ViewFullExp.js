@@ -61,9 +61,11 @@ class ViewFullExp extends Component{
   
   download = ()=> {
     this.setState({ondownload:true})
-    const {name,year,company,exptext,linkedinlink,experiencefile} = localStorage.get('indets')
-    var strj = experiencefile
-    var base64 = btoa(
+    const {_id,name,year,company,exptext,linkedinlink,experiencefile} = localStorage.get('indets')
+    
+    axios.get('http://18.221.72.173:4000/api/experiences/getfile/'+_id).then(function (response) {
+      var strj = response.data.message[0].experiencefile
+      var base64 = btoa(
         new Uint8Array(strj)
             .reduce((data, byte) => data + String.fromCharCode(byte), '')
         );
@@ -74,6 +76,14 @@ class ViewFullExp extends Component{
     downloadLink.href = strj;
     downloadLink.download = fileName;
     downloadLink.click()
+      
+    })
+    .catch((e)=>
+    {
+    
+    alert(e);
+    })
+   
 }
 
   render(){
