@@ -125,9 +125,9 @@ componentDidMount() {
   //   $("#loader").fadeOut(5000);
     
   // });
-  $(window).on("load",function(){
-    $("#loader").show();
-});
+//   $(window).on("load",function(){
+//     $("#loader").show();
+// });
 
 setTimeout(function(){
 $("#loader").hide();
