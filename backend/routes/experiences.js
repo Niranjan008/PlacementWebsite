@@ -8,7 +8,8 @@ getpendingapprovals,
 getallexp,
 getspecificexp,
 changeapproval,
-deleteexp
+deleteexp,
+getfileonly
 } = require("../utils/Auth");
 const uuidv4 = require("uuid").v4;
 const path = require('path')
@@ -39,6 +40,10 @@ await getspecificexp(req.params.company, res);
 
 router.get("/giveapproval/:id", async (req, res) => {
 await changeapproval(req.params.id, res);
+})
+
+router.get("/getfile/:id",async (req,res)=>{
+    await getfileonly(req.params.id,res)
 })
 
 router.get("/deletef/:id",async (req,res)=>{

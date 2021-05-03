@@ -32,17 +32,30 @@ class ViewFullExp extends Component{
   
   componentDidMount(){
 
-    const {name,year,company,exptext,linkedinlink,experiencefile} = localStorage.get('indets')
-    var strj = experiencefile;
+    const {_id,name,year,company,exptext,linkedinlink} = localStorage.get('indets')
+
+    var strj
+    axios.get('http://18.221.72.173:4000/api/experiences/getfile/'+_id).then(function (response) {
       
-        
-    obj = document.createElement('object');
+      strj= response.data.message[0].experiencefile
+      obj = document.createElement('object');
     obj.style.width = '100%';
     obj.style.height = '500pt';
     obj.type = 'application/pdf';
+    console.log(strj)
     obj.data = strj;
     if(!isMobile)
-      ReactDOM.render(<center><iframe src={obj.data} type={obj.type}  style={{width:`90%`,height:`800px`}}></iframe></center>,document.getElementById('pdf'))
+      ReactDOM.render(<center><iframe src={obj.data} type={obj.type}  style={{width:`90%`,height:`800px`}}></iframe></center>,document.getElementById('pdf'))    
+  
+    })
+    .catch((e)=>
+    {
+    
+    alert(e);
+    })
+      
+        
+    
   
   }
   
@@ -64,7 +77,7 @@ class ViewFullExp extends Component{
 }
 
   render(){
-      const {name,year,company,exptext,linkedinlink,experiencefile} = localStorage.get('indets')
+      const {name,year,company,linkedinlink,experiencefile} = localStorage.get('indets')
 
       // var strj = experiencefile;
       // obj = document.createElement('object');

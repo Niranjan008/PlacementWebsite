@@ -1255,6 +1255,7 @@ render() {
             </div>
             <br />
             <br/>
+            
             <div class="row">
               <div class="col-md-6 col-lg-2 text-center team mb-5">
               
@@ -1271,9 +1272,9 @@ render() {
                   <i class="fab fa-linkedin-in"></i>
                 </a>
               </div>
-              <div class="col-md-6 col-lg-2 text-center team mb-5">
+              <div class="col-md-6 col-lg-3 text-center team mb-5">
                
-                <h3>Lekha</h3>
+                <h3>Lekha Shanthini</h3>
                 <i>3rd year CSE</i>
                 <br />
                 <a
@@ -1305,7 +1306,7 @@ render() {
 
               
 
-              <div class="col-md-6 col-lg-2 text-center team mb-5">
+              <div class="col-md-6 col-lg-3 text-center team mb-5">
                
                 <h3>Shruthi </h3>
                 <i>3rd year CSE</i>
@@ -1319,7 +1320,7 @@ render() {
                   <i class="fab fa-linkedin-in"></i>
                 </a>
               </div>
-              <div class="col-md-6 col-lg-2 text-center team mb-5">
+              {/* <div class="col-md-6 col-lg-2 text-center team mb-5">
                
                 <h3>Sowmiya</h3>
                 <i>3rd year CSE</i>
@@ -1332,7 +1333,7 @@ render() {
                 >
                   <i class="fab fa-linkedin-in"></i>
                 </a>
-              </div>
+              </div> */}
               <div class="col-md-6 col-lg-2 text-center team mb-5">
                 
 
@@ -1349,6 +1350,7 @@ render() {
                 </a>
               </div>
             </div>
+            
           </div>
         </div> 
 

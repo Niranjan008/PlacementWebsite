@@ -157,7 +157,7 @@ return user ? false : true;
 };
 
 const getallexp = async (res) => {
-const data = await experienceschema.find({ isverified: { $in: ["yes"] } })
+const data = await experienceschema.find({ isverified: { $in: ["yes"] } },'-experiencefile')
 console.log(data)
 return res.status(200).json({
   message: data,
@@ -165,12 +165,20 @@ return res.status(200).json({
 });
 };
 const getspecificexp = async (cmpny, res) => {
-const data = await experienceschema.find({ isverified: { $in: ["yes"] }, company: {$regex:cmpny,$options:'i'}})
+const data = await experienceschema.find({ isverified: { $in: ["yes"] }, company: {$regex:cmpny,$options:'i'}},'-experiencefile')
 console.log(data.length)
 return res.status(200).json({
   message: data,
   success: true
 });
+}
+
+const getfileonly = async (user_id,res)=>{
+  const data = await experienceschema.find({_id: user_id},'name year company linkedinlink experiencefile')
+  return res.status(200).json({
+    message: data,
+    success: true
+  });
 }
 
 const changeapproval = async (objid, res) => {
@@ -218,5 +226,6 @@ getpendingapprovals,
 getallexp,
 getspecificexp,
 changeapproval,
-deleteexp
+deleteexp,
+getfileonly
 };
