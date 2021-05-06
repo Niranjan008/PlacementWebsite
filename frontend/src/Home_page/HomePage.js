@@ -1425,7 +1425,7 @@ render() {
                 <h4 class="fa fa-envelope text-primary"></h4>
                 <div class="pl-3">
                   <h5 class="text-white">Email</h5>
-                  <p> placements@abacus.org.in</p>
+                  <a href="mailto:placements@abacus.org.in" style={{color:`white`}}><p> placements@abacus.org.in</p></a>
                 </div>
               </div>
               <div class="d-flex">
@@ -1455,7 +1455,7 @@ render() {
                   href="/tips"
                   style={{ textDecoration: `none` }}
                 >
-                  <i class="fa fa-angle-right mr-2"></i>Prep Tips
+                  <i class="fa fa-angle-right mr-2"></i>Preparation Tips
                 </a>
                 <a
                   class="text-white mb-2"

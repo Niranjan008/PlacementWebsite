@@ -40,8 +40,6 @@ onSubmit = (e) => {
   const {uname,email,year,company,linkedIn,selectedFile} = this.state;
   this.setState({validname:false,validyear:false,validcompany:false,validemail:false,validlinkedin:false,validfile:false})
   let formData = new FormData();
-  console.log(this.state.uname + this.state.email +
-  this.state.year +this.state.company + this.state.linkedIn + this.state.selectedFile)
   if(this.state.uname !== "" && this.state.email !== "" &&
     this.state.year !== "" && this.state.company !== "" && this.state.linkedIn !== "" && this.state.selectedFile !== "" ){
     formData.append('uname', uname);
@@ -49,10 +47,8 @@ onSubmit = (e) => {
     formData.append('year', year);
     formData.append('company',company);
     formData.append('linkedIn',linkedIn);
-    console.log(linkedIn)
     formData.append('selectedFile',result);
     const ss = {uname:uname,email:email,year:year,company:company,linkedIn:linkedIn,selectedFile:selectedFile}
-    console.log(ss)
     const headers = {
       'Content-Type': 'application/json',
       'Accept':'application/json'

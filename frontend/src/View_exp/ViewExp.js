@@ -25,13 +25,13 @@ constructor(){
   this.buttonRef = React.createRef();
 
   this.savestate.bind(this)
+  this.searchlist.bind(this)
 }
 
 
 
 onChange = (e) => {
 this.setState({ [e.target.name]: e.target.value });
-console.log(this.state.search_text)
 }
 
 
@@ -50,14 +50,13 @@ componentDidMount(){
 
       self.setState({dets:response.data.message,onload:false})
       
-      console.log("successfull!!");
+    
       
   })
   .catch((e)=>
   {
     
     window.alert(e)
-    console.log(e)
   })
   // $(window).on("load", function () {
   //   $("#loader").fadeOut(15000);
@@ -78,7 +77,7 @@ componentDidMount(){
 }
 
 displayExp = (dets) =>{
-console.log(dets);
+
 var slf = this
 
 
@@ -110,19 +109,12 @@ return dets.map((det,index)=>
 ))
 }
 
-dispExpPop = (dets,index) =>{
-
-return dets.map((det)=>{
-  
-
-})
-}
 
 searchexp = ()=>{
 var self = this
   self.setState({onload:true,emptydata:false})
-
-  axios.get('http://18.221.72.173:4000/api/experiences/getbycompany/' + self.state.search_text).then(function (response) {
+  if(this.state.search_text == ''){
+     axios.get('http://18.221.72.173:4000/api/experiences/getallexp').then(function (response) {
       self.setState({dets:response.data.message,search_text:self.state.search_text,onload:false})
       
       if(response.data.message.length==0){
@@ -136,6 +128,25 @@ var self = this
     
     alert(e);
   })
+  }
+  else{
+    var self = this
+    axios.get('http://18.221.72.173:4000/api/experiences/getbycompany/' + self.state.search_text).then(function (response) {
+
+        self.setState({dets:response.data.message,search_text:self.state.search_text,onload:false})
+        if(response.data.message.length==0){
+          self.searchlist({company:'All'})
+        }
+        
+        
+        
+    })
+    .catch((e)=>
+    {
+       alert(e);
+      
+    })
+  }
 
 }
 
@@ -162,7 +173,7 @@ if(cmpny.company == 'All'){
 }
 else{
 axios.get('http://18.221.72.173:4000/api/experiences/getbycompany/' + cmpny.company).then(function (response) {
-  console.log(cmpny.company.localeCompare('All'))
+ 
 
   if(response.data.message.length==0){
     self.setState({emptydata:true})
@@ -172,7 +183,7 @@ axios.get('http://18.221.72.173:4000/api/experiences/getbycompany/' + cmpny.comp
     self.setState({onload:true})
   self.setState({dets:response.data.message,search_text:self.state.search_text,onload:false})
   
-  console.log("successfull!!");
+
   }
   
   

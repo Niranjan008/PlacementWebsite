@@ -42,7 +42,6 @@ class ViewFullExp extends Component{
     obj.style.width = '100%';
     obj.style.height = '500pt';
     obj.type = 'application/pdf';
-    console.log(strj)
     obj.data = strj;
     if(!isMobile)
       ReactDOM.render(<center><iframe src={obj.data} type={obj.type}  style={{width:`90%`,height:`800px`}}></iframe></center>,document.getElementById('pdf'))    
@@ -89,30 +88,7 @@ class ViewFullExp extends Component{
   render(){
       const {name,year,company,linkedinlink,experiencefile} = localStorage.get('indets')
 
-      // var strj = experiencefile;
-      // obj = document.createElement('object');
-      // obj.style.width = '100%';
-      // obj.style.height = '500pt';
-      // obj.type = 'application/pdf';
-      // obj.data = strj;
-    
-        
       
-  //     var strj = experiencefile.data.data;
-  //     var base64 = btoa(
-  //         new Uint8Array(strj)
-  //           .reduce((data, byte) => data + String.fromCharCode(byte), '')
-  //       );
-        
-        
-      
-  //     const linkSource = `data:application/pdf;base64,${base64}`;
-
-  //     var StringDecoder = require('string_decoder').StringDecoder;
-
-
-  
-  // var decoder = new StringDecoder('utf8');
 
   
   

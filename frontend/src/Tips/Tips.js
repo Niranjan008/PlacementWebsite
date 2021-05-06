@@ -690,7 +690,7 @@ return (
                 fontFamily: `"Nunito",sans-serif`,
                 color: `#00394f`,
                 fontWeight:`normal`
-              }} href="https://www.indiabix.com/">www.indiabix.com</a> </span>
+              }} href="https://www.indiabix.com/" target="_blank">www.indiabix.com</a> </span>
               
             </p>
           </li>
