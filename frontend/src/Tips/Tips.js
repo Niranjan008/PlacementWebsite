@@ -481,7 +481,7 @@ return (
             </li>
             
             <li class="active">
-              <a href="/tips" class="nav-item nav-link active">
+              <a  style={{cursor:`default`}} class="nav-item nav-link active">
                 Preparation
               </a>
             </li>
@@ -490,11 +490,7 @@ return (
                 Experience
               </a>
             </li>
-            {/* <li>
-              <a href="/tips" class="nav-item nav-link">
-                Tips
-              </a>
-            </li> */}
+            
             <li>
               <a href="/exp_post" class="nav-item nav-link">
                 Post

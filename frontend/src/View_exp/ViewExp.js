@@ -19,7 +19,7 @@ constructor(){
       dets:[],
       onload: true,
       emptydata:false,
-
+      search_text:''
   }
   this.searchRef = React.createRef();
   this.buttonRef = React.createRef();
@@ -114,20 +114,7 @@ searchexp = ()=>{
 var self = this
   self.setState({onload:true,emptydata:false})
   if(this.state.search_text == ''){
-     axios.get('http://18.221.72.173:4000/api/experiences/getallexp').then(function (response) {
-      self.setState({dets:response.data.message,search_text:self.state.search_text,onload:false})
-      
-      if(response.data.message.length==0){
-        self.setState({emptydata:true})
-      }
-      
-      
-  })
-  .catch((e)=>
-  {
-    
-    alert(e);
-  })
+    self.searchlist({company:'All'})
   }
   else{
     var self = this
@@ -135,7 +122,7 @@ var self = this
 
         self.setState({dets:response.data.message,search_text:self.state.search_text,onload:false})
         if(response.data.message.length==0){
-          self.searchlist({company:'All'})
+          self.setState({emptydata:true})
         }
         
         
@@ -240,7 +227,7 @@ var cmpnylist = ['Accenture','Accolite','Alstom', 'Amazon','Aspire Systems','Bar
             </a>
           </li>
           <li class="active">
-            <a href="/exp_view" class="nav-item nav-link active">
+            <a  style={{cursor:`default`}} class="nav-item nav-link active">
               Experiences
             </a>
           </li>

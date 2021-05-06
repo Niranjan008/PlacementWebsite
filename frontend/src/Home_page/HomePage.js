@@ -310,7 +310,7 @@ render() {
         <div class="container">
           <div class="row align-items-center">
             <div class="col-lg-5 bounce-1  ">
-              <a href="http://cseaceg.org.in/" target="_blank">
+              <a href="https://cseaceg.org.in/" target="_blank">
                 <img
                   class=" csea-logo rounded mb-5 mb-lg-0"
                   src={cseaLogo}
@@ -1508,9 +1508,10 @@ render() {
                 </button>
               </div>
             </form> */}
-              <a href="/exp_post"><button
+              <a href="/exp_post" style={{textDecoration:`none`}}><button
                 class="btn btn-primary btn-block border-0 py-3"
                 type="submit"
+                
               >
                 Click here to post
               </button></a>
@@ -1522,7 +1523,7 @@ render() {
           >
             <p class="m-0 text-center text-white">
               &copy;
-              <a class="text-primary font-weight-bold" href="#about">
+              <a class="text-primary font-weight-bold" href="https://cseaceg.org.in/">
                 CSEA
               </a>
               . All Rights Reserved.

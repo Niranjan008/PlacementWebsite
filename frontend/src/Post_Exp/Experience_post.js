@@ -170,7 +170,7 @@ render() {
               </li>
                 
               <li class="active">
-                <a href="/exp_post" class="nav-item nav-link active">
+                <a  style={{cursor:`default`}} class="nav-item nav-link active">
                   Post
                 </a>
               </li>
@@ -213,7 +213,7 @@ render() {
                     {this.state.validemail?<center><p class="help-block text-danger">Please enter valid email</p></center>:null}
                   </div>
                   <div class="control-group">
-                    <input type="text" class="form-control-post" id="subject" placeholder="Year of passing out" required="required" data-validation-required-message="Please enter the year of interview" name="year" value={year} onChange={this.onChange} />
+                    <input type="text" class="form-control-post" id="subject" placeholder="Year of Passing Out" required="required" data-validation-required-message="Please enter the year of interview" name="year" value={year} onChange={this.onChange} />
                     <br/>
                     {this.state.validyear?<center><p class="help-block text-danger">Please enter year</p></center>:null}
                   </div>
@@ -223,7 +223,7 @@ render() {
                     {this.state.validyear?<center><p class="help-block text-danger">Please enter company</p></center>:null}
                   </div>
                   <div class="control-group">
-                    <input class="form-control-post" rows="6" id="linkedIn" placeholder="linkedIn URL"  data-validation-required-message="Please enter your linkedIn Link" name="linkedIn" value={linkedIn} onChange={this.onChange}></input>
+                    <input class="form-control-post" rows="6" id="linkedIn" placeholder="LinkedIn URL"  data-validation-required-message="Please enter your linkedIn Link" name="linkedIn" value={linkedIn} onChange={this.onChange}></input>
                     <br/>
                     {this.state.validlinkedin?<center><p class="help-block text-danger">Please enter your linkedin url</p></center>:null}
                     <center><p class="help-block text-danger" >* Fill with '-' if you don't have a LinkedIn profile</p></center>

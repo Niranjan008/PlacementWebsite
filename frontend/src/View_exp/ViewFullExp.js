@@ -133,7 +133,7 @@ class ViewFullExp extends Component{
                 </a>
               </li>
               <li class="active">
-                <a href="/exp_view" class="nav-item nav-link active">
+                <a  style={{cursor:`default`}} class="nav-item nav-link active">
                   Experiences
                 </a>
               </li>
