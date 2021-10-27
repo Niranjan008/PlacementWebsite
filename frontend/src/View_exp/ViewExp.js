@@ -38,6 +38,29 @@ this.setState({ [e.target.name]: e.target.value });
 savestate(ind){
 console.log(this.state.dets[ind])
 localStorage.set('indets',this.state.dets[ind])
+const {_id,name,year,company,exptext,linkedinlink,experiencefile} = localStorage.get('indets')
+    
+axios.get('http://18.118.34.18:4000/api/experiences/getfile/'+_id).then(function (response) {
+  var strj = response.data.message[0].experiencefile
+  var base64 = btoa(
+    new Uint8Array(strj)
+        .reduce((data, byte) => data + String.fromCharCode(byte), '')
+    );
+    
+console.log(base64.toString())
+const downloadLink = document.createElement("a");
+const fileName = "Experience" + "_" + name +".pdf";
+downloadLink.href = strj;
+downloadLink.download = fileName;
+downloadLink.click()
+  
+})
+.catch((e)=>
+{
+
+alert(e);
+})
+
 }
 componentDidMount(){
 
@@ -99,8 +122,7 @@ return dets.map((det,index)=>
           </div>
 
           <div class="card-link">
-<span onClick={() => this.savestate(index)}><Link target="_blank" to= {{pathname: '/exp_full_view'
-}} > Read Article </Link></span>
+<span onClick={() => this.savestate(index)} style={{color:`white`,cursor:`pointer`}}><u>Read Article</u> </span>
 
           </div>
       </div>
