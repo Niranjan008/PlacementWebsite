@@ -45,7 +45,7 @@ componentDidMount(){
 
 
   var self = this
-  axios.get('http://18.221.72.173:4000/api/experiences/getallexp',{mode:'cors'}).then(function (response) {
+  axios.get('http://18.118.34.18:4000/api/experiences/getallexp',{mode:'cors'}).then(function (response) {
 
 
       self.setState({dets:response.data.message,onload:false})
@@ -118,7 +118,7 @@ var self = this
   }
   else{
     var self = this
-    axios.get('http://18.221.72.173:4000/api/experiences/getbycompany/' + self.state.search_text).then(function (response) {
+    axios.get('http://18.118.34.18:4000/api/experiences/getbycompany/' + self.state.search_text).then(function (response) {
 
         self.setState({dets:response.data.message,search_text:self.state.search_text,onload:false})
         if(response.data.message.length==0){
@@ -142,7 +142,7 @@ var self = this
 self.setState({onload:true})
 self.setState({emptydata:false})
 if(cmpny.company == 'All'){
-  axios.get('http://18.221.72.173:4000/api/experiences/getallexp').then(function (response) {
+  axios.get('http://18.118.34.18:4000/api/experiences/getallexp').then(function (response) {
       self.setState({dets:response.data.message,search_text:self.state.search_text,onload:false})
       
       if(response.data.message.length==0){
@@ -159,7 +159,7 @@ if(cmpny.company == 'All'){
 
 }
 else{
-axios.get('http://18.221.72.173:4000/api/experiences/getbycompany/' + cmpny.company).then(function (response) {
+axios.get('http://18.118.34.18:4000/api/experiences/getbycompany/' + cmpny.company).then(function (response) {
  
 
   if(response.data.message.length==0){

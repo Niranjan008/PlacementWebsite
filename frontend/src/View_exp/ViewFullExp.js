@@ -35,7 +35,7 @@ class ViewFullExp extends Component{
     const {_id,name,year,company,exptext,linkedinlink} = localStorage.get('indets')
 
     var strj
-    axios.get('http://18.221.72.173:4000/api/experiences/getfile/'+_id).then(function (response) {
+    axios.get('http://18.118.34.18:4000/api/experiences/getfile/'+_id).then(function (response) {
       
       strj= response.data.message[0].experiencefile
       obj = document.createElement('object');
@@ -62,7 +62,7 @@ class ViewFullExp extends Component{
     this.setState({ondownload:true})
     const {_id,name,year,company,exptext,linkedinlink,experiencefile} = localStorage.get('indets')
     
-    axios.get('http://18.221.72.173:4000/api/experiences/getfile/'+_id).then(function (response) {
+    axios.get('http://18.118.34.18:4000/api/experiences/getfile/'+_id).then(function (response) {
       var strj = response.data.message[0].experiencefile
       var base64 = btoa(
         new Uint8Array(strj)

@@ -14,9 +14,7 @@ return (
   <div>
     <BrowserRouter>
       <Switch>
-        <Route exact path = "/">
-          <HomePage/>
-        </Route>
+       
         <Route exact path = "/adminlogin">
           <AdminLogin/>
         </Route>
@@ -31,6 +29,9 @@ return (
         </Route>
         <Route exact path = "/tips">
         <Tips/>
+        </Route>
+         <Route path = "/">
+          <HomePage/>
         </Route>
       </Switch>
       <Route exact path = "/exp_full_view">

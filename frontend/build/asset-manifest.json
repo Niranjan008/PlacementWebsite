@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/static/css/main.887311c4.chunk.css",
-    "main.js": "/static/js/main.c1ee23a4.chunk.js",
-    "main.js.map": "/static/js/main.c1ee23a4.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.248907bc.js",
-    "runtime-main.js.map": "/static/js/runtime-main.248907bc.js.map",
-    "static/js/2.0c67d57e.chunk.js": "/static/js/2.0c67d57e.chunk.js",
-    "static/js/2.0c67d57e.chunk.js.map": "/static/js/2.0c67d57e.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.887311c4.chunk.css.map": "/static/css/main.887311c4.chunk.css.map",
-    "static/js/2.0c67d57e.chunk.js.LICENSE.txt": "/static/js/2.0c67d57e.chunk.js.LICENSE.txt",
-    "static/media/csea black.bb3a8954.png": "/static/media/csea black.bb3a8954.png",
-    "static/media/csea_black1.bb3a8954.png": "/static/media/csea_black1.bb3a8954.png",
-    "static/media/interview-removebg-preview.81dd2ea8.png": "/static/media/interview-removebg-preview.81dd2ea8.png",
-    "static/media/interview.4db39061.png": "/static/media/interview.4db39061.png",
-    "static/media/logo2.ba50316a.png": "/static/media/logo2.ba50316a.png",
-    "static/media/post.a6a6bfc4.jpg": "/static/media/post.a6a6bfc4.jpg",
-    "static/media/preparation.7850376e.jpeg": "/static/media/preparation.7850376e.jpeg",
-    "static/media/style.css": "/static/media/shot-unscreen.8281352f.gif"
+    "main.css": "./static/css/main.023bfd47.chunk.css",
+    "main.js": "./static/js/main.87e84a68.chunk.js",
+    "main.js.map": "./static/js/main.87e84a68.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.a9245325.js",
+    "runtime-main.js.map": "./static/js/runtime-main.a9245325.js.map",
+    "static/js/2.0c67d57e.chunk.js": "./static/js/2.0c67d57e.chunk.js",
+    "static/js/2.0c67d57e.chunk.js.map": "./static/js/2.0c67d57e.chunk.js.map",
+    "index.html": "./index.html",
+    "static/css/main.023bfd47.chunk.css.map": "./static/css/main.023bfd47.chunk.css.map",
+    "static/js/2.0c67d57e.chunk.js.LICENSE.txt": "./static/js/2.0c67d57e.chunk.js.LICENSE.txt",
+    "static/media/csea black.bb3a8954.png": "./static/media/csea black.bb3a8954.png",
+    "static/media/csea_black1.bb3a8954.png": "./static/media/csea_black1.bb3a8954.png",
+    "static/media/interview-removebg-preview.81dd2ea8.png": "./static/media/interview-removebg-preview.81dd2ea8.png",
+    "static/media/interview.4db39061.png": "./static/media/interview.4db39061.png",
+    "static/media/logo2.ba50316a.png": "./static/media/logo2.ba50316a.png",
+    "static/media/post.a6a6bfc4.jpg": "./static/media/post.a6a6bfc4.jpg",
+    "static/media/preparation.7850376e.jpeg": "./static/media/preparation.7850376e.jpeg",
+    "static/media/style.css": "./static/media/shot-unscreen.8281352f.gif"
   },
   "entrypoints": [
-    "static/js/runtime-main.248907bc.js",
+    "static/js/runtime-main.a9245325.js",
     "static/js/2.0c67d57e.chunk.js",
-    "static/css/main.887311c4.chunk.css",
-    "static/js/main.c1ee23a4.chunk.js"
+    "static/css/main.023bfd47.chunk.css",
+    "static/js/main.87e84a68.chunk.js"
   ]
 }

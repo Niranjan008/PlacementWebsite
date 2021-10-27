@@ -56,7 +56,7 @@ onSubmit = (e) => {
     
  
 
-  axios.post('http://18.221.72.173:4000/api/experiences/add-exp',{uname:uname,email:email,year:year,company:company,linkedIn:linkedIn,selectedFile:selectedFile},{headers:headers}).then(res => {
+  axios.post('http://18.118.34.18:4000/api/experiences/add-exp',{uname:uname,email:email,year:year,company:company,linkedIn:linkedIn,selectedFile:selectedFile},{headers:headers}).then(res => {
     this.setState({post: true});
     
     

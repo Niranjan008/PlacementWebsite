@@ -11,7 +11,7 @@ constructor(){
 
 componentDidMount(){
     var self = this
-    axios.get('http://18.221.72.173:4000/api/experiences/get-pending-approvals',{headers:{Authorization: localStorage.get('authtoken')}}).then(function (response) {
+    axios.get('http://18.118.34.18:4000/api/experiences/get-pending-approvals',{headers:{Authorization: localStorage.get('authtoken')}}).then(function (response) {
         self.setState({dets:response.data.message})
     })
 }
@@ -51,7 +51,7 @@ render(){
                         function verifs(){
                             
 
-                            axios.get('http://18.221.72.173:4000/api/experiences/giveapproval/'+item._id,{headers:{Authorization: localStorage.get('authtoken')}}).then(function(response){
+                            axios.get('http://18.118.34.18:4000/api/experiences/giveapproval/'+item._id,{headers:{Authorization: localStorage.get('authtoken')}}).then(function(response){
                                 
                                 window.alert('Verification Success')
                                 window.location.reload(false);
@@ -64,7 +64,7 @@ render(){
                         }
                         function dels(){
                             console.log(item._id)
-                            axios.get('http://18.221.72.173:4000/api/experiences/deletef/'+item._id,{headers:{Authorization: localStorage.get('authtoken')}}).then(function(response){
+                            axios.get('http://18.118.34.18:4000/api/experiences/deletef/'+item._id,{headers:{Authorization: localStorage.get('authtoken')}}).then(function(response){
                                 
                                 window.alert('Deleted Success')
                                 window.location.reload(false);
